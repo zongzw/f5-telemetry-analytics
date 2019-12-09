@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    container_name: ELASTICSEARCH
+    ports:
+      - 9200:9200
+    environment:
+      - discovery.type=single-node
+    volumes:
+     - ${HOMEDIR}/data/elasticsearch:/usr/share/elasticsearch/data
+
+  fluentd:
+    build: ${HOMEDIR}/docker/fluentd
+    image: zongzw/fluentd:v1.3.2
+    container_name: FLUENTD
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+      - 20001:20001/udp
+    volumes:
+      - ${HOMEDIR}/conf.d/fluentd.conf:/fluentd/etc/fluentd.conf
+    depends_on:
+      - elasticsearch
+      - kibana
+    environment:
+      - FLUENTD_CONF=fluentd.conf
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.2.0
+    container_name: KIBANA
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601
+    volumes:
+      - ${HOMEDIR}/conf.d/kibana.yml:/usr/share/kibana/config/kibana.yml
