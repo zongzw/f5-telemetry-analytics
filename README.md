@@ -1,6 +1,6 @@
 # efk-over-bigip
 
-This is a project of using EFK to do analytics over BIG-IP data traffic.
+This project aims for the visualization and analytics over BIG-IP data traffic by using EFK.
 
 ## Running Dependencies
 
