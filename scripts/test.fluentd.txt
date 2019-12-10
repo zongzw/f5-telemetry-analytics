@@ -1,0 +1,3 @@
+curl -X POST -d 'json={"event": "data", "host": "183.84.2.166"}' http://localhost:8081/geoip.access
+
+curl -X POST -d 'json={"event": "data"}' http://localhost:8081/myapp.access
