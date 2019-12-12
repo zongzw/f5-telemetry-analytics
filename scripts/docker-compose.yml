@@ -20,6 +20,7 @@ services:
       - 24224:24224/udp
       - 20001:20001/udp
       - 8081:8081
+      - 8085:8085
     volumes:
       - ${HOMEDIR}/conf.d/fluentd.conf:/etc/td-agent/td-agent.conf
     depends_on:

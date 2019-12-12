@@ -14,8 +14,14 @@ USER_AGENTS = (
 )
 
 # DOMAIN = "http://nginx-website.com"
-DOMAIN = "http://nginx"
+DOMAIN = "http://10.250.17.132:80"
 SOURCE = ['.'.join((str(random.randint(1,254)) for _ in range(4))) for _ in range(100)]
+
+for n in SOURCE:
+    if n.startswith('192.') or n.startswith('127.') or n.startswith('10.'):
+        SOURCE.remove(n)
+
+print(SOURCE)
 def fetch(num):
     spoof_src = random.choice(SOURCE)
     user_agent = random.choice(USER_AGENTS)
@@ -25,9 +31,9 @@ def fetch(num):
     
     return r
 
-pool = eventlet.GreenPool(1000)
+pool = eventlet.GreenPool(10)
 
-for r in range(500):
+for r in range(50):
     pool.spawn(fetch, r)
 
 pool.waitall()

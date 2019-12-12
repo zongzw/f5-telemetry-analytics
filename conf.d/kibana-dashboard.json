@@ -1,0 +1,74 @@
+{
+  "version": "7.2.0",
+  "objects": [
+    {
+      "id": "31a3c230-1cb7-11ea-ace7-df9fa86920db",
+      "type": "dashboard",
+      "updated_at": "2019-12-12T08:12:52.562Z",
+      "version": "WzEyMSw0NV0=",
+      "attributes": {
+        "title": "Data Traffic Visualization",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"gridData\":{\"w\":24,\"h\":15,\"x\":0,\"y\":0,\"i\":\"1\"},\"version\":\"7.2.0\",\"panelIndex\":\"1\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"}]",
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "panel_0",
+          "type": "visualization",
+          "id": "3ced5820-1cb4-11ea-ac99-051dc966cf16"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "7.0.0"
+      }
+    },
+    {
+      "id": "3ced5820-1cb4-11ea-ac99-051dc966cf16",
+      "type": "visualization",
+      "updated_at": "2019-12-12T07:51:43.009Z",
+      "version": "WzExOSw0NF0=",
+      "attributes": {
+        "title": "Accessing Geography",
+        "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"autoPrecision\":true,\"field\":\"geo\",\"isFilteredByCollar\":true,\"mapBounds\":{\"bottom_right\":{\"lat\":-4.565473550710278,\"lon\":-9.580078125},\"top_left\":{\"lat\":66.58321725728176,\"lon\":-172.6171875}},\"mapCenter\":{\"lat\":39.30029918615029,\"lon\":-91.09863281250001},\"mapZoom\":4,\"precision\":2,\"useGeocentroid\":true},\"schema\":\"segment\",\"type\":\"geohash_grid\"}],\"params\":{\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"dimensions\":{\"geocentroid\":{\"accessor\":3,\"aggType\":\"geo_centroid\",\"format\":{\"id\":\"string\"},\"params\":{}},\"geohash\":{\"accessor\":1,\"aggType\":\"geohash_grid\",\"format\":{\"id\":\"string\"},\"params\":{\"precision\":3,\"useGeocentroid\":true}},\"metric\":{\"accessor\":2,\"aggType\":\"count\",\"format\":{\"id\":\"number\"},\"params\":{}}},\"heatClusterSize\":1.5,\"isDesaturated\":true,\"legendPosition\":\"bottomright\",\"mapCenter\":[0,0],\"mapType\":\"Scaled Circle Markers\",\"mapZoom\":2,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true}}},\"title\":\"Accessing Geography\",\"type\":\"tile_map\"}",
+        "uiStateJSON": "{\"mapCenter\":[27.994401411046148,20.917968750000004],\"mapZoom\":2}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "9f1ac050-1caa-11ea-a372-4d0203d8a900"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.2.0"
+      }
+    },
+    {
+      "id": "9f1ac050-1caa-11ea-a372-4d0203d8a900",
+      "type": "index-pattern",
+      "updated_at": "2019-12-12T06:42:54.748Z",
+      "version": "WzExNyw0M10=",
+      "attributes": {
+        "title": "http-fluentd",
+        "timeFieldName": "timestamp",
+        "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"bigip-info\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"city\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"client-ip\",\"type\":\"ip\",\"esTypes\":[\"ip\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"content-type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"content-type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"content-type\",\"subType\":\"multi\"},{\"name\":\"cookie\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"country\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"country_name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"geo\",\"type\":\"geo_point\",\"esTypes\":[\"geo_point\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"host\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"latency\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"latency.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"latency\",\"subType\":\"multi\"},{\"name\":\"method\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"method.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"method\",\"subType\":\"multi\"},{\"name\":\"postal_code\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"region_code\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"region_name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"server-ip\",\"type\":\"ip\",\"esTypes\":[\"ip\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"status\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"timestamp\",\"type\":\"date\",\"esTypes\":[\"date\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"uri\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"uri.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"uri\",\"subType\":\"multi\"},{\"name\":\"user-agent\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"username\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"username.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"username\",\"subType\":\"multi\"}]"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "6.5.0"
+      }
+    }
+  ]
+}

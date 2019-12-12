@@ -1,0 +1,42 @@
+# KEEP THIS LINE HERE.
+# DON'T USE 'backlash' TO WARP LINES IN THIS FILE.
+
+# when RULE_INIT {
+#    set static::general_remote_syslog_publisher "/Sample_container/hsl-publisher"
+# }
+
+# when CLIENT_ACCEPTED {
+#    set hsl [HSL::open -publisher $static::general_remote_syslog_publisher]
+# }
+
+when HTTP_REQUEST {
+    set request_start [clock clicks -milliseconds]
+    if { [HTTP::header X-Forwarded-For] ne "" } {
+        set client_ip [HTTP::header X-Forwarded-For]
+    } else {
+        set client_ip [IP::client_addr]
+    }
+
+    # set client_port [TCP::client_port]
+    set host [HTTP::header host]
+    set user_agent [HTTP::header user-agent]
+    set content_type [HTTP::header content-type]
+    set cookie [HTTP::header cookie]
+    set uri [HTTP::uri]
+    set method [HTTP::method]
+    set username [HTTP::username]
+}
+
+when HTTP_RESPONSE {
+    set hsl [HSL::open -proto UDP -pool logging_pool]
+    
+    set timestamp [clock format [clock seconds] -format "%Y-%m-%dT%T.000Z"]
+    set request_end [clock clicks -milliseconds]
+    set server_ip [IP::server_addr]
+    set resp_status [HTTP::status]
+    set latency [expr {$request_end-$request_start}]
+    
+    HSL::send $hsl "timestamp: $timestamp client-ip: $client_ip host: $host user-agent: $user_agent cookie: $cookie method: $method uri: $uri username: $username content-type: $content_type server-ip: $server_ip latency: $latency resp-status: $resp_status"
+    
+    log local0. "timestamp: $timestamp client-ip: $client_ip host: $host user-agent: $user_agent cookie: $cookie method: $method uri: $uri username: $username content-type: $content_type server-ip: $server_ip latency: $latency resp-status: $resp_status"
+}

@@ -1,0 +1,56 @@
+when RULE_INIT {
+    set static::general_remote_syslog_publisher "/Sample_container/hsl-publisher"
+}
+
+when CLIENT_ACCEPTED {
+    set hsl [HSL::open -publisher $static::general_remote_syslog_publisher]
+}
+
+when HTTP_REQUEST {
+    set request_start [clock clicks -milliseconds]
+    if { [HTTP::header X-Forwarded-For] ne "" } {
+        set client_ip [HTTP::header X-Forwarded-For]
+    } else {
+        set client_ip [IP::client_addr]
+    }
+
+    # set client_port [TCP::client_port]
+    set host [HTTP::header host]
+    set user_agent [HTTP::header user-agent]
+    set content_type [HTTP::header content-type]
+    set cookie [HTTP::header cookie]
+    set uri [HTTP::uri]
+    set method [HTTP::method]
+    set username [HTTP::username]
+}
+
+when HTTP_RESPONSE {
+    set request_end [clock clicks -milliseconds]
+    set server_ip [IP::server_addr]
+    set resp_status [HTTP::status]
+    set latency [expr {$request_end-$request_start}]
+    
+    HSL::send $hsl "client-ip: $client_ip\
+    host: $host\
+    user-agent: $user_agent\
+    cookie: $cookie\
+    method: $method\
+    uri: $uri\
+    username: $username\
+    content-type: $content_type\
+    server-ip: $server_ip\
+    latency: $latency\
+    resp-status: $resp_status"
+    
+    log local0. "client-ip: $client_ip\
+    host: $host\
+    user-agent: $user_agent\
+    cookie: $cookie\
+    method: $method\
+    uri: $uri\
+    username: $username\
+    content-type: $content_type\
+    server-ip: $server_ip\
+    latency: $latency\
+    resp-status: $resp_status"
+}
