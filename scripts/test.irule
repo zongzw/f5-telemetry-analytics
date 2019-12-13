@@ -1,3 +1,0 @@
-when RULE_INIT {
-    set static::general_remote_syslog_publisher "/Sample_container/hsl-publisher"
-}

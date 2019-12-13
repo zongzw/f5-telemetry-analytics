@@ -1,7 +1,15 @@
 import eventlet
-eventlet.monkey_patch()
+import subprocess
 import requests
 import random
+import sys
+
+if len(sys.argv) != 3:
+    print("%s <ipaddress> <port>" % sys.argv[0])
+    sys.exit(1)
+
+eventlet.monkey_patch()
+
 USER_AGENTS = (
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_7_0; en-US)",
     "AppleWebKit/534.21 (KHTML, like Gecko) Chrome/11.0.678.0 Safari/534.21",
@@ -14,26 +22,47 @@ USER_AGENTS = (
 )
 
 # DOMAIN = "http://nginx-website.com"
-DOMAIN = "http://10.250.17.132:80"
+
+# def get_env(envstr):
+#     return subprocess.check_output(['bash', '-c', '. /root/setup.rc && echo $FAKE_BIGIP_VS_IPADDR']).strip()
+
+DOMAIN = "http://%s:%s" % (sys.argv[1], sys.argv[2])
 SOURCE = ['.'.join((str(random.randint(1,254)) for _ in range(4))) for _ in range(100)]
 
+print([10, 172, 192] + range(224, 256) )
 for n in SOURCE:
-    if n.startswith('192.') or n.startswith('127.') or n.startswith('10.'):
-        SOURCE.remove(n)
+    for m in [10, 172, 192 ] + range(224, 256):
+        if n.startswith("%d." % m):
+            print("removing %s" % n)
+            SOURCE.remove(n)
 
 print(SOURCE)
-def fetch(num):
+
+count=0
+failed=0
+
+def fetch():
+    global failed
     spoof_src = random.choice(SOURCE)
     user_agent = random.choice(USER_AGENTS)
     
     headers = {'X-Forwarded-For':spoof_src, 'User-Agent':user_agent}
-    r = requests.get(DOMAIN, headers = headers, timeout=20)
-    
-    return r
+    try:
+        r = requests.get(DOMAIN, headers = headers, timeout=20)
+        return r
+    except Exception as e:
+        failed +=1;
+        print("failed to connect %s: %s" % (DOMAIN, e.message))
 
-pool = eventlet.GreenPool(10)
+pool = eventlet.GreenPool(2000)
 
-for r in range(50):
-    pool.spawn(fetch, r)
+# for r in range(500):
+#     print(r)
+#     pool.spawn(fetch, r)
+
+while True:
+    print("count: %d, failed: %d" % (count, failed))
+    count += 1
+    pool.spawn(fetch)
 
 pool.waitall()
