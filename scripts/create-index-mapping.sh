@@ -3,8 +3,10 @@
 host_endpoint="http://elasticsearch:9200"
 index_name=http-fluentd
 response=`curl -s -o /dev/null $host_endpoint/$index_name -w "%{http_code}"`
-if [ "$response" != "200" ]; then 
-    curl -X PUT $host_endpoint/$index_name
+if [ "$response" != "200" ]; then
+    echo -n "create index: $index_name ... "
+    curl -s -X PUT $host_endpoint/$index_name
+    echo "done"
 fi
 
 # {
@@ -102,11 +104,16 @@ body=`cat << EOF
     },
     "region_name": {
       "type": "text"
-    } 
+    },
+    "latency": {
+      "type": "integer"
+    }
   }
 }
 EOF
 `
 
-curl -X PUT -H "Content-Type: application/json" \
+echo -n "creating index: $index_name's mapping ..."
+curl -X PUT -s -H "Content-Type: application/json" \
     $host_endpoint/$index_name/_mapping -d "$body"
+echo " done"

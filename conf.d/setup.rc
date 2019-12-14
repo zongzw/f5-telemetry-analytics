@@ -8,6 +8,7 @@ BIGIP_VS_PATH="/sample_application/A1/serviceMain"
 # fake application setup
 FAKE_BIGIP_VS_IPADDR=10.250.17.133
 FAKE_BIGIP_VS_PORT=80
+FAKE_BIGIP_VS_SERVICEPORT=84
 FAKE_BIGIP_VS_POOL='[
-    "10.250.64.100"
+    "10.250.11.185"
 ]'

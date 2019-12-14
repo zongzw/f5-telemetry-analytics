@@ -2,7 +2,7 @@ version: "3"
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
     container_name: ELASTICSEARCH
     ports:
       - 9200:9200
@@ -28,7 +28,7 @@ services:
       - kibana
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:7.2.0
+    image: docker.elastic.co/kibana/kibana:7.4.1
     container_name: KIBANA
     depends_on:
       - elasticsearch
@@ -52,6 +52,7 @@ services:
     volumes:
       - ${HOMEDIR}/scripts:/root/scripts
       - ${HOMEDIR}/conf.d/setup.rc:/root/setup.rc # temp
+      - ${HOMEDIR}/conf.d/kibana-exports:/root/kibana-exports
 
   nginx:
     image: nginx:latest

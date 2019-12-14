@@ -6,10 +6,10 @@ command_prefix="curl -s -k -u admin:admin"
 # env 
 . /root/setup.rc # temp
 
-# deploy with as3
-irule_content=`cat $cdir/logging.irule | sed ':a;N;s/\n/\\\\n/g;ta' | sed 's/"/\\\\"/g'`
+# irule_content=`cat $cdir/logging.irule | sed ':a;N;s/\n/\\\\n/g;ta' | sed 's/"/\\\\"/g'`
 # echo $irule_content
 
+# deploy with as3
 vs_name=sample_application
 body=`cat << EOF
 {
@@ -35,10 +35,7 @@ body=`cat << EOF
                     "virtualAddresses": [
                         "$FAKE_BIGIP_VS_IPADDR"
                     ],
-                    "pool": "web_pool",
-                    "iRules": [
-                        "f5-logging-irule"
-                    ]
+                    "pool": "web_pool"
                 },
                 "web_pool": {
                     "class": "Pool",
@@ -47,7 +44,7 @@ body=`cat << EOF
                     ],
                     "members": [
                         {
-                            "servicePort": 8080,
+                            "servicePort": $FAKE_BIGIP_VS_SERVICEPORT,
                             "serverAddresses": $FAKE_BIGIP_VS_POOL
                         }
                     ]
@@ -63,10 +60,6 @@ body=`cat << EOF
                             "serverAddresses": $FAKE_BIGIP_VS_POOL
                         }
                     ]
-                },
-                "f5-logging-irule": {
-                    "class": "iRule",
-                    "iRule": "\n\n$irule_content"
                 }
             }
         }
@@ -75,6 +68,17 @@ body=`cat << EOF
 EOF
 `
 
+# don't create irule for the fake bigip vs.
+# ,
+#                     "iRules": [
+#                         "f5-logging-irule"
+#                     ]
+
+# ,
+#                 "f5-logging-irule": {
+#                     "class": "iRule",
+#                     "iRule": "\n\n$irule_content"
+#                 }
 #echo $body
 
 $command_prefix -H "Content-Type: application/json" \

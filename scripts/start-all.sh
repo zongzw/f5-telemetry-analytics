@@ -32,6 +32,8 @@ refresh_image_if_necessary
 
 docker-compose -f $HOMEDIR/scripts/docker-compose.yml up -d --force-recreate --remove-orphans
 
+docker exec SANDBOX "/root/scripts/setup-efk.sh"
+
 x='
 0. start docker containers..
 

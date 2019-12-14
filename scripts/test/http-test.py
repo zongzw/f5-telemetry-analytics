@@ -54,7 +54,7 @@ def fetch():
         failed +=1;
         print("failed to connect %s: %s" % (DOMAIN, e.message))
 
-pool = eventlet.GreenPool(2000)
+pool = eventlet.GreenPool(20)
 
 # for r in range(500):
 #     print(r)
