@@ -45,7 +45,7 @@ services:
     ports:
       - 8000:80
     depends_on:
-      - nginx
+      # - nginx
       - as3
     env_file:
       - ${HOMEDIR}/conf.d/setup.rc

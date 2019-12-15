@@ -39,33 +39,38 @@ for n in SOURCE:
 
 print(SOURCE)
 
-count=0
-failed=0
-
+count = 0
+failed = 0
+total_time = 0
 def fetch():
     global failed
+    global count
+    global total_time
+
     spoof_src = random.choice(SOURCE)
     user_agent = random.choice(USER_AGENTS)
     
     headers = {'X-Forwarded-For':spoof_src, 'User-Agent':user_agent}
     try:
-        r = requests.get(DOMAIN, headers = headers, timeout=20)
-        return r
+        stime = time.time()
+        requests.get(DOMAIN, headers = headers, timeout=20)
+
     except Exception as e:
         failed +=1;
         print("failed to connect %s: %s" % (DOMAIN, e.message))
+    finally:
+        count += 1;
+        etime = time.time()
+        total_time += etime - stime
+        print("count_total: %d, count_failed: %d, time_total: %f, time_average: %f" % (count, failed, total_time, total_time/count))
 
-pool = eventlet.GreenPool(20)
+pool = eventlet.GreenPool(200)
 
 # for r in range(500):
 #     print(r)
 #     pool.spawn(fetch, r)
 
-stime = time.time()
-while True:
-    count += 1
+while count < 1000:
     pool.spawn(fetch)
-    etime = time.time()
-    print("count: %d, failed: %d, average request time: %f" % (count, failed, (etime - stime)/count))
 
 pool.waitall()
