@@ -48,18 +48,6 @@ body=`cat << EOF
                             "serverAddresses": $FAKE_BIGIP_VS_POOL
                         }
                     ]
-                },
-                "logging_pool": {
-                    "class": "Pool",
-                    "monitors": [
-                        "icmp"
-                    ],
-                    "members": [
-                        {
-                            "servicePort": 20001,
-                            "serverAddresses": $FAKE_BIGIP_VS_POOL
-                        }
-                    ]
                 }
             }
         }
@@ -67,6 +55,21 @@ body=`cat << EOF
 }
 EOF
 `
+
+# don't create logging pool here.
+# ,
+#                  "logging_pool": {
+#                     "class": "Pool",
+#                     "monitors": [
+#                         "icmp"
+#                     ],
+#                     "members": [
+#                         {
+#                             "servicePort": 20001,
+#                             "serverAddresses": $FAKE_BIGIP_VS_POOL
+#                         }
+#                     ]
+#                 }
 
 # don't create irule for the fake bigip vs.
 # ,

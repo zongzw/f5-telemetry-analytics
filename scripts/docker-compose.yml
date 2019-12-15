@@ -54,13 +54,13 @@ services:
       - ${HOMEDIR}/conf.d/setup.rc:/root/setup.rc # temp
       - ${HOMEDIR}/conf.d/kibana-exports:/root/kibana-exports
 
-  nginx:
-    image: nginx:latest
-    container_name: WEBSERVER
-    ports:
-      - 8080:80
-    volumes:
-      - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: WEBSERVER
+  #   ports:
+  #     - 8080:80
+  #   volumes:
+  #     - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
 
   as3:
     image: f5devcentral/f5-as3-container:latest

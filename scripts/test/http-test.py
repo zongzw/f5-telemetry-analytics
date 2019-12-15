@@ -3,6 +3,7 @@ import subprocess
 import requests
 import random
 import sys
+import time
 
 if len(sys.argv) != 3:
     print("%s <ipaddress> <port>" % sys.argv[0])
@@ -60,9 +61,11 @@ pool = eventlet.GreenPool(20)
 #     print(r)
 #     pool.spawn(fetch, r)
 
+stime = time.time()
 while True:
-    print("count: %d, failed: %d" % (count, failed))
     count += 1
     pool.spawn(fetch)
+    etime = time.time()
+    print("count: %d, failed: %d, average request time: %f" % (count, failed, (etime - stime)/count))
 
 pool.waitall()

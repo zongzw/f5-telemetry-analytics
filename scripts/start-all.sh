@@ -32,19 +32,18 @@ refresh_image_if_necessary
 
 docker-compose -f $HOMEDIR/scripts/docker-compose.yml up -d --force-recreate --remove-orphans
 
-docker exec SANDBOX "/root/scripts/setup-efk.sh"
+docker exec SANDBOX "/root/scripts/cmds-in-sandbox/setup-efk.sh"
 
 x='
 0. start docker containers..
-
 1. kibana:          import kibana settings
 2. elasticsearch:   create index mapping
 
 3. edit setup.rc.
 (. bigip:           create a fake virtual server on bigip)
-4. sandbox          run python http-test.py
 
-5. bigip:           create logging irule
-6. bigip:           setup bigip virtual server irule
-7. 
+4. bigip:           create logging irule
+5. bigip:           setup bigip virtual server irule
+
+6. sandbox          run python http-test.py
 '

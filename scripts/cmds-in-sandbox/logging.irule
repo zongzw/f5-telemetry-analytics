@@ -28,7 +28,7 @@ when HTTP_REQUEST {
 }
 
 when HTTP_RESPONSE {
-    set hsl [HSL::open -proto UDP -pool logging_pool]
+    set hsl [HSL::open -proto UDP -pool f5-logging-pool]
     
     set timestamp [clock format [clock seconds] -format "%Y-%m-%dT%T.000Z"]
     set request_end [clock clicks -milliseconds]

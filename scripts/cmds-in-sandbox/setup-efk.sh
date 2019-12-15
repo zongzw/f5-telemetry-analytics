@@ -13,7 +13,7 @@ while true; do
     fi
     res_code=`curl http://kibana:5601/app/kibana -s -o /dev/null -w "%{http_code}"`
     if [ "$res_code" = "200" ]; then 
-        echo "OK"
+        echo " OK"
         break; 
     else 
         echo -n "."
