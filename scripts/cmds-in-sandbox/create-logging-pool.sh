@@ -27,7 +27,7 @@ $command_prefix -XPOST -w "%{http_code}" -H "Content-Type: application/json" \
         \"members\": [
             {
                 \"kind\": \"ltm:pool:members\",
-                \"name\": \"$BIGIP_LOGGING_TARGET:20001\"
+                \"name\": \"$LOGGING_TARGET:20001\"
             }
 	    ]
     }
