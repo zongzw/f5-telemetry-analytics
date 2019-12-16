@@ -39,6 +39,7 @@ body=`cat << EOF
                 },
                 "web_pool": {
                     "class": "Pool",
+                    "loadBalancingMode": "least-connections-node",
                     "monitors": [
                         "http"
                     ],

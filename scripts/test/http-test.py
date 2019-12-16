@@ -62,15 +62,19 @@ def fetch():
         count += 1;
         etime = time.time()
         total_time += etime - stime
-        print("count_total: %d, count_failed: %d, time_total: %f, time_average: %f" % (count, failed, total_time, total_time/count))
+        if count % 1000 == 0:
+            print("count_total: %d, count_failed: %d, time_total: %f, time_average: %f" % (count, failed, total_time, total_time/count))
 
-pool = eventlet.GreenPool(200)
+pool = eventlet.GreenPool(20)
 
 # for r in range(500):
 #     print(r)
 #     pool.spawn(fetch, r)
 
-while count < 1000:
+# while count < 3000:
+while True:
     pool.spawn(fetch)
 
 pool.waitall()
+
+print("result: count_total: %d, count_failed: %d, time_total: %f, time_average: %f" % (count, failed, total_time, total_time/count))

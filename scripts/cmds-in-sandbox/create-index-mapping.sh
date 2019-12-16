@@ -65,13 +65,15 @@ body=`cat << EOF
       "type": "date"
     },
     "bigip-info": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "client-ip": {
       "type": "ip"
     },
     "host": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "user-agent": {
       "type": "keyword"
@@ -83,30 +85,46 @@ body=`cat << EOF
       "type": "ip"
     },
     "status": {
-      "type": "text"
-    }, "city": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
+    }, 
+    "city": {
+      "type": "text",
+      "fielddata": true
     },
     "geo": {
       "type": "geo_point"
     },
     "country": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "country_name": {   
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "postal_code": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "region_code": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "region_name": {
-      "type": "text"
+      "type": "text",
+      "fielddata": true
     },
     "latency": {
       "type": "integer"
+    },
+    "method": {
+      "type": "text",
+      "fielddata": true
+    },
+    "uri": {
+      "type": "text",
+      "fielddata": true
     }
   }
 }
