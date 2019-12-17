@@ -47,6 +47,9 @@ services:
     depends_on:
       # - nginx
       - as3
+      - kibana
+      - elasticsearch
+      - fluentd
     env_file:
       - ${HOMEDIR}/conf.d/setup.rc
     volumes:
