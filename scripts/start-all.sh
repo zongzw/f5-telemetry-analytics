@@ -30,7 +30,7 @@ function refresh_image_if_necessary() {
 
 refresh_image_if_necessary
 
-chmod -R $HOMEDIR/data/* # permission denied in linux.
+chmod -R 777 $HOMEDIR/data/* # permission denied in linux.
 docker-compose -f $HOMEDIR/scripts/docker-compose.yml up -d --force-recreate --remove-orphans
 
 docker exec SANDBOX "/root/scripts/cmds-in-sandbox/setup-efk.sh"
