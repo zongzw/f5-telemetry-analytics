@@ -64,9 +64,8 @@ def send_once():
 eventlet.monkey_patch()
 pool = eventlet.GreenPool(20)
 
-splits = 60
-period = 60
-max = 80
+splits = 7200
+max = 200
 def count_total(index):
     global splits
     n = index % (splits + 1)
@@ -74,12 +73,12 @@ def count_total(index):
     print(n, int(t * max))
     return int(t * max)
 
-endless = 0 
+endless = int(time.time())
 while True:
     count = count_total(endless)
     for n in range(0, count): 
         pool.spawn(send_once)
         # time.sleep(0.05)
-    time.sleep(period/splits)
+    time.sleep(1)
 
     endless += 1
