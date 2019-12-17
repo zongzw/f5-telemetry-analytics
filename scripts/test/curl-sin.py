@@ -11,7 +11,6 @@ import eventlet
 #     print("%s <ipaddress> <port>" % sys.argv[0])
 #     sys.exit(1)
 
-eventlet.monkey_patch()
 
 def request_once():
     DOMAIN = "http://%s:%s" % ('10.250.17.133', '80')
@@ -31,6 +30,7 @@ def request_once():
 # print(dir(datetime.datetime.now().minute))
 # print(datetime.datetime.now().minute)
 
+eventlet.monkey_patch()
 pool = eventlet.GreenPool(20)
 
 period = 60
