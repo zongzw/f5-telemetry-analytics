@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "timestamp": {
+      "type": "date"
+    },
+    "message": {
+      "type": "text",
+      "fielddata": true
+    }
+  }
+}

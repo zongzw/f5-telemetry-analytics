@@ -1,9 +1,10 @@
 #!/bin/bash
 
 cdir=`cd $(dirname $0); pwd`
+workdir=$cdir/../..
 command_prefix="curl -s -k -u admin:admin"
 
-. /root/setup.rc # temp
+. $workdir/conf.d/.setup.rc # temp
 
 
 # create pool on bigip

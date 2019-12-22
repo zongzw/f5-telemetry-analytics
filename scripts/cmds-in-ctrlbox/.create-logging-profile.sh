@@ -5,12 +5,13 @@
 # "zongzw timestamp: $DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000Z client-ip: $CLIENT_IP host: $Host user-agent: ${User-agent} cookie: $Cookie method: $HTTP_METHOD uri: $HTTP_URI username: $Username content-type: ${Content-Type} server-ip: $SERVER_IP latency: $RESPONSE_MSECS resp-status: $HTTP_STATCODE"
 
 cdir=`cd $(dirname $0); pwd`
+workdir=$cdir/../..
 command_prefix="curl -s -k -u admin:admin"
 
-. /root/setup.rc # temp
+. $workdir/conf.d/.setup.rc # temp
 
 request_logging_profile_name="f5-request-logging-profile"
-request_logging_profile_tmpl='timestamp: $DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000Z client-ip: ${X-Forwarded-For} host: $Host user-agent: ${User-agent} cookie: $Cookie method: $HTTP_METHOD uri: $HTTP_URI username: $Username content-type: ${Content-Type} server-ip: $SERVER_IP latency: $RESPONSE_MSECS resp-status: $HTTP_STATCODE'
+request_logging_profile_tmpl=`cat $workdir/conf.d/request-logging-template.profile`
 request_logging_profile_body=`cat << EOF
 {
     "kind": "tm:ltm:profile:request-log:request-logstate",

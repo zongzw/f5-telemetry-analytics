@@ -25,7 +25,7 @@ USER_AGENTS = (
 # DOMAIN = "http://nginx-website.com"
 
 # def get_env(envstr):
-#     return subprocess.check_output(['bash', '-c', '. /root/setup.rc && echo $FAKE_BIGIP_VS_IPADDR']).strip()
+#     return subprocess.check_output(['bash', '-c', '. /root/workdir/conf.d/.setup.rc && echo $FAKE_BIGIP_VS_IPADDR']).strip()
 
 DOMAIN = "http://%s:%s" % (sys.argv[1], sys.argv[2])
 SOURCE = ['.'.join((str(random.randint(1,254)) for _ in range(4))) for _ in range(100)]

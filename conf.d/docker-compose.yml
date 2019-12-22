@@ -16,11 +16,11 @@ services:
     image: zongzw/fluentd:latest
     container_name: FLUENTD
     ports:
-      - 24224:24224
-      - 24224:24224/udp
+      # - 24224:24224
+      # - 24224:24224/udp
       - 20001:20001/udp
-      - 8081:8081
-      - 8085:8085
+      - 8081-8089:8081-8089
+      # - 8085:8085
     volumes:
       - ${HOMEDIR}/conf.d/fluentd.conf:/etc/td-agent/td-agent.conf
     depends_on:
@@ -38,24 +38,24 @@ services:
       - ${HOMEDIR}/conf.d/kibana.yml:/usr/share/kibana/config/kibana.yml
       - ${HOMEDIR}/data/kibana:/usr/share/kibana/data
 
-  sandbox:
-    build: ${HOMEDIR}/docker/sandbox
-    image: zongzw/sandbox:latest
-    container_name: SANDBOX
+  ctrlbox:
+    build: ${HOMEDIR}/docker/ctrlbox
+    image: zongzw/ctrlbox:latest
+    container_name: CTRLBOX
     ports:
       - 8000:80
     depends_on:
       # - nginx
-      - as3
       - kibana
       - elasticsearch
       - fluentd
     env_file:
-      - ${HOMEDIR}/conf.d/setup.rc
+      - ${HOMEDIR}/conf.d/.setup.rc
     volumes:
-      - ${HOMEDIR}/scripts:/root/scripts
-      - ${HOMEDIR}/conf.d/setup.rc:/root/setup.rc # temp
-      - ${HOMEDIR}/conf.d/kibana-exports:/root/kibana-exports
+      - ${HOMEDIR}:/root/workdir
+      # - ${HOMEDIR}/scripts:/root/scripts
+      # - ${HOMEDIR}/conf.d/setup.rc:/root/setup.rc # temp
+      # - ${HOMEDIR}/conf.d/kibana-exports:/root/kibana-exports
 
   # nginx:
   #   image: nginx:latest
@@ -65,8 +65,8 @@ services:
   #   volumes:
   #     - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
 
-  as3:
-    image: f5devcentral/f5-as3-container:latest
-    container_name: AS3
-    ports: 
-      - 8443:443
+  # as3:
+  #   image: f5devcentral/f5-as3-container:latest
+  #   container_name: AS3
+  #   ports: 
+  #     - 8443:443

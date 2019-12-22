@@ -5,17 +5,17 @@ if [ $# -ne 2 ]; then
     exit 1
 fi
 
-cmdsfolder=/root/scripts/cmds-in-sandbox
-docker exec SANDBOX "$cmdsfolder/create-fake-bigip-vs.sh"
-docker exec SANDBOX "$cmdsfolder/create-logging-pool.sh"
+cmdsfolder=/root/workdir/scripts/cmds-in-ctrlbox
+docker exec CTRLBOX "$cmdsfolder/.create-fake-bigip-vs.sh"
+docker exec CTRLBOX "$cmdsfolder/.create-logging-pool.sh"
 
-docker exec SANDBOX "$cmdsfolder/create-logging-profile.sh"
-docker exec SANDBOX "$cmdsfolder/setup-bigip-vs-profile.sh"
+docker exec CTRLBOX "$cmdsfolder/.create-logging-profile.sh"
+docker exec CTRLBOX "$cmdsfolder/.setup-bigip-vs-profile.sh"
 
-# docker exec SANDBOX "$cmdsfolder/create-logging-irule.sh"
-# docker exec SANDBOX "$cmdsfolder/setup-bigip-vs-irule.sh"
+# docker exec CTRLBOX "$cmdsfolder/create-logging-irule.sh"
+# docker exec CTRLBOX "$cmdsfolder/setup-bigip-vs-irule.sh"
 
-docker exec SANDBOX bash -c ". /root/setup.rc && env && python /root/scripts/test/http-test.py $1 $2"
+docker exec CTRLBOX bash -c ". /root/workdir/conf.d/.setup.rc && env && python /root/workdir/scripts/test/http-test.py $1 $2"
 
 
 # solve: https://www.cnblogs.com/hcy-fly/p/7908324.html

@@ -1,12 +1,13 @@
 #!/bin/bash
 
 cdir=`cd $(dirname $0); pwd`
+workdir=$cdir/../..
 command_prefix="curl -s -k -u admin:admin"
 
 # env 
-. /root/setup.rc # temp
+. $workdir/conf.d/.setup.rc # temp
 
-# irule_content=`cat $cdir/logging.irule | sed ':a;N;s/\n/\\\\n/g;ta' | sed 's/"/\\\\"/g'`
+# irule_content=`cat $workdir/conf.d/.logging.irule | sed ':a;N;s/\n/\\\\n/g;ta' | sed 's/"/\\\\"/g'`
 # echo $irule_content
 
 # deploy with as3
