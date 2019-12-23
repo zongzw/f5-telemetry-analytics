@@ -6,6 +6,7 @@ The scaling-out is an another story, so performance improving work is on the way
 
 ## Program Architecture
 
+![image](https://github.com/zongzw/efk-over-bigip/blob/master/docs/topology.png)
 
 ## Running Dependencies
 
