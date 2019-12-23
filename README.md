@@ -14,7 +14,7 @@ The scaling-out is an another story, so performance improving work is on the way
 * docker-compose
 
 
-## Usage and workflow
+## Usage and Workflow
 
 1. Run `start-all.sh`:
    For the first time of running `start-all.sh`, docker command will pull or build images, so it may take a few minutes to finish.
@@ -25,4 +25,29 @@ The scaling-out is an another story, so performance improving work is on the way
    1. Imports kibana dashboards to KIBANA.
    1. Creates indexs and mappings in ELASTICSEARCH.
 
-2. Setup
+2. Setup BIG-IP request logging profile and HSL pool.
+   
+   To collect logs from BIG-IP virtual servers to EFK, manually, BIG-IP admin needs to
+
+   1. Create HSL pool.
+
+      The pool member is the host where EFK program starts. 
+      
+      The port is 20001.
+
+   1. Create request logging profile using the HSL pool and bind it to the specific virtual server.
+
+      On the request logging profile creation page, left all configuration as default except *Response Setting* -> *Template*: Use the content of `conf.d/request-logging-template.profile`.
+
+3. Discover and View in Dashboard or Do analytics.
+
+   Open Kibana webpage: http://localhost:5601:
+
+   1. Navigate to Discover tab, to view if there are logs comming in.
+   1. Navigate to Dashboard tab for visualization.
+
+      The dashboards can be shared thus embedded in customers' web application via iframe.
+
+      Click *share* to find it.
+      
+   1. Navigate to Machine Learning tab for data analytics.
