@@ -13,11 +13,11 @@ timestr = time.strftime(strfmt, timetuple)
 import socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 h = socket.gethostbyname('fluentd')
-s.connect((h, 8082))
+s.connect((h, 8084))
 def logging_once():
     global s
     # s.send("%s: 10 20 200\n" % timestr)
-    s.send("2019-12-16T12:12:12.000Z: 10 20 200\n")
+    s.send("%s: 10 20 200\n" % timestr)
 # s.send("%s: zongzhaowei\n" % timestr)
 # s.send("%s: zongzhaowei\n" % timestr)
 # s.send("%s: zongzhaowei\n" % timestr)

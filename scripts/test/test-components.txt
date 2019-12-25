@@ -1,0 +1,21 @@
+fluentd:
+
+    curl -X POST -d 'json={"event": "data", "host": "183.84.2.166"}' http://localhost:8081/geoip.access
+
+    curl -X POST -d 'json={"event": "data"}' http://localhost:8081/myapp.access
+
+    curl http://10.250.17.132 -H "X-Forwarded-For: 183.84.2.166"
+
+kafka:
+
+    /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9093 --topic test --from-beginning
+
+    /opt/bitnami/kafka/bin/kafka-console-producer.sh --broker-list kafka:9093 --topic test
+
+    create topic:
+        kafka-topics.sh --create --zookeeper zookeeper --replication-factor 1 --partitions 3 --topic messages
+
+logstash:
+    curl http://localhost:9600 | python -m json.tool
+
+    

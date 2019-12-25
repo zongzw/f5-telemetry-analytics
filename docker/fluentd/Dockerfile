@@ -28,5 +28,6 @@ RUN yum group install -y "Development Tools"
 RUN yum install -y epel-release
 RUN yum install -y geoip-devel
 RUN td-agent-gem install fluent-plugin-geoip
+RUN td-agent-gem install fluent-plugin-kafka
 
 ENTRYPOINT /etc/init.d/td-agent start && while true; do sleep 1; done

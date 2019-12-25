@@ -36,6 +36,8 @@ function refresh_image_if_necessary() {
 refresh_image_if_necessary
 
 chmod -R 777 $HOMEDIR/data/* # permission denied in linux.
+
+# docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option down # force remove and recreate the network
 docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option up -d --force-recreate --remove-orphans
 
 docker exec CTRLBOX "/root/workdir/scripts/cmds-in-ctrlbox/setup-efk.sh"

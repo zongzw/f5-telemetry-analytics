@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "timestamp": {
+      "type": "date"
+    },
+    "latency": {
+      "type": "integer"
+    },
+    "resp_code": {
+      "type": "integer"
+    },
+    "size": {
+      "type": "integer"
+    }
+  }
+}

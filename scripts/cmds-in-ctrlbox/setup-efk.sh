@@ -5,7 +5,7 @@ cdir=`cd $(dirname $0); pwd`
 wait=0
 timeout=20
 
-echo -n "waiting for kibana to be ready ..."
+echo -n "Waiting for kibana to be ready ..."
 while true; do 
     if [ $wait -ge $timeout ]; then 
         echo "timeout for waiting for kibana readiness."
