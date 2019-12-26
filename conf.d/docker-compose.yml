@@ -156,10 +156,14 @@ services:
     depends_on:
       - elasticsearch
     ports:
+      - 4560:4560 # for logstash debug test.
       - 5000:5000
       - 9600:9600
     volumes:
       - ${HOMEDIR}/conf.d/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    entrypoint:
+      - /usr/local/bin/docker-entrypoint
+      - -r    # Make logstash reload automatically when conf. changes.
     
     
   # nginx:
