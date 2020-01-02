@@ -15,7 +15,7 @@ function refresh_image_if_necessary() {
     if [ x"$md5bin" = x ]; then md5bin=`which md5sum`; fi; 
 
     for n in fluentd $demo_image; do 
-        echo generating image: $n; 
+        echo "Generating image: $n ..."
 
         dockerfile_path=$HOMEDIR/docker/$n/Dockerfile
         md5_file=$HOMEDIR/docker/.$n.image.md5

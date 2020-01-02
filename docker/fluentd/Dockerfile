@@ -29,5 +29,8 @@ RUN yum install -y epel-release
 RUN yum install -y geoip-devel
 RUN td-agent-gem install fluent-plugin-geoip
 RUN td-agent-gem install fluent-plugin-kafka
+RUN td-agent-gem install fluent-plugin-random
+RUN td-agent-gem install fluent-plugin-anonymizer -v 1.0.0
+RUN td-agent-gem install fluent-plugin-throttle
 
 ENTRYPOINT /etc/init.d/td-agent start && while true; do sleep 1; done

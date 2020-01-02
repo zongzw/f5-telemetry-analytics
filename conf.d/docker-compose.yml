@@ -24,6 +24,7 @@ services:
     volumes:
       - ${HOMEDIR}/conf.d/fluentd.conf:/etc/td-agent/td-agent.conf
       - ${HOMEDIR}/conf.d/fluentd:/etc/td-agent/fluentd
+      - ${HOMEDIR}/scripts/cmds-in-fluentd:/root/cmds-in-fluentd
     depends_on:
       - elasticsearch
       - kibana
