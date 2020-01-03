@@ -3,9 +3,7 @@
 cdir=`cd $(dirname $0); pwd`;
 export HOMEDIR=$cdir/..
 
-if [ $# -eq 1 -a "$1" = "--demo" ]; then 
-    demo=true
-    demo_image="ctrlbox"
+if [ $# -eq 1 -a "$1" = "--demo" ]; then
     demo_yml_option="-f $HOMEDIR/conf.d/.docker-compose-demo.yml"
 fi
 
@@ -14,7 +12,7 @@ function refresh_image_if_necessary() {
     md5bin=`which md5`
     if [ x"$md5bin" = x ]; then md5bin=`which md5sum`; fi; 
 
-    for n in fluentd $demo_image; do 
+    for n in fluentd ctrlbox; do 
         echo "Generating image: $n ..."
 
         dockerfile_path=$HOMEDIR/docker/$n/Dockerfile
@@ -36,11 +34,20 @@ function refresh_image_if_necessary() {
 refresh_image_if_necessary
 
 chmod -R 777 $HOMEDIR/data/* # permission denied in linux.
+rm -rf $HOMEDIR/data/kafka/* # remove legacy kafka data for no persistence.
 
 # docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option down # force remove and recreate the network
 docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option up -d --force-recreate --remove-orphans
 
 docker exec CTRLBOX "/root/workdir/scripts/cmds-in-ctrlbox/setup-efk.sh"
+
+echo "Setup self control and monitor system."
+docker exec CTRLBOX "crond"
+docker exec CTRLBOX crontab /etc/crontab
+
+echo "Setup fluentd auto reload for configuration changes(per min)."
+docker exec FLUENTD "crond"
+docker exec FLUENTD crontab /etc/crontab
 
 x='
 0. start docker containers..

@@ -31,6 +31,7 @@ fluentd:
 
     jmeter test command: 
         ./bin/jmeter -n -t ~/GitRepos/zongzw/efk-over-bigip/scripts/test/fluentd-http-8085.jmx -e -o ~/GitRepos/zongzw/efk-over-bigip/scripts/test/htmlreport -l ~/GitRepos/zongzw/efk-over-bigip/scripts/test/testresult.jtl
+
 kafka:
 
     /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9093 --topic test --from-beginning
@@ -40,6 +41,9 @@ kafka:
     create topic:
         kafka-topics.sh --create --zookeeper zookeeper --replication-factor 1 --partitions 3 --topic messages
 
+    list topic 
+        kafka-topics.sh --zookeeper zookeeper:2181 --list
+        kafka-topics.sh --zookeeper zookeeper:2181 --topic http-fluentd --describe
 logstash:
     curl http://localhost:9600 | python -m json.tool
 
