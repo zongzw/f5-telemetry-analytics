@@ -22,7 +22,7 @@ function get_n_hour_further_datestr() {
   if [ "x$h" = "x" ]; then h=0; fi
   curhour=`date +%H`
   curdate=`date +%Y%m%d`
-  echo `date -d "$curdate $curhour $h hour" +%Y.%m.%d.%H`
+  echo `date -d "$curdate $curhour $h hour" +%Y.%m.%d`
 }
 
 (
@@ -47,3 +47,14 @@ function get_n_hour_further_datestr() {
     echo
   done
 )
+
+echo -n "Creating aliases for http-fluentd-* and errlogs-* ... "
+curl -XPOST -s -w "%{http_code}" -H "Content-Type: application/json" $host_endpoint/_aliases -d'
+{
+    "actions" : [
+        { "add" : { "index" : "http-fluentd-*", "alias" : "all-http-fluentd-alias" } },
+        { "add" : { "index" : "errlogs-*", "alias" : "all-errlogs-alias" } }
+    ]
+}'
+echo
+

@@ -1,1 +1,1 @@
-*/30 * * * * /root/workdir/scripts/cmds-in-ctrlbox/create-index-mapping.sh 1
+30 * * * * /root/workdir/scripts/cmds-in-ctrlbox/create-index-mapping.sh 24
