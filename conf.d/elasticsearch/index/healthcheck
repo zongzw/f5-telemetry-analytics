@@ -1,0 +1,22 @@
+{
+  "properties": {
+    "timestamp": {
+      "type": "date"
+    },
+    "kfk_data_size_m": {
+      "type": "integer"
+    },
+    "total_size_m": {
+      "type": "integer"
+    },
+    "avail_size_m": {
+      "type": "integer"
+    },
+    "es_data_size_m": {
+      "type": "integer"
+    },
+    "usage_rate": {
+      "type": "integer"
+    }
+  }
+}

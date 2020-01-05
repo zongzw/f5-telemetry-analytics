@@ -44,6 +44,9 @@ kafka:
     list topic 
         kafka-topics.sh --zookeeper zookeeper:2181 --list
         kafka-topics.sh --zookeeper zookeeper:2181 --topic http-fluentd --describe
+
+    kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list kafka:9093 --topic http-fluentd --time -1
+
 logstash:
     curl http://localhost:9600 | python -m json.tool
 
