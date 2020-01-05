@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cdir=`cd $(dirname $0); pwd`
-workdir=$cdir/../..
+workdir=$cdir/../../..
 
 es_data_dir=$workdir/data/elasticsearch
 
