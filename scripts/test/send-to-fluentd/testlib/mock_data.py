@@ -80,7 +80,8 @@ def mock_logging_data_20001(ts, concurrency):
         "server-ip": rand_dest,
         "latency": random.randint(1, 20),
         "status": "200",
-        "sender": "zongzw %0d" % random.randint(0, 100)
+        "sender": "zongzw %0d" % random.randint(0, 100),
+        "stdout": "OK"
     }
     
     

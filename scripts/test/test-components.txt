@@ -47,6 +47,9 @@ kafka:
 
     kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list kafka:9093 --topic http-fluentd --time -1
 
+    configuration list: 
+        kafka-configs.sh --zookeeper zookeeper:2181 --describe --entity-type brokers
+
 logstash:
     curl http://localhost:9600 | python -m json.tool
 
