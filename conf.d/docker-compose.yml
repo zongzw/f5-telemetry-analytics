@@ -10,6 +10,9 @@ services:
       - discovery.type=single-node
     volumes:
      - ${HOMEDIR}/data/elasticsearch:/usr/share/elasticsearch/data
+    entrypoint:
+      - /usr/local/bin/docker-entrypoint.sh
+      - eswrapper
 
   fluentd:
     build: ${HOMEDIR}/docker/fluentd
@@ -30,6 +33,10 @@ services:
       - elasticsearch
       - kibana
       - kafka
+    entrypoint:
+      - /bin/sh
+      - -c
+      - /etc/init.d/td-agent start && while true; do sleep 1; done
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.4.1
@@ -41,6 +48,10 @@ services:
     volumes:
       - ${HOMEDIR}/conf.d/kibana.yml:/usr/share/kibana/config/kibana.yml
       - ${HOMEDIR}/data/kibana:/usr/share/kibana/data
+    entrypoint:
+      - /usr/local/bin/dumb-init
+      - --
+      - /usr/local/bin/kibana-docker
 
   ctrlbox:
     build: ${HOMEDIR}/docker/ctrlbox
@@ -63,6 +74,10 @@ services:
       # - ${HOMEDIR}/scripts:/root/scripts
       # - ${HOMEDIR}/conf.d/setup.rc:/root/setup.rc # temp
       # - ${HOMEDIR}/conf.d/kibana-exports:/root/kibana-exports
+    entrypoint:
+      - /bin/sh
+      - -c
+      - while true; do sleep 1; done
 
   # zookeeper:
   #   image: wurstmeister/zookeeper:latest
@@ -97,6 +112,9 @@ services:
     #   - ${HOMEDIR}/data/zookeeper:/bitnami
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+    entrypoint:
+      - /entrypoint.sh
+      - /run.sh
 
   kafka:
     image: bitnami/kafka:2
@@ -121,6 +139,9 @@ services:
       - KAFKA_LOG_RETENTION_BYTES=1073741824  #1GB
     depends_on:
       - zookeeper
+    entrypoint:
+      - /entrypoint.sh
+      - /run.sh
 
   # zookeeper:
   #   image: wurstmeister/zookeeper:3.4.6
