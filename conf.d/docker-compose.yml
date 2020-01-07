@@ -13,7 +13,7 @@ services:
 
   fluentd:
     build: ${HOMEDIR}/docker/fluentd
-    image: zongzw/fluentd:latest
+    image: f5networks/fluentd:latest
     container_name: FLUENTD
     ports:
       # - 24224:24224
@@ -44,7 +44,7 @@ services:
 
   ctrlbox:
     build: ${HOMEDIR}/docker/ctrlbox
-    image: zongzw/ctrlbox:latest
+    image: f5networks/ctrlbox:latest
     container_name: CTRLBOX
     ports:
       - 8000:80
@@ -89,7 +89,7 @@ services:
   #     # KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
 
   zookeeper:
-    image: 'bitnami/zookeeper:3'
+    image: bitnami/zookeeper:3
     container_name: ZOOKEEPER
     ports:
       - '2181:2181'
@@ -99,7 +99,7 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
 
   kafka:
-    image: 'bitnami/kafka:2'
+    image: bitnami/kafka:2
     container_name: KAFKA
     ports:
       - 9092:9092

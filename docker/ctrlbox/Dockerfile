@@ -1,3 +1,6 @@
+# build with
+#   docker build . -t f5networks/ctrlbox:latest
+
 FROM centos:7
 
 RUN yum update -y

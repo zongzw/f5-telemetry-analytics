@@ -7,31 +7,32 @@ if [ $# -eq 1 -a "$1" = "--demo" ]; then
     demo_yml_option="-f $HOMEDIR/conf.d/.docker-compose-demo.yml"
 fi
 
-function refresh_image_if_necessary() {
+# don't do the automatic rebuild
+# function refresh_image_if_necessary() {
     
-    md5bin=`which md5`
-    if [ x"$md5bin" = x ]; then md5bin=`which md5sum`; fi; 
+#     md5bin=`which md5`
+#     if [ x"$md5bin" = x ]; then md5bin=`which md5sum`; fi; 
 
-    for n in fluentd ctrlbox; do 
-        echo "Generating image: $n ..."
+#     for n in fluentd ctrlbox; do 
+#         echo "Generating image: $n ..."
 
-        dockerfile_path=$HOMEDIR/docker/$n/Dockerfile
-        md5_file=$HOMEDIR/docker/.$n.image.md5
-        curmd5=`$md5bin $dockerfile_path | grep -oE "[0-9a-z]{32}"`
-        image_name=zongzw/$n:latest
-        image_found=`docker images --format "{{.Repository}}:{{.Tag}}" | grep $image_name`
+#         dockerfile_path=$HOMEDIR/docker/$n/Dockerfile
+#         md5_file=$HOMEDIR/docker/.$n.image.md5
+#         curmd5=`$md5bin $dockerfile_path | grep -oE "[0-9a-z]{32}"`
+#         image_name=f5networks/$n:latest
+#         image_found=`docker images --format "{{.Repository}}:{{.Tag}}" | grep $image_name`
 
-        if [ ! -f $md5_file \
-            -o "`cat $md5_file`" != "$curmd5" \
-            -o x"$image_found" = x ]; then
-            docker build -t $image_name $(dirname $dockerfile_path);
-            $md5bin $dockerfile_path | grep -oE "[0-9a-z]{32}" > $md5_file;
-        fi
-    done
+#         if [ ! -f $md5_file \
+#             -o "`cat $md5_file`" != "$curmd5" \
+#             -o x"$image_found" = x ]; then
+#             docker build -t $image_name $(dirname $dockerfile_path);
+#             $md5bin $dockerfile_path | grep -oE "[0-9a-z]{32}" > $md5_file;
+#         fi
+#     done
     
-}
+# }
 
-refresh_image_if_necessary
+# refresh_image_if_necessary
 
 chmod -R 777 $HOMEDIR/data/* # permission denied in linux.
 rm -rf $HOMEDIR/data/kafka/* # remove legacy kafka data for no persistence.

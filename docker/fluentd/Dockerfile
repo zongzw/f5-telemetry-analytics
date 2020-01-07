@@ -1,5 +1,5 @@
 # build with
-#   docker build . -t zongzw/fluentd:latest
+#   docker build . -t f5networks/fluentd:latest
 
 
 # ======================================
