@@ -176,7 +176,8 @@ services:
       # KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
 
   logstash:
-    image: logstash:7.5.1
+    build: ${HOMEDIR}/docker/logstash
+    image: f5networks/logstash:latest
     container_name: LOGSTASH
     depends_on:
       - elasticsearch

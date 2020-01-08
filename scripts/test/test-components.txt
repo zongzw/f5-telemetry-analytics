@@ -32,6 +32,9 @@ fluentd:
     jmeter test command: 
         ./bin/jmeter -n -t ~/GitRepos/zongzw/efk-over-bigip/scripts/test/fluentd-http-8085.jmx -e -o ~/GitRepos/zongzw/efk-over-bigip/scripts/test/htmlreport -l ~/GitRepos/zongzw/efk-over-bigip/scripts/test/testresult.jtl
 
+        20001 udp test: under scripts/test/
+            ~/Downloads/software/apache-jmeter-5.2.1/bin/jmeter -n -t 20001-send-2-fluentd.jmx -e -o test-report/20001-send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
+
 kafka:
 
     /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9093 --topic test --from-beginning

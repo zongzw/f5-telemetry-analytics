@@ -70,6 +70,7 @@ def mock_logging_data_20001(ts, concurrency):
     jdata = {
         "timestamp": timeutils.ts2str(ts),
         "client-ip": rand_src,
+        # "client-ip": "10.250.11.24",
         "host": "bigip-vs-server",
         "user-agent": user_agent,
         "cookie": "",
