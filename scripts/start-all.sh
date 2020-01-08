@@ -47,13 +47,15 @@ if [ $? -ne 0 ]; then echo "FLUENTD not found, cannot forward, quit."; exit 1; f
 
 docker exec CTRLBOX "/root/workdir/scripts/cmds-in-ctrlbox/setup-efk.sh"
 
-echo "Setup self control and monitor system."
+echo -n "Setup self control and monitoring ... "
 docker exec CTRLBOX "crond"
 docker exec CTRLBOX crontab /etc/crontab
+echo "done"
 
-echo "Setup fluentd auto reload for configuration changes(per min)."
+echo -n "Setup fluentd auto-configuration reloading ... "
 docker exec FLUENTD "crond"
 docker exec FLUENTD crontab /etc/crontab
+echo "done"
 
 # x='
 # 0. start docker containers..

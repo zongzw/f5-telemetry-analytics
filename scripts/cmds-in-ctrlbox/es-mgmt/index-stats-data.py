@@ -12,26 +12,47 @@ if rel_path == '': rel_path = '.'
 es_host = 'http://elasticsearch:9200'
 disk_script_path = "%s/collect-disk-stats.sh" % (rel_path)
 
+collectd = {}
+
 try:
     r = subprocess.check_output(disk_script_path, shell=True)
     disk_data = json.loads(r)
+    for k, v in disk_data.items():
+        collectd[k] = v
 except Exception as e:
     print("failed to get disk usage info: %s" % e.message)
     sys.exit(1)
 
-print("debug info: disk_data: %s" % (json.dumps(disk_data, indent=2)))
+for n in ['http-fluentd', 'errlogs']:
+    try:
+        index_pattern = n
+        r = requests.get(
+            "%s/%s-*/_stats" % (es_host, index_pattern),
+        )
+        docs_info = r.json()['_all']['total']['docs']
+        index_count = docs_info['count'] - docs_info['deleted']
+        collectd['%s-docs-count' % index_pattern] = index_count
+    except Exception as e:
+        print("failed to get index '%s''s stat: %s" % (index_pattern, e.message))
+        sys.exit(1)
+
 
 datestr = time.strftime("%Y.%m.%d", time.gmtime())
 timestr = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())
 
 try:
     index_name = "healthcheck-%s" % datestr
-    disk_data['timestamp'] = timestr
+    collectd['timestamp'] = timestr
+
+    print("debug info: disk_data: %s" % (json.dumps(collectd, indent=2)))
+
     r = requests.post(
         "%s/%s/_doc" % (es_host, index_name), 
         headers={"Content-Type": "application/json"},
-        json=disk_data
+        json=collectd
     )
     print(r.json())
 except Exception as e:
     print("failed to post doc to index %s: %s" % (index_name, e.message))
+
+

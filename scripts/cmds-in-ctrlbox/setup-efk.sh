@@ -32,7 +32,7 @@ $cdir/create-index-mapping.sh
 # cluster.routing.allocation.disk.watermark.flood_stage 
 # Controls the flood stage watermark. 
 # It defaults to 95%, meaning that Elasticsearch enforces a read-only index block on every index 
-echo -n "Disabling Elasticsearch enforces a read-only index block on every inde ... "
+echo -n "Disabling Elasticsearch read_only_allow_delete ... "
 curl -X PUT 'http://elasticsearch:9200/_cluster/settings' \
     -s -w "%{http_code}" -H 'Content-Type: application/json' \
     -d '{
@@ -44,7 +44,7 @@ echo
 
 # When elastic reach its flood stage disk watermark, it will make indices readonly-allow-delete.
 # blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];"})
-echo -n "Setting existing indices to read_only_allow_delete false ... "
+echo -n "Setting ES indices read_only_allow_delete false ... "
 curl -X PUT 'http://elasticsearch:9200/_all/_settings' \
     -s -w "%{http_code}" -H 'Content-Type: application/json' \
     -d '{

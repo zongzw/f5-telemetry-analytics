@@ -17,6 +17,12 @@
     },
     "usage_rate": {
       "type": "integer"
+    },
+    "http-fluentd-docs-count": {
+      "type": "integer"
+    },
+    "errlogs-docs-count": {
+      "type": "integer"
     }
   }
 }
