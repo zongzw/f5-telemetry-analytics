@@ -39,6 +39,12 @@ rm -rf $HOMEDIR/data/kafka/* # remove legacy kafka data for no persistence.
 # docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option down # force remove and recreate the network
 docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option up -d --force-recreate --remove-orphans
 
+sleep 1
+docker ps | grep "CTRLBOX" > /dev/null
+if [ $? -ne 0 ]; then echo "CTRLBOX not found, cannot forward, quit."; exit 1; fi
+docker ps | grep "FLUENTD" > /dev/null
+if [ $? -ne 0 ]; then echo "FLUENTD not found, cannot forward, quit."; exit 1; fi
+
 docker exec CTRLBOX "/root/workdir/scripts/cmds-in-ctrlbox/setup-efk.sh"
 
 echo "Setup self control and monitor system."
@@ -49,16 +55,16 @@ echo "Setup fluentd auto reload for configuration changes(per min)."
 docker exec FLUENTD "crond"
 docker exec FLUENTD crontab /etc/crontab
 
-x='
-0. start docker containers..
-1. kibana:          import kibana settings
-2. elasticsearch:   create index mapping
+# x='
+# 0. start docker containers..
+# 1. kibana:          import kibana settings
+# 2. elasticsearch:   create index mapping
 
-3. edit .setup.rc.
-(. bigip:           create a fake virtual server on bigip)
+# 3. edit .setup.rc.
+# (. bigip:           create a fake virtual server on bigip)
 
-4. bigip:           create logging irule
-5. bigip:           setup bigip virtual server irule
+# 4. bigip:           create logging irule
+# 5. bigip:           setup bigip virtual server irule
 
-6. ctrlbox          run python http-test.py
-'
+# 6. ctrlbox          run python http-test.py
+# '
