@@ -189,7 +189,7 @@
       <hashTree>
         <kg.apc.jmeter.samplers.UDPSampler guiclass="kg.apc.jmeter.samplers.UDPSamplerGui" testclass="kg.apc.jmeter.samplers.UDPSampler" testname="jp@gc - UDP Request" enabled="true">
           <stringProp name="hostname">10.250.18.183</stringProp>
-          <stringProp name="port">20000</stringProp>
+          <stringProp name="port">20001</stringProp>
           <boolProp name="waitresponse">false</boolProp>
           <boolProp name="closechannel">false</boolProp>
           <stringProp name="timeout">1000</stringProp>
