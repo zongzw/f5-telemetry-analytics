@@ -19,10 +19,10 @@
       "type": "integer"
     },
     "http-fluentd-docs-count": {
-      "type": "integer"
+      "type": "long"
     },
     "errlogs-docs-count": {
-      "type": "integer"
+      "type": "long"
     }
   }
 }
