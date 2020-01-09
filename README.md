@@ -21,7 +21,7 @@ The scaling-out is an another story, so performance improving work is on the way
 
    The `start-all.sh` process do the following 3 things in sequence:
    
-   1. Starts the containers: ELASTICSEARCH FLUENTDx .. KIBANA and CTRLBOX.
+   1. Starts the containers: ELASTICSEARCH FLUENTD .. KIBANA and CTRLBOX.
    1. Imports kibana dashboards to KIBANA.
    1. Creates indexs and mappings in ELASTICSEARCH.
 

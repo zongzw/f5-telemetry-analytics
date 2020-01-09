@@ -40,7 +40,7 @@ rm -rf $HOMEDIR/data/kafka/* # remove legacy kafka data for no persistence.
 docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option up -d --force-recreate --remove-orphans
 
 sleep 1
-for n in "CTRLBOX" "FLUENTD1" "FLUENTD2"; do 
+for n in "CTRLBOX" "FLUENTD"; do 
     docker ps | grep "$n" > /dev/null
     if [ $? -ne 0 ]; then echo "$n not found, cannot forward, quit."; exit 1; fi
 done
@@ -52,7 +52,7 @@ docker exec CTRLBOX "crond"
 docker exec CTRLBOX crontab /etc/crontab
 echo "done"
 
-for n in "FLUENTD1" "FLUENTD2"; do 
+for n in "FLUENTD"; do 
     echo -n "Setup $n auto-configuration reloading ... "
     docker exec $n "crond"
     docker exec $n crontab /etc/crontab
