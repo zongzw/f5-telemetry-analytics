@@ -4,4 +4,4 @@
 
 - pipeline.id: main
   path.config: "/usr/share/logstash/pipeline"
-  pipeline.workers: 3
+  pipeline.workers: 8

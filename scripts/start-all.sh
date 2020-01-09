@@ -40,10 +40,10 @@ rm -rf $HOMEDIR/data/kafka/* # remove legacy kafka data for no persistence.
 docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option up -d --force-recreate --remove-orphans
 
 sleep 1
-docker ps | grep "CTRLBOX" > /dev/null
-if [ $? -ne 0 ]; then echo "CTRLBOX not found, cannot forward, quit."; exit 1; fi
-docker ps | grep "FLUENTD" > /dev/null
-if [ $? -ne 0 ]; then echo "FLUENTD not found, cannot forward, quit."; exit 1; fi
+for n in "CTRLBOX" "FLUENTD1" "FLUENTD2"; do 
+    docker ps | grep "$n" > /dev/null
+    if [ $? -ne 0 ]; then echo "$n not found, cannot forward, quit."; exit 1; fi
+done
 
 docker exec CTRLBOX "/root/workdir/scripts/cmds-in-ctrlbox/setup-efk.sh"
 
@@ -52,11 +52,12 @@ docker exec CTRLBOX "crond"
 docker exec CTRLBOX crontab /etc/crontab
 echo "done"
 
-echo -n "Setup fluentd auto-configuration reloading ... "
-docker exec FLUENTD "crond"
-docker exec FLUENTD crontab /etc/crontab
-echo "done"
-
+for n in "FLUENTD1" "FLUENTD2"; do 
+    echo -n "Setup $n auto-configuration reloading ... "
+    docker exec $n "crond"
+    docker exec $n crontab /etc/crontab
+    echo "done"
+done
 # x='
 # 0. start docker containers..
 # 1. kibana:          import kibana settings
