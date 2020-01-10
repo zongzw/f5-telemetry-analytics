@@ -36,7 +36,7 @@ fluentd:
             ~/Downloads/software/apache-jmeter-5.2.1/bin/jmeter -n -t 20001-send-2-fluentd.jmx -e -o test-report/20001-send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
         
         20000 udp test: 
-        /root/downloads/apache-jmeter-5.2.1/bin/jmeter -n -t 20000-send-2-fluentd.jmx -e -o test-report/20000-send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
+        /root/downloads/apache-jmeter-5.2.1/bin/jmeter -n -t send-2-fluentd.jmx -e -o test-report/send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
 
 kafka:
 
