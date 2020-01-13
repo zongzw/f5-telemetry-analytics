@@ -5,9 +5,14 @@ import json
 import subprocess
 import time
 
+import fluentd_buffer_size
+
 curdir = os.getcwd()
 rel_path = os.path.dirname(sys.argv[0])
 if rel_path == '': rel_path = '.'
+if not rel_path.startswith('/'): rel_path = os.path.join(curdir, rel_path)
+
+workdir = os.path.join(rel_path, '../../..')
 
 es_host = 'http://elasticsearch:9200'
 disk_script_path = "%s/collect-disk-stats.sh" % (rel_path)
@@ -36,6 +41,11 @@ for n in ['http-fluentd', 'errlogs']:
         print("failed to get index '%s''s stat: %s" % (index_pattern, e.message))
         sys.exit(1)
 
+tag_name = 'http-fluentd'
+datadir = os.path.join(workdir, 'data/fluentd', tag_name)
+print datadir
+workers_size = fluentd_buffer_size.get_subfolder_size(datadir)
+collectd['fluentd_size_bytes'] = workers_size
 
 datestr = time.strftime("%Y.%m.%d", time.gmtime())
 timestr = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())
