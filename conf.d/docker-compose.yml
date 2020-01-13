@@ -1,18 +1,71 @@
 version: "3"
 
 services:
-  elasticsearch:
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+  #   container_name: ELASTICSEARCH
+  #   ports:
+  #     - 9200:9200
+  #   environment:
+  #     - discovery.type=single-node
+  #   volumes:
+  #    - ${HOMEDIR}/data/elasticsearch:/usr/share/elasticsearch/data
+  #   # entrypoint:
+  #   #   - /usr/local/bin/docker-entrypoint.sh
+  #   #   - eswrapper
+
+  es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
-    container_name: ELASTICSEARCH
+    container_name: ES01
     ports:
       - 9200:9200
     environment:
-      - discovery.type=single-node
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     volumes:
-     - ${HOMEDIR}/data/elasticsearch:/usr/share/elasticsearch/data
-    # entrypoint:
-    #   - /usr/local/bin/docker-entrypoint.sh
-    #   - eswrapper
+     - ${HOMEDIR}/data/es01:/usr/share/elasticsearch/data
+    
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+    container_name: ES02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+     - ${HOMEDIR}/data/es02:/usr/share/elasticsearch/data
+
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+    container_name: ES03
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+     - ${HOMEDIR}/data/es03:/usr/share/elasticsearch/data
 
   fluentd:
     build: ${HOMEDIR}/docker/fluentd
@@ -29,16 +82,21 @@ services:
       - ${HOMEDIR}/conf.d/fluentd:/etc/td-agent/fluentd
       - ${HOMEDIR}/scripts/cmds-in-fluentd:/root/cmds-in-fluentd
       - ${HOMEDIR}/conf.d/fluentd-crontab:/etc/crontab
+      - ${HOMEDIR}/data/fluentd:/var/log/td-agent/buffer
+    links:
+      - es01:elasticsearch
     depends_on:
-      - elasticsearch
+      - es01
       - kibana
-      - kafka
+      # - kafka
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.4.1
     container_name: KIBANA
+    links:
+      - es01:elasticsearch
     depends_on:
-      - elasticsearch
+      - es01
     ports:
       - 5601:5601
     volumes:
@@ -55,13 +113,15 @@ services:
     container_name: CTRLBOX
     ports:
       - 8000:80
+    links:
+      - es01:elasticsearch
     depends_on:
       - nginx
       - kibana
-      - elasticsearch
+      - es01
       - fluentd
-      - kafka
-      - logstash
+      # - kafka
+      # - logstash
     env_file:
       - ${HOMEDIR}/conf.d/.setup.rc
     volumes:
@@ -99,68 +159,58 @@ services:
   #     # KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
   #     # KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
 
-  zookeeper:
-    image: bitnami/zookeeper:3
-    container_name: ZOOKEEPER
-    ports:
-      - 2181:2181
-    # volumes:
-    #   - ${HOMEDIR}/data/zookeeper:/bitnami
-    environment:
-      - ALLOW_ANONYMOUS_LOGIN=yes
+  # zookeeper:
+  #   image: bitnami/zookeeper:3
+  #   container_name: ZOOKEEPER
+  #   ports:
+  #     - 2181:2181
+  #   # volumes:
+  #   #   - ${HOMEDIR}/data/zookeeper:/bitnami
+  #   environment:
+  #     - ALLOW_ANONYMOUS_LOGIN=yes
     
-  kafka:
-    image: bitnami/kafka:2
-    container_name: KAFKA
-    ports:
-      - 9092:9092
-      - 9093:9093
-    volumes:
-      - ${HOMEDIR}/data/kafka:/bitnami/kafka
-    environment:
-      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
-      - ALLOW_PLAINTEXT_LISTENER=yes
-      - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:9093,EXTERNAL://localhost:9092
-      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=EXTERNAL:PLAINTEXT,INTERNAL:PLAINTEXT
-      - KAFKA_CFG_LISTENERS=INTERNAL://kafka:9093,EXTERNAL://localhost:9092
-      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
-      # fix error of fluentd: error_class=Kafka::MessageSizeTooLarge error="Kafka::MessageSizeTooLarge"
-      - KAFKA_CFG_MESSAGE_MAX_BYTES=1073741824 # 1G
-      # data retention settings
-      - KAFKA_CFG_LOG_RETENTION_CHECK_INTERVAL_MS=10000 # 10s
-      - KAFKA_CFG_LOG_RETENTION_HOURS=1 # 1hour
-      - KAFKA_CFG_LOG_RETENTION_BYTES=1073741824  #1GB
-    depends_on:
-      - zookeeper
+  # kafka:
+  #   image: bitnami/kafka:2
+  #   container_name: KAFKA
+  #   ports:
+  #     - 9092:9092
+  #     - 9093:9093
+  #   volumes:
+  #     - ${HOMEDIR}/data/kafka:/bitnami/kafka
+  #   environment:
+  #     - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+  #     - ALLOW_PLAINTEXT_LISTENER=yes
+  #     - KAFKA_CFG_ADVERTISED_LISTENERS=INTERNAL://kafka:9093,EXTERNAL://localhost:9092
+  #     - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=EXTERNAL:PLAINTEXT,INTERNAL:PLAINTEXT
+  #     - KAFKA_CFG_LISTENERS=INTERNAL://kafka:9093,EXTERNAL://localhost:9092
+  #     - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=INTERNAL
+  #     # fix error of fluentd: error_class=Kafka::MessageSizeTooLarge error="Kafka::MessageSizeTooLarge"
+  #     - KAFKA_CFG_MESSAGE_MAX_BYTES=1073741824 # 1G
+  #     # data retention settings
+  #     - KAFKA_CFG_LOG_RETENTION_CHECK_INTERVAL_MS=10000 # 10s
+  #     - KAFKA_CFG_LOG_RETENTION_HOURS=1 # 1hour
+  #     - KAFKA_CFG_LOG_RETENTION_BYTES=1073741824  #1GB
+  #   depends_on:
+  #     - zookeeper
 
-      # KAFKA_ADVERTISED_HOST_NAME: kafka
-      # KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
-      # KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      # KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      # KAFKA_CREATE_TOPICS: "messages:1:1,test:1:1:compact"
-
-      # KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092
-      # KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
-      # KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
-      # KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      # KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
-
-  logstash:
-    build: ${HOMEDIR}/docker/logstash
-    image: f5networks/logstash:latest
-    container_name: LOGSTASH
-    depends_on:
-      - elasticsearch
-    ports:
-      # - 4560:4560 # for logstash debug test.
-      # - 5000:5000
-      - 9600:9600
-    volumes:
-      - ${HOMEDIR}/conf.d/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
-      - ${HOMEDIR}/conf.d/logstash.pipelines:/usr/share/logstash/config/pipelines.yml
-    entrypoint:
-      - /usr/local/bin/docker-entrypoint
-      - -r    # Make logstash reload automatically when conf. changes.
+  # logstash:
+  #   build: ${HOMEDIR}/docker/logstash
+  #   image: f5networks/logstash:latest
+  #   container_name: LOGSTASH
+  #   links:
+  #     - es01:elasticsearch
+  #   depends_on:
+  #     - es01
+  #   ports:
+  #     # - 4560:4560 # for logstash debug test.
+  #     # - 5000:5000
+  #     - 9600:9600
+  #   volumes:
+  #     - ${HOMEDIR}/conf.d/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+  #     - ${HOMEDIR}/conf.d/logstash.pipelines:/usr/share/logstash/config/pipelines.yml
+  #   entrypoint:
+  #     - /usr/local/bin/docker-entrypoint
+  #     - -r    # Make logstash reload automatically when conf. changes.
     
     
   nginx:
