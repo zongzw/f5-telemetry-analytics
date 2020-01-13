@@ -1,6 +1,6 @@
-# efk-over-bigip
+# bde-over-bigip
 
-This program works on the **Visualization and Analytics over BIG-IP Data Traffic** by using docker based EFK.
+This program works on the **Visualization and Analytics over BIG-IP Data Traffic** by using docker based EFK. 'bde' means Big Data Engine.
 
 The scaling-out is an another story, so performance improving work is on the way.
 
