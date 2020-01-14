@@ -2,8 +2,8 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-01-08T10:37:16.702Z", 
-      "version": "WzEyMywxN10=", 
+      "updated_at": "2020-01-14T02:38:28.628Z", 
+      "version": "WzE0MiwzM10=", 
       "references": [
         {
           "type": "visualization", 
@@ -19,6 +19,11 @@
           "type": "visualization", 
           "name": "panel_2", 
           "id": "3be3f520-3202-11ea-81df-d1165f93a2ca"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_3", 
+          "id": "1c5616f0-35dd-11ea-afec-abd1758d2491"
         }
       ], 
       "migrationVersion": {
@@ -29,7 +34,7 @@
         "timeRestore": false, 
         "description": "", 
         "title": "healthcheck-dashboard", 
-        "panelsJSON": "[{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":16,\"h\":15,\"i\":\"24e2a6b9-7a4d-4bcd-a3ab-5e9e8e5dd7f2\"},\"panelIndex\":\"24e2a6b9-7a4d-4bcd-a3ab-5e9e8e5dd7f2\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":16,\"y\":0,\"w\":16,\"h\":15,\"i\":\"a52db45c-31d0-48d7-9e43-7ce6b8d88276\"},\"panelIndex\":\"a52db45c-31d0-48d7-9e43-7ce6b8d88276\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":32,\"y\":0,\"w\":16,\"h\":15,\"i\":\"e28a0200-3d23-40b0-b95e-5b834405ec29\"},\"panelIndex\":\"e28a0200-3d23-40b0-b95e-5b834405ec29\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"}]", 
+        "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"24e2a6b9-7a4d-4bcd-a3ab-5e9e8e5dd7f2\",\"w\":16,\"x\":0,\"y\":0},\"panelIndex\":\"24e2a6b9-7a4d-4bcd-a3ab-5e9e8e5dd7f2\",\"version\":\"7.4.1\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"a52db45c-31d0-48d7-9e43-7ce6b8d88276\",\"w\":16,\"x\":16,\"y\":0},\"panelIndex\":\"a52db45c-31d0-48d7-9e43-7ce6b8d88276\",\"version\":\"7.4.1\",\"panelRefName\":\"panel_1\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"e28a0200-3d23-40b0-b95e-5b834405ec29\",\"w\":16,\"x\":32,\"y\":0},\"panelIndex\":\"e28a0200-3d23-40b0-b95e-5b834405ec29\",\"version\":\"7.4.1\",\"panelRefName\":\"panel_2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":15,\"i\":\"b2099a1d-c053-44b6-bd2e-0dfb88a4371a\",\"w\":24,\"x\":0,\"y\":15},\"panelIndex\":\"b2099a1d-c053-44b6-bd2e-0dfb88a4371a\",\"version\":\"7.4.1\",\"panelRefName\":\"panel_3\"}]", 
         "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -116,6 +121,32 @@
       }, 
       "type": "visualization", 
       "id": "3be3f520-3202-11ea-81df-d1165f93a2ca"
+    }, 
+    {
+      "updated_at": "2020-01-13T08:57:02.917Z", 
+      "version": "WzEzMiwzMl0=", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "4792caa0-3201-11ea-81df-d1165f93a2ca"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\n  \"title\": \"fluentd-buffer-size\",\n  \"type\": \"line\",\n  \"params\": {\n    \"type\": \"line\",\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Max fluentd_size_bytes.worker0\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"line\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"Max fluentd_size_bytes.worker0\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"3\",\n          \"label\": \"Max fluentd_size_bytes.worker1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"4\",\n          \"label\": \"Max fluentd_size_bytes.worker2\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"5\",\n          \"label\": \"Max fluentd_size_bytes.worker3\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"6\",\n          \"label\": \"Max fluentd_size_bytes.worker4\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"7\",\n          \"label\": \"Max fluentd_size_bytes.worker5\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"8\",\n          \"label\": \"Max fluentd_size_bytes.worker6\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"9\",\n          \"label\": \"Max fluentd_size_bytes.worker7\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"labels\": {},\n    \"thresholdLine\": {\n      \"show\": false,\n      \"value\": 10,\n      \"width\": 1,\n      \"style\": \"full\",\n      \"color\": \"#34130C\"\n    },\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"date\",\n          \"params\": {\n            \"pattern\": \"HH:mm:ss\"\n          }\n        },\n        \"params\": {\n          \"date\": true,\n          \"interval\": \"PT30S\",\n          \"format\": \"HH:mm:ss\",\n          \"bounds\": {\n            \"min\": \"2020-01-13T07:58:04.992Z\",\n            \"max\": \"2020-01-13T08:13:04.992Z\"\n          }\n        },\n        \"aggType\": \"date_histogram\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 1,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"max\"\n        }\n      ]\n    },\n    \"radiusRatio\": 50\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker0\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker1\"\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker2\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"timestamp\",\n        \"timeRange\": {\n          \"from\": \"now-15m\",\n          \"to\": \"now\"\n        },\n        \"useNormalizedEsInterval\": true,\n        \"interval\": \"auto\",\n        \"drop_partials\": false,\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"5\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker3\"\n      }\n    },\n    {\n      \"id\": \"6\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker4\"\n      }\n    },\n    {\n      \"id\": \"7\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker5\"\n      }\n    },\n    {\n      \"id\": \"8\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker6\"\n      }\n    },\n    {\n      \"id\": \"9\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"fluentd_size_bytes.worker7\"\n      }\n    }\n  ]\n}", 
+        "description": "", 
+        "title": "fluentd-buffer-size", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"query\": {\n    \"language\": \"kuery\",\n    \"query\": \"\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "1c5616f0-35dd-11ea-afec-abd1758d2491"
     }, 
     {
       "updated_at": "2020-01-14T01:17:28.539Z", 
