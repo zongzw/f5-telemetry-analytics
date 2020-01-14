@@ -1,0 +1,70 @@
+fluentd:
+
+    reload: /etc/init.d/td-agent reload 
+    tail -f /var/log/td-agent/td-agent.log
+
+    curl -X POST -d 'json={"event": "data", "host": "183.84.2.166"}' http://localhost:8081/geoip.access
+
+    curl -X POST -d 'json={"event": "data"}' http://localhost:8081/myapp.access
+
+    curl http://10.250.17.133 -H "X-Forwarded-For: 183.84.2.166"
+
+
+    查看udp 发送因为响应不过来导致的失败数量：
+        Every 1.0s: netstat -su                                                                                                       Mon Dec 30 02:19:01 2019
+
+        IcmpMsg:
+            OutType3: 43
+        Udp:
+            1576668 packets received
+            30692 packets to unknown port received.
+            913627 packet receive errors
+            253 packets sent
+-->>        913627 receive buffer errors
+            0 send buffer errors
+        UdpLite:
+        IpExt:
+            InOctets: 700854469
+            OutOctets: 63786983
+            InNoECTPkts: 2743097
+
+
+    jmeter test command: 
+        ./bin/jmeter -n -t ~/GitRepos/zongzw/efk-over-bigip/test/fluentd-http-8085.jmx -e -o ~/GitRepos/zongzw/efk-over-bigip/test/htmlreport -l ~/GitRepos/zongzw/efk-over-bigip/test/testresult.jtl
+
+        20001 udp test: under test/
+            ~/Downloads/software/apache-jmeter-5.2.1/bin/jmeter -n -t 20001-send-2-fluentd.jmx -e -o test-report/20001-send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
+        
+        20000 udp test: 
+        /root/downloads/apache-jmeter-5.2.1/bin/jmeter -n -t send-2-fluentd.jmx -e -o test-report/send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
+
+kafka:
+
+    /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9093 --topic test --from-beginning
+
+    /opt/bitnami/kafka/bin/kafka-console-producer.sh --broker-list kafka:9093 --topic test
+
+    create topic:
+        kafka-topics.sh --create --zookeeper zookeeper --replication-factor 1 --partitions 3 --topic messages
+
+    list topic 
+        kafka-topics.sh --zookeeper zookeeper:2181 --list
+        kafka-topics.sh --zookeeper zookeeper:2181 --topic http-fluentd --describe
+
+    kafka-run-class.sh kafka.tools.GetOffsetShell --broker-list kafka:9093 --topic http-fluentd --time -1
+
+    configuration list: 
+        kafka-configs.sh --zookeeper zookeeper:2181 --describe --entity-type brokers
+
+logstash:
+    curl http://localhost:9600 | python -m json.tool
+
+    Change logstash configuration:
+    
+    and run: docker logs -f LOGSTASH 
+
+elasticsearch
+    
+    check index: 
+
+        http://localhost:9200/http-fluentd

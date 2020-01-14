@@ -5,4 +5,4 @@ if [ $# -ne 4 ]; then
     exit 1
 fi
 
-docker exec CTRLBOX bash -c "python /root/workdir/scripts/test/access-to-bigip/access-vs-with-ip-port-count-bucket.py $1 $2 $3 $4"
+docker exec CTRLBOX bash -c "python /root/workdir/test/access-to-bigip/access-vs-with-ip-port-count-bucket.py $1 $2 $3 $4"

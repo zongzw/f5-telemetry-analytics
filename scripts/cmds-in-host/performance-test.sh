@@ -17,7 +17,7 @@ docker exec CTRLBOX "$cmdsfolder/.setup-bigip-vs-profile.sh"
 
 cdir=`cd $(dirname $0); pwd`
 $cdir/access-vs-in-batch.sh $1 $2 $3 $4
-# docker exec CTRLBOX bash -c ". /root/workdir/conf.d/.setup.rc && env && python /root/workdir/scripts/test/http-test.py $1 $2"
+# docker exec CTRLBOX bash -c ". /root/workdir/conf.d/.setup.rc && env && python /root/workdir/test/http-test.py $1 $2"
 
 
 # solve: https://www.cnblogs.com/hcy-fly/p/7908324.html
