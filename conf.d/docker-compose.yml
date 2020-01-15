@@ -1,18 +1,68 @@
 version: "3"
 
 services:
-  elasticsearch:
+  # elasticsearch:
+  #   image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+  #   container_name: ELASTICSEARCH
+  #   ports:
+  #     - 9200:9200
+  #   environment:
+  #     - discovery.type=single-node
+  #   volumes:
+  #    - ${HOMEDIR}/data/elasticsearch:/usr/share/elasticsearch/data
+
+  es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
-    container_name: ELASTICSEARCH
+    container_name: ES01
     ports:
       - 9200:9200
     environment:
-      - discovery.type=single-node
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     volumes:
-     - ${HOMEDIR}/data/elasticsearch:/usr/share/elasticsearch/data
-    # entrypoint:
-    #   - /usr/local/bin/docker-entrypoint.sh
-    #   - eswrapper
+     - ${HOMEDIR}/data/elasticsearch/es01:/usr/share/elasticsearch/data
+    
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+    container_name: ES02
+    environment:
+      - node.name=es02
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es03
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+     - ${HOMEDIR}/data/elasticsearch/es02:/usr/share/elasticsearch/data
+
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+    container_name: ES03
+    environment:
+      - node.name=es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es01,es02
+      - cluster.initial_master_nodes=es01,es02,es03
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+     - ${HOMEDIR}/data/elasticsearch/es03:/usr/share/elasticsearch/data
 
   fluentd:
     build: ${HOMEDIR}/docker/fluentd
@@ -30,16 +80,20 @@ services:
       - ${HOMEDIR}/scripts/cmds-in-fluentd:/root/cmds-in-fluentd
       - ${HOMEDIR}/conf.d/fluentd-crontab:/etc/crontab
       - ${HOMEDIR}/data/fluentd:/var/log/td-agent/buffer
+    links:
+      - es01:elasticsearch
     depends_on:
-      - elasticsearch
+      - es01
       - kibana
       - kafka
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.4.1
     container_name: KIBANA
+    links:
+      - es01:elasticsearch
     depends_on:
-      - elasticsearch
+      - es01
     ports:
       - 5601:5601
     volumes:
@@ -56,10 +110,12 @@ services:
     container_name: CTRLBOX
     ports:
       - 8000:80
+    links:
+      - es01:elasticsearch
     depends_on:
       - nginx
       - kibana
-      - elasticsearch
+      - es01
       - fluentd
       - kafka
       - logstash
@@ -150,8 +206,10 @@ services:
     build: ${HOMEDIR}/docker/logstash
     image: f5networks/logstash:latest
     container_name: LOGSTASH
+    links:
+      - es01:elasticsearch
     depends_on:
-      - elasticsearch
+      - es01
     ports:
       # - 4560:4560 # for logstash debug test.
       # - 5000:5000
