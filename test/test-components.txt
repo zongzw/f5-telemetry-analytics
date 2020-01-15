@@ -68,3 +68,8 @@ elasticsearch
     check index: 
 
         http://localhost:9200/http-fluentd
+
+
+    check cluster status:
+
+        curl "localhost:9200/_cat/nodes?v&pretty"
