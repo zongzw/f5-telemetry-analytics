@@ -36,6 +36,10 @@ refresh_image_if_necessary
 chmod -R 777 $HOMEDIR/data/* # permission denied in linux.
 rm -rf $HOMEDIR/data/kafka/* # remove legacy kafka data for no persistence.
 
+# ERROR: [1] bootstrap checks failed
+# [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+sysctl -w vm.max_map_count=262144
+
 # docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option down # force remove and recreate the network
 docker-compose -f $HOMEDIR/conf.d/docker-compose.yml $demo_yml_option up -d --force-recreate --remove-orphans
 

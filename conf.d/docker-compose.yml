@@ -28,7 +28,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-     - ${HOMEDIR}/data/es01:/usr/share/elasticsearch/data
+     - ${HOMEDIR}/data/elasticsearch/es01:/usr/share/elasticsearch/data
     
   es02:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
@@ -45,7 +45,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-     - ${HOMEDIR}/data/es02:/usr/share/elasticsearch/data
+     - ${HOMEDIR}/data/elasticsearch/es02:/usr/share/elasticsearch/data
 
   es03:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.1
@@ -62,7 +62,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-     - ${HOMEDIR}/data/es03:/usr/share/elasticsearch/data
+     - ${HOMEDIR}/data/elasticsearch/es03:/usr/share/elasticsearch/data
 
   fluentd:
     build: ${HOMEDIR}/docker/fluentd
