@@ -10,7 +10,7 @@ import time
 import testlib
 
 if len(sys.argv) != 4:
-    print("%s <maxps> <start> <end>\n" % sys.argv[0])
+    print("%s <maxps> <start-timestr> <end-timestr>\n" % sys.argv[0])
     sys.exit(1)
 
 port = 20001

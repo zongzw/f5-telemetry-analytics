@@ -33,8 +33,18 @@ function get_n_hour_further_datestr() {
     response=`curl -s -o /dev/null $host_endpoint/$index_name -w "%{http_code}"`
     if [ "$response" != "200" ]; then
       echo -n "Creating index: $index_name ... "
-      curl -s -o /dev/null -w "%{http_code}" \
-        -X PUT $host_endpoint/$index_name
+      curl -s -w "%{http_code}" \
+        -H "Content-Type: application/json" \
+        -X PUT $host_endpoint/$index_name -d '
+          {
+            "settings": {
+              "index": {
+                "number_of_shards": 3,
+                "number_of_replicas": 1
+              }
+            }
+          }
+        '
       echo
     fi
 
