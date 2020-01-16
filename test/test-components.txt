@@ -33,10 +33,10 @@ fluentd:
         ./bin/jmeter -n -t ~/GitRepos/zongzw/efk-over-bigip/test/fluentd-http-8085.jmx -e -o ~/GitRepos/zongzw/efk-over-bigip/test/htmlreport -l ~/GitRepos/zongzw/efk-over-bigip/test/testresult.jtl
 
         20001 udp test: under test/
-            ~/Downloads/software/apache-jmeter-5.2.1/bin/jmeter -n -t jmx_files/send-2-fluentd.jmx -e -o test-report/send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
+            ~/Downloads/software/apache-jmeter-5.2.1/bin/jmeter -n -t jmx-files/send-2-fluentd.jmx -e -o test-report/send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
         
         20000 udp test: 
-        /root/downloads/apache-jmeter-5.2.1/bin/jmeter -n -t jmx_files/send-2-fluentd.jmx -e -o test-report/send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
+        /root/downloads/apache-jmeter-5.2.1/bin/jmeter -n -t jmx-files/send-2-fluentd.jmx -e -o test-report/send-2-fluentd-`date +%s` -l test-report/result-`date +%s`.jtl
 
 kafka:
 
