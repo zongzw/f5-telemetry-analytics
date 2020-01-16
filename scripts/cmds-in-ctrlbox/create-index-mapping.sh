@@ -40,7 +40,7 @@ function get_n_hour_further_datestr() {
             "settings": {
               "index": {
                 "number_of_shards": 3,
-                "number_of_replicas": 1
+                "number_of_replicas": 0
               }
             }
           }

@@ -227,7 +227,9 @@ services:
     container_name: NGINX
     ports:
       - 20000:20000/udp
+      - 80:80
     volumes:
       - ${HOMEDIR}/conf.d/nginx.conf:/etc/nginx/nginx.conf
+      - ${HOMEDIR}/conf.d/nginx-dashboards:/etc/nginx/dashboards
     depends_on:
       - fluentd

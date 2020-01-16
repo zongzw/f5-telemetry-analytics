@@ -7,3 +7,7 @@ server.name: kibana
 server.host: "0"
 elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 xpack.monitoring.ui.container.elasticsearch.enabled: true
+
+# Fix the issue: Error in visualization
+# [esaggs] > Request Timeout after 30000ms
+elasticsearch.requestTimeout: 300000
