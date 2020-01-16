@@ -4,4 +4,4 @@
 
 - pipeline.id: main
   path.config: "/usr/share/logstash/pipeline"
-  pipeline.workers: 8
+  # pipeline.workers: 8 # default is cpu number
