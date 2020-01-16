@@ -118,7 +118,8 @@ services:
       - es01
       - fluentd
       - kafka
-      - logstash
+      - logstash1
+      - logstash2
     env_file:
       - ${HOMEDIR}/conf.d/.setup.rc
     volumes:
@@ -202,10 +203,10 @@ services:
       # KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       # KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
 
-  logstash:
+  logstash1:
     build: ${HOMEDIR}/docker/logstash
     image: f5networks/logstash:latest
-    container_name: LOGSTASH
+    container_name: LOGSTASH1
     links:
       - es01:elasticsearch
     depends_on:
@@ -213,7 +214,7 @@ services:
     ports:
       # - 4560:4560 # for logstash debug test.
       # - 5000:5000
-      - 9600:9600
+      - 9601:9600
     volumes:
       - ${HOMEDIR}/conf.d/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
       - ${HOMEDIR}/conf.d/logstash.pipelines:/usr/share/logstash/config/pipelines.yml
@@ -221,7 +222,25 @@ services:
       - /usr/local/bin/docker-entrypoint
       - -r    # Make logstash reload automatically when conf. changes.
     
-    
+  logstash2:
+    build: ${HOMEDIR}/docker/logstash
+    image: f5networks/logstash:latest
+    container_name: LOGSTASH2
+    links:
+      - es01:elasticsearch
+    depends_on:
+      - es01
+    ports:
+      # - 4560:4560 # for logstash debug test.
+      # - 5000:5000
+      - 9602:9600
+    volumes:
+      - ${HOMEDIR}/conf.d/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ${HOMEDIR}/conf.d/logstash.pipelines:/usr/share/logstash/config/pipelines.yml
+    entrypoint:
+      - /usr/local/bin/docker-entrypoint
+      - -r    # Make logstash reload automatically when conf. changes.
+
   nginx:
     image: nginx:latest
     container_name: NGINX
