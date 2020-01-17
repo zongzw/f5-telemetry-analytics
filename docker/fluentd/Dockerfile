@@ -17,7 +17,7 @@
 
 FROM centos:7
 RUN yum update -y 
-RUN yum install -y sudo vim tree
+RUN yum install -y sudo vim tree tcpdump
 
 RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent3.sh | sh
 
