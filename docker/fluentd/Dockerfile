@@ -21,12 +21,11 @@ RUN yum install -y sudo vim tree
 
 RUN curl -L https://toolbelt.treasuredata.com/sh/install-redhat-td-agent3.sh | sh
 
-
 # RUN yum group install -y "Development Tools"
 # RUN yum install -y epel-release
 # RUN yum install -y geoip-devel
-
 # RUN td-agent-gem install fluent-plugin-geoip
+
 RUN td-agent-gem install fluent-plugin-elasticsearch
 RUN td-agent-gem install fluent-plugin-kafka
 RUN td-agent-gem install fluent-plugin-random
