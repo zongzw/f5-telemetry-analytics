@@ -2,8 +2,8 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzE5LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzMzLDJd", 
       "references": [
         {
           "type": "visualization", 
@@ -105,8 +105,8 @@
       "id": "bfd5e380-17d5-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzIwLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzM0LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -131,8 +131,8 @@
       "id": "74a3c070-172c-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzIxLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzM1LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -157,8 +157,8 @@
       "id": "06a507a0-172c-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzIyLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzM2LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -183,8 +183,8 @@
       "id": "4c3a3900-172e-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzIzLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzM3LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -209,8 +209,8 @@
       "id": "2cca2b10-172f-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzI0LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzM4LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -235,8 +235,8 @@
       "id": "b4ec8880-1734-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzI1LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzM5LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -261,8 +261,8 @@
       "id": "19a8b0e0-1736-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzI2LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQwLDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -287,8 +287,8 @@
       "id": "01dcf310-173e-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzI3LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQxLDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -313,8 +313,8 @@
       "id": "4ad51b00-173f-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzI4LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQyLDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -344,8 +344,8 @@
       "id": "9f0975f0-173e-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzI5LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQzLDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -370,8 +370,8 @@
       "id": "6eaa1ed0-1740-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzMwLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQ0LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -396,8 +396,8 @@
       "id": "af24c5f0-1740-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzMxLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQ1LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -422,8 +422,8 @@
       "id": "0b2293f0-1741-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzMyLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQ2LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -448,8 +448,8 @@
       "id": "49621820-1741-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzMzLDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQ3LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -474,8 +474,8 @@
       "id": "be402790-1741-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzM0LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQ4LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -500,8 +500,8 @@
       "id": "e5eeb180-1741-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzM1LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzQ5LDJd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -526,8 +526,8 @@
       "id": "5e1d41b0-17d5-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-01-06T02:29:12.506Z", 
-      "version": "WzM2LDFd", 
+      "updated_at": "2020-01-15T09:11:58.462Z", 
+      "version": "WzUwLDJd", 
       "references": [], 
       "migrationVersion": {
         "index-pattern": "6.5.0"
