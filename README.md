@@ -6,7 +6,7 @@ The scaling-out is an another story, so performance improving work is on the way
 
 ## Program Architecture
 
-![image](https://github.com/zongzw/efk-over-bigip/blob/master/docs/topology.png)
+![image](docs/topology.png)
 
 ## Running Dependencies
 
@@ -27,7 +27,7 @@ The scaling-out is an another story, so performance improving work is on the way
 
 2. Setup BIG-IP request logging profile and HSL pool.
 
-   More details about Request Logging Profile configuration(or optional using iRules) on BIG-IP, see https://github.com/zongzw/efk-over-bigip/blob/master/docs/BIG-IP_Configuration_for_BDE.docx.
+   More details about Request Logging Profile configuration(or optional using iRules) on BIG-IP, see ![BIG-IP Configuration](docs/BIG-IP_Configuration_for_BDE.docx).
    
    To collect logs from BIG-IP virtual servers to EFK, manually, BIG-IP admin needs to
 
