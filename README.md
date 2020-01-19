@@ -26,6 +26,8 @@ The scaling-out is an another story, so performance improving work is on the way
    1. Creates indexs and mappings in ELASTICSEARCH.
 
 2. Setup BIG-IP request logging profile and HSL pool.
+
+   More details about Request Logging Profile configuration(or optional using iRules) on BIG-IP, see https://github.com/zongzw/efk-over-bigip/blob/master/docs/BIG-IP_Configuration_for_BDE.docx.
    
    To collect logs from BIG-IP virtual servers to EFK, manually, BIG-IP admin needs to
 
