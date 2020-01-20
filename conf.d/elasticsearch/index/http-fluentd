@@ -5,14 +5,22 @@
     },
     "bigip-info": {
       "type": "text",
-      "fielddata": true
+      "fields": {
+        "raw": {
+          "type": "keyword"
+        }
+      }
     },
     "client-ip": {
       "type": "ip"
     },
     "host": {
       "type": "text",
-      "fielddata": true
+      "fields": {
+        "raw": {
+          "type": "keyword"
+        }
+      }
     },
     "user-agent": {
       "type": "keyword"
@@ -29,7 +37,11 @@
     }, 
     "city": {
       "type": "text",
-      "fielddata": true
+      "fields": {
+        "raw": {
+          "type": "keyword"
+        }
+      }
     },
     "geo": {
       "type": "geo_point"
@@ -40,7 +52,11 @@
     },
     "country_name": {   
       "type": "text",
-      "fielddata": true
+      "fields": {
+        "raw": {
+          "type": "keyword"
+        }
+      }
     },
     "postal_code": {
       "type": "text",
@@ -52,7 +68,11 @@
     },
     "region_name": {
       "type": "text",
-      "fielddata": true
+      "fields": {
+        "raw": {
+          "type": "keyword"
+        }
+      }
     },
     "latency": {
       "type": "integer"
@@ -63,7 +83,11 @@
     },
     "uri": {
       "type": "text",
-      "fielddata": true
+      "fields": {
+        "raw": {
+          "type": "keyword"
+        }
+      }
     }
   }
 }
