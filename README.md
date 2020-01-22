@@ -53,3 +53,49 @@ The scaling-out is an another story, so performance improving work is on the way
       Click *share* to find it.
       
    1. Navigate to Machine Learning tab for data analytics.
+
+## BIG-IP Configuration Template
+
+As the "Get Start", there are 3 options for configuring BIG-IP for logging. 
+
+1. Request Logging Profile + HSL (Recommended)
+
+   Copy the content of `conf.d/request-logging-template.profile` to the request logging profile as mentioned above. A standard content may be like:
+
+   ```
+      {
+      "timestamp": "$DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000${TIME_OFFSET}",
+      "client-ip": "${X-Forwarded-For}", 
+      "host": "$Host", 
+      "user-agent": "${User-agent}", 
+      "cookie": "$Cookie", 
+      "method": "$HTTP_METHOD", 
+      "uri": "$HTTP_URI", 
+      "username": "$Username", 
+      "content-type": "${Content-Type}", 
+      "server-ip": "$SERVER_IP", 
+      "latency": $RESPONSE_MSECS, 
+      "status": "$HTTP_STATCODE"
+      }
+   ```
+
+   Users can customize this configuration based on their own business purpose.
+
+   The profile way has least performance impact to data traffic.
+
+2. iRules + HSL
+
+   There is an example: `conf.d/.logging.irule`. 
+   
+   Also users can define their own logic and metrics for information collecting.
+
+   The iRule way is more flexible to business scenario. However, users should consider the performance impact during to add (one more) irule for BIG-IP VS configuration.
+
+3. Automation Telemetry Streaming
+
+   This is a new way for metrics collection. 
+   
+   Users need to install the iControlLX extention to BIG-IP for telemetry streaming.
+   
+   More information, see here: https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/
+
