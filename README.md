@@ -1,6 +1,6 @@
-# BDE-OVER-BIGIP
+# BigData Source Tools Using BIG-IP Telemetry
 
-This program works on the **Visualization and Analytics over BIG-IP Data Traffic** by using docker based EFK. 'bde' means Big Data Engine.
+This program works on the **Visualization and Analytics over BIG-IP Data Traffic** by using docker based EFK.
 
 The scaling-out is an another story, so performance improving work is on the way.
 

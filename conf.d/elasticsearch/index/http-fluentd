@@ -3,91 +3,17 @@
     "timestamp": {
       "type": "date"
     },
-    "bigip-info": {
-      "type": "text",
-      "fields": {
-        "raw": {
-          "type": "keyword"
-        }
-      }
-    },
     "client-ip": {
       "type": "ip"
-    },
-    "host": {
-      "type": "text",
-      "fields": {
-        "raw": {
-          "type": "keyword"
-        }
-      }
-    },
-    "user-agent": {
-      "type": "keyword"
-    },
-    "cookie": {
-      "type": "keyword"
     },
     "server-ip": {
       "type": "ip"
     },
-    "status": {
-      "type": "text",
-      "fielddata": true
-    }, 
-    "city": {
-      "type": "text",
-      "fields": {
-        "raw": {
-          "type": "keyword"
-        }
-      }
-    },
     "geo": {
       "type": "geo_point"
     },
-    "country": {
-      "type": "text",
-      "fielddata": true
-    },
-    "country_name": {   
-      "type": "text",
-      "fields": {
-        "raw": {
-          "type": "keyword"
-        }
-      }
-    },
-    "postal_code": {
-      "type": "text",
-      "fielddata": true
-    },
-    "region_code": {
-      "type": "text",
-      "fielddata": true
-    },
-    "region_name": {
-      "type": "text",
-      "fields": {
-        "raw": {
-          "type": "keyword"
-        }
-      }
-    },
     "latency": {
       "type": "integer"
-    },
-    "method": {
-      "type": "text",
-      "fielddata": true
-    },
-    "uri": {
-      "type": "text",
-      "fields": {
-        "raw": {
-          "type": "keyword"
-        }
-      }
     }
   }
 }

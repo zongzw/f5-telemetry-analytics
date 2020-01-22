@@ -1,0 +1,69 @@
+{
+  "properties": {
+    "timestamp": {
+      "type": "date"
+    },
+    "bigip-info": {
+      "type": "text",
+      "fielddata": true
+    },
+    "client-ip": {
+      "type": "ip"
+    },
+    "host": {
+      "type": "text",
+      "fielddata": true
+    },
+    "user-agent": {
+      "type": "keyword"
+    },
+    "cookie": {
+      "type": "keyword"
+    },
+    "server-ip": {
+      "type": "ip"
+    },
+    "status": {
+      "type": "text",
+      "fielddata": true
+    }, 
+    "city": {
+      "type": "text",
+      "fielddata": true
+    },
+    "geo": {
+      "type": "geo_point"
+    },
+    "country": {
+      "type": "text",
+      "fielddata": true
+    },
+    "country_name": {   
+      "type": "text",
+      "fielddata": true
+    },
+    "postal_code": {
+      "type": "text",
+      "fielddata": true
+    },
+    "region_code": {
+      "type": "text",
+      "fielddata": true
+    },
+    "region_name": {
+      "type": "text",
+      "fielddata": true
+    },
+    "latency": {
+      "type": "integer"
+    },
+    "method": {
+      "type": "text",
+      "fielddata": true
+    },
+    "uri": {
+      "type": "text",
+      "fielddata": true
+    }
+  }
+}
