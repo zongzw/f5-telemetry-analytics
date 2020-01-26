@@ -30,13 +30,31 @@ when HTTP_REQUEST {
 when HTTP_RESPONSE {
     set hsl [HSL::open -proto UDP -pool f5-logging-pool]
     
-    set timestamp [clock format [clock seconds] -format "%Y-%m-%dT%T.000Z"]
+    set timestamp [clock format [clock seconds] -format "%Y-%m-%dT%T.000%z"]
     set request_end [clock clicks -milliseconds]
     set server_ip [IP::server_addr]
     set resp_status [HTTP::status]
     set latency [expr {$request_end-$request_start}]
     
-    HSL::send $hsl "timestamp: $timestamp client-ip: $client_ip host: $host user-agent: $user_agent cookie: $cookie method: $method uri: $uri username: $username content-type: $content_type server-ip: $server_ip latency: $latency resp-status: $resp_status"
+    # FOR DEBUG: 
+    # Add this line to the following line to check log reachment to logstash
+    # \"stdout\": \"OK\", \
+    HSL::send $hsl "\
+    {\
+        \"timestamp\": \"$timestamp\", \
+        \"client-ip\": \"183.84.2.166\", \
+        \"host\": \"$host\", \
+        \"user-agent\": \"$user_agent\", \
+        \"cookie\": \"$cookie\", \
+        \"method\": \"$method\", \
+        \"uri\": \"$uri\", \
+        \"username\": \"$username\", \
+        \"content-type\": \"$content_type\", \
+        \"server-ip\": \"$server_ip\", \
+        \"latency\": $latency, \
+        \"resp-status\": \"$resp_status\"\
+    }"
     
-    log local0. "timestamp: $timestamp client-ip: $client_ip host: $host user-agent: $user_agent cookie: $cookie method: $method uri: $uri username: $username content-type: $content_type server-ip: $server_ip latency: $latency resp-status: $resp_status"
+    # FOR DEBUG: 
+    # log local0. "timestamp: $timestamp client-ip: $client_ip host: $host user-agent: $user_agent cookie: $cookie method: $method uri: $uri username: $username content-type: $content_type server-ip: $server_ip latency: $latency resp-status: $resp_status"
 }
