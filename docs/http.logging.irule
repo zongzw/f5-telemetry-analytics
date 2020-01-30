@@ -1,13 +1,3 @@
-# KEEP THIS LINE HERE.
-# DON'T USE 'backlash' TO WARP LINES IN THIS FILE.
-
-# when RULE_INIT {
-#    set static::general_remote_syslog_publisher "/Sample_container/hsl-publisher"
-# }
-
-# when CLIENT_ACCEPTED {
-#    set hsl [HSL::open -publisher $static::general_remote_syslog_publisher]
-# }
 
 when HTTP_REQUEST {
     set request_start [clock clicks -milliseconds]

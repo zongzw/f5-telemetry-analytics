@@ -11,7 +11,7 @@ command_prefix="curl -s -k -u admin:admin"
 . $workdir/conf.d/.setup.rc # temp
 
 request_logging_profile_name="f5-request-logging-profile"
-request_logging_profile_tmpl=`cat $workdir/conf.d/request-logging-template.profile`
+request_logging_profile_tmpl=`cat $workdir/docs/http.logging.profile`
 request_logging_profile_body=`cat << EOF
 {
     "kind": "tm:ltm:profile:request-log:request-logstate",

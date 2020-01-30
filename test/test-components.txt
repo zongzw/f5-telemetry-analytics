@@ -73,3 +73,7 @@ elasticsearch
     check cluster status:
 
         curl "localhost:9200/_cat/nodes?v&pretty"
+
+    list all indices:
+
+        curl -XGET 'http://10.250.18.183:9200/_cat/indices/?v'

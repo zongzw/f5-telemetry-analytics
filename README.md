@@ -39,7 +39,7 @@ The scaling-out is an another story, so performance improving work is on the way
 
    1. Create request logging profile using the HSL pool and bind it to the specific virtual server.
 
-      On the request logging profile creation page, left all configuration as default except *Response Setting* -> *Template*: Use the content of `conf.d/request-logging-template.profile`.
+      On the request logging profile creation page, left all configuration as default except *Response Setting* -> *Template*: Use the content of `docs/http.logging.profile`.
 
 3. Discover and View in Dashboard or Do analytics.
 
@@ -60,7 +60,7 @@ As the "Get Start", there are 3 options for configuring BIG-IP for logging.
 
 1. Request Logging Profile + HSL (Recommended)
 
-   Copy the content of `conf.d/request-logging-template.profile` to the request logging profile as mentioned above. A standard content may be like:
+   Copy the content of `docs/http.logging.profile` to the request logging profile as mentioned above. A standard content may be like:
 
    ```
       {
@@ -85,7 +85,7 @@ As the "Get Start", there are 3 options for configuring BIG-IP for logging.
 
 2. iRules + HSL
 
-   There is an example: `conf.d/.logging.irule`. 
+   There is an example: `docs/http.logging.irule`. 
    
    Also users can define their own logic and metrics for information collecting.
 

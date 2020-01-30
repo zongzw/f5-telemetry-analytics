@@ -1,0 +1,146 @@
+when RULE_INIT {
+    # V1.1.1 
+    #Pls check https://github.com/myf5/f5-elk-demo/l4 for updated version
+    #This irule work ONLY FOR L4 TYPE VS,DON NOT USE FOR STD VS
+    #Any question pls create issue on the github,Will be best effort support. Welcome PR if you had enhenced/fixed it.
+    #The irule will caculates the initial response packet delay for each tcp client data request
+    #The irule also caculates the delay between continuous response packets, but sampling for below interval
+    #Which means, get a delay every 5 continuous tcp response packets. Bigger number cause less sampling.
+    #If you think there are too many logs were sent to ELK, pls adjust it bigger.
+    set static::interval 1
+
+    #You need create a LTM pool named as below pool name, here is logstash-pool_8515
+    set static::hslpool "f5-logging-pool-64.100"
+    
+    # set it to 1 in case you need debug
+    set static::debug 0
+    set static::stdout "OK"
+}
+when CLIENT_ACCEPTED {
+    set cd 0
+    set sd 0
+    set server_data_time_last 0
+    set skip 0
+    set hsf 1
+    # set hsl [HSL::open -proto TCP -pool $static::hslpool]
+    set hsl [HSL::open -proto UDP -pool $static::hslpool]
+    #set client_remote "[IP::client_addr]"
+    set client_remote "183.84.2.166"
+    set client_remote_port "[TCP::client_port]"
+    set client_local  "[IP::local_addr clientside]"
+    set client_local_port "[TCP::local_port clientside]"
+    if {($static::debug == 1)} {
+        log local0. "[virtual name] $client_remote $client_local SYN is coming. [clock clicks -milliseconds]"
+    }
+}
+
+when CLIENT_DATA {
+    incr cd
+    set cdf 1
+    set sdf 0
+    set server_data_time_last 0
+    set client_data_time [clock clicks -milliseconds]
+    if {($static::debug == 1)} {
+        log local0. "[virtual name] $client_remote $client_local cd number: $cd, Client data fired,client data time is $client_data_time"
+    }
+    if {($hsf == 1)}{
+        set cd 0
+    }
+}
+
+
+when SERVER_DATA {
+    incr sd
+    incr sdf
+    set server_data_time [clock clicks -milliseconds]
+    set server_local  "[IP::local_addr]"
+    set server_local_port "[TCP::local_port]"
+    set server_remote "[IP::server_addr]"
+    set server_remote_port "[TCP::server_port]"
+    if {($hsf == 1)}{
+        if {($static::debug == 1)} {
+            log local0. "[virtual name] $client_remote $client_local $server_local $server_remote sd number: $sd,Server data fired,This is TCP 3HS! server data time is $server_data_time"
+            log local0. "[virtual name] The 3HS delay is [expr {$server_data_time-$client_data_time}]"
+        }
+        # set elkdata "[virtual name] $client_remote $client_local $server_local $server_remote HS-delay [expr {$server_data_time-$client_data_time}]\n"
+        set elkdata "{ \
+            \"timestamp\": \"[clock format [clock seconds] -format "%Y-%m-%dT%T.000%z"]\", \
+            \"stdout\": \"$static::stdout\", \
+            \"vs_name\": \"[virtual name]\", \
+            \"client-ip\": \"$client_remote\", \
+            \"client_remote_port\": \"$client_remote_port\", \
+            \"client_local\": \"$client_local\", \
+            \"client_local_port\": \"$client_local_port\", \
+            \"server_local\": \"$server_local\", \
+            \"server_local_port\": \"$server_local_port\", \
+            \"server_remote\": \"$server_remote\", \
+            \"server_remote_port\": \"$server_remote_port\", \
+            \"delay_type\": \"HS-delay\", \
+            \"delay_value\": [expr {$server_data_time-$client_data_time}] \
+        }"
+        HSL::send $hsl $elkdata
+        set hsf 0
+        set cd 0
+        set sd 0
+        set cdf 0
+    } else {
+        if {($static::debug == 1)} {
+            log local0. "[virtual name] $client_remote $client_local $server_local $server_remote sd number: $sd, Server data fired,server data time is $server_data_time"
+        }
+        if {($cd >= 1) and ($cdf == 1) }{
+        # If client sends several continuous data, then server respond. The delay will be the time between the server data and the last client data
+        # If it is a big client data, this may cause false positive. You can check client data number as reference.
+        # If the cd number is bigger (like > 10), then you can safely ignore it if the delay value is bigger.
+            if {($static::debug == 1)} {
+                log local0. "[virtual name] $client_remote $client_local $server_local $server_remote sd number: $sd, ========The delay of initial response packet: [expr {$server_data_time-$client_data_time}]"
+            }
+            #set elkdata "[virtual name] $client_remote $client_local $server_local $server_remote cdnumber $cd init-delay [expr {$server_data_time-$client_data_time}]\n"
+            
+            set elkdata "{ \
+                \"timestamp\": \"[clock format [clock seconds] -format "%Y-%m-%dT%T.000%z"]\", \
+                \"stdout\": \"$static::stdout\", \
+                \"vs_name\": \"[virtual name]\", \
+                \"client-ip\": \"$client_remote\", \
+                \"client_remote_port\": \"$client_remote_port\", \
+                \"client_local\": \"$client_local\", \
+                \"client_local_port\": \"$client_local_port\", \
+                \"server_local\": \"$server_local\", \
+                \"server_local_port\": \"$server_local_port\", \
+                \"server_remote\": \"$server_remote\", \
+                \"server_remote_port\": \"$server_remote_port\", \
+                \"cdnumber\": $cd, \
+                \"delay_type\": \"init-delay\", \
+                \"delay_value\": [expr {$server_data_time-$client_data_time}] \
+            }"
+            HSL::send $hsl $elkdata
+            set cd 0
+            set sd 0
+            set cdf 0
+        }
+        if {($sdf > 1) and ($cdf == 0) and ([expr {$sd%$static::interval}] == 0)}{
+            set sd_latency [expr {$server_data_time-$server_data_time_last}]
+            if {($static::debug == 1)} {
+                log local0. "[virtual name] $client_remote $client_local $server_local $server_remote .========server data delay from the last server data:$sd_latency"
+            }
+            #set elkdata "[virtual name] $client_remote $client_local $server_local $server_remote svr-pkts-delay $sd_latency\n"
+            set elkdata "{ \
+                \"timestamp\": \"[clock format [clock seconds] -format "%Y-%m-%dT%T.000%z"]\", \
+                \"stdout\": \"$static::stdout\", \
+                \"vs_name\": \"[virtual name]\", \
+                \"client-ip\": \"$client_remote\", \
+                \"client_remote_port\": \"$client_remote_port\", \
+                \"client_local\": \"$client_local\", \
+                \"client_local_port\": \"$client_local_port\", \
+                \"server_local\": \"$server_local\", \
+                \"server_local_port\": \"$server_local_port\", \
+                \"server_remote\": \"$server_remote\", \
+                \"server_remote_port\": \"$server_remote_port\", \
+                \"delay_type\": \"svr-pkts-delay\", \
+                \"delay_value\": $sd_latency \
+            }"
+            HSL::send $hsl $elkdata
+         }
+        set skip 0
+        set server_data_time_last $server_data_time
+    }
+}

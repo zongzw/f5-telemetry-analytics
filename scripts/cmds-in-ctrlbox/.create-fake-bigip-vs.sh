@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# NOT WORKS NOW BECAUSE THERE ARE '\' IN docs/http.logging.irule
+
 cdir=`cd $(dirname $0); pwd`
 workdir=$cdir/../..
 command_prefix="curl -s -k -u admin:admin"
@@ -7,7 +9,7 @@ command_prefix="curl -s -k -u admin:admin"
 # env 
 . $workdir/conf.d/.setup.rc # temp
 
-# irule_content=`cat $workdir/conf.d/.logging.irule | sed ':a;N;s/\n/\\\\n/g;ta' | sed 's/"/\\\\"/g'`
+# irule_content=`cat $workdir/docs/http.logging.irule | sed ':a;N;s/\n/\\\\n/g;ta' | sed 's/"/\\\\"/g'`
 # echo $irule_content
 
 # deploy with as3
