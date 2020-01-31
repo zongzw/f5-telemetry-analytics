@@ -41,7 +41,7 @@
                 <br>
             </div>
             <div style="float:right;"> 
-                <font size="1" face="verdana" color="gray">
+                <font size="2" face="verdana" color="gray">
                     <a href="http://__KIBANA_INTERNAL_PLACEHOLDER__:5601/app/kibana/#/dashboards">查看或定制所有视图</a>
                 </font>
             </div>
@@ -50,21 +50,27 @@
 
         <div id="tabs" style="height: 100%;">
             <ul>
-                <li><a href="#tabs-1">Requests && Clients</a></li>
-                <li><a href="#tabs-2">Responses && Servers</a></li>
-                <li><a href="#tabs-3">System Health Check</a></li>
+                <li><a href="#tabs-1">客户端及请求分析</a></li>
+                <li><a href="#tabs-2">服务器及响应分析</a></li>
+                <li><a href="#tabs-3">TCP层数据延迟分析</a></li>
+                <li><a href="#tabs-4">系统自检测</a></li>
             </ul>
-            <div id="tabs-1" style="height: 100%;">
+            <div id="tabs-1" style="height: 90%;">
                 <iframe
                     src="http://__KIBANA_INTERNAL_PLACEHOLDER__:5601/app/kibana#/dashboard/32941260-1fe8-11ea-9205-0ddd0eea1a39?embed=true&_g=()"
                     height="100%" width="100%"></iframe>
             </div>
-            <div id="tabs-2" style="height: 100%;">
+            <div id="tabs-2" style="height: 90%;">
                 <iframe
                     src="http://__KIBANA_INTERNAL_PLACEHOLDER__:5601/app/kibana#/dashboard/66cae1e0-1fe7-11ea-9205-0ddd0eea1a39?embed=true&_g=()"
                     height="100%" width="100%"></iframe>
             </div>
-            <div id="tabs-3" style="height: 100%;">
+            <div id="tabs-3" style="height: 90%;">
+                <iframe
+                    src="http://__KIBANA_INTERNAL_PLACEHOLDER__:5601/app/kibana#/dashboard/77d817f0-4404-11ea-ba6f-f398d1ae1a65?embed=true&_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-1h%2Cto%3Anow))"
+                    height="100%" width="100%"></iframe>
+            </div>
+            <div id="tabs-4" style="height: 90%;">
                 <iframe
                     src="http://__KIBANA_INTERNAL_PLACEHOLDER__:5601/app/kibana#/dashboard/cd2451f0-2fbf-11ea-a3b3-f9aafa624e6a?embed=true&_g=()"
                     height="100%" width="100%"></iframe>

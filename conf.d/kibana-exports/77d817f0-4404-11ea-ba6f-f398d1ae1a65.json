@@ -1,0 +1,279 @@
+{
+  "version": "7.4.1", 
+  "objects": [
+    {
+      "updated_at": "2020-01-31T08:37:35.035Z", 
+      "version": "WzI3Miw1XQ==", 
+      "references": [
+        {
+          "type": "visualization", 
+          "name": "panel_0", 
+          "id": "AWIXmi0Uoz5dPjfN8oMu"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_1", 
+          "id": "547bbf70-4367-11ea-ba6f-f398d1ae1a65"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_2", 
+          "id": "AWIVKxrfoz5dPjfN8naj"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_3", 
+          "id": "AWIVJDsKoz5dPjfN8nZx"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_4", 
+          "id": "AWIVUkZ6oz5dPjfN8nh1"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_5", 
+          "id": "0933eed0-43ed-11ea-ba6f-f398d1ae1a65"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_6", 
+          "id": "AWIVXPftoz5dPjfN8nkt"
+        }
+      ], 
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      }, 
+      "attributes": {
+        "hits": 0, 
+        "timeFrom": "now-1h", 
+        "timeRestore": true, 
+        "description": "", 
+        "title": "das.4\u5c42\u670d\u52a1\u54cd\u5e94\u5ef6\u8fdf\u7edf\u8ba1", 
+        "panelsJSON": "[{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":8,\"i\":\"4d765d9d-366c-4e4d-885e-1c902f7aba5f\"},\"panelIndex\":\"4d765d9d-366c-4e4d-885e-1c902f7aba5f\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":0,\"w\":23,\"h\":8,\"i\":\"94f821f0-9f62-4bdc-8542-e5cea50e2fde\"},\"panelIndex\":\"94f821f0-9f62-4bdc-8542-e5cea50e2fde\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":8,\"w\":24,\"h\":8,\"i\":\"249c7d19-25bc-4723-a918-fec10433b3da\"},\"panelIndex\":\"249c7d19-25bc-4723-a918-fec10433b3da\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":8,\"w\":24,\"h\":8,\"i\":\"4e9423bd-12e9-4088-bae8-e8f6ff1e5bff\"},\"panelIndex\":\"4e9423bd-12e9-4088-bae8-e8f6ff1e5bff\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":16,\"w\":24,\"h\":8,\"i\":\"2db8f408-e3a5-41ca-a965-205c27f56759\"},\"panelIndex\":\"2db8f408-e3a5-41ca-a965-205c27f56759\",\"embeddableConfig\":{},\"panelRefName\":\"panel_4\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":16,\"w\":24,\"h\":8,\"i\":\"56de8d1c-330d-43f1-a00e-e64b342bc081\"},\"panelIndex\":\"56de8d1c-330d-43f1-a00e-e64b342bc081\",\"embeddableConfig\":{},\"panelRefName\":\"panel_5\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":24,\"w\":48,\"h\":10,\"i\":\"1814ac82-fde4-4b90-b032-63c72c0d87cc\"},\"panelIndex\":\"1814ac82-fde4-4b90-b032-63c72c0d87cc\",\"embeddableConfig\":{},\"panelRefName\":\"panel_6\"}]", 
+        "timeTo": "now", 
+        "optionsJSON": "{\"useMargins\":true,\"hidePanelTitles\":false}", 
+        "version": 1, 
+        "refreshInterval": {
+          "pause": false, 
+          "value": 5000
+        }, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      }, 
+      "type": "dashboard", 
+      "id": "77d817f0-4404-11ea-ba6f-f398d1ae1a65"
+    }, 
+    {
+      "updated_at": "2020-01-31T08:19:24.550Z", 
+      "version": "WzI2NCw1XQ==", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }, 
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u670d\u52a1\u5668\u63e1\u624b\u5ef6\u8fdf(per server)\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 5 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average hs-delay\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Average delay_value\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT5S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-01-31T08:01:06.374Z\",\"max\":\"2020-01-31T08:16:06.374Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"avg\"}],\"series\":[{\"accessor\":1,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\",\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"server_remote.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "description": "", 
+        "title": "vis.\u670d\u52a1\u5668\u63e1\u624b\u5ef6\u8fdf(per server)", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"delay_type.keyword\",\"value\":\"HS-delay\",\"params\":{\"query\":\"HS-delay\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"delay_type.keyword\":{\"query\":\"HS-delay\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "AWIXmi0Uoz5dPjfN8oMu"
+    }, 
+    {
+      "updated_at": "2020-01-31T01:22:28.096Z", 
+      "version": "WzIxNCw1XQ==", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }, 
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.L4\u670d\u52a1\u5668\u5b9e\u65f6\u63e1\u624b\u5ef6\u8fdf\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"filter\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"\u6700\u5c0f\u63e1\u624b\u5ef6\u8fdf\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"\u6700\u5c0f\u63e1\u624b\u5ef6\u8fdf\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"3\",\"label\":\"\u6700\u5927\u63e1\u624b\u5ef6\u8fdf\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"4\",\"label\":\"\u5e73\u5747\u63e1\u624b\u5ef6\u8fdf\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm\"}},\"params\":{\"date\":true,\"interval\":\"PT30M\",\"format\":\"HH:mm\",\"bounds\":{\"min\":\"2020-01-29T13:46:24.440Z\",\"max\":\"2020-01-30T13:46:24.440Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"min\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\",\"customLabel\":\"\u6700\u5c0f\u63e1\u624b\u5ef6\u8fdf\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-24h\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\",\"customLabel\":\"\u6700\u5927\u63e1\u624b\u5ef6\u8fdf\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\",\"customLabel\":\"\u5e73\u5747\u63e1\u624b\u5ef6\u8fdf\"}}]}", 
+        "description": "", 
+        "title": "vis.L4\u670d\u52a1\u5668\u5b9e\u65f6\u63e1\u624b\u5ef6\u8fdf", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"delay_type\",\"value\":\"HS-Delay\",\"params\":{\"query\":\"HS-Delay\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"delay_type\":{\"query\":\"HS-Delay\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "547bbf70-4367-11ea-ba6f-f398d1ae1a65"
+    }, 
+    {
+      "updated_at": "2020-01-31T05:57:46.155Z", 
+      "version": "WzIzNyw1XQ==", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }, 
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u670d\u52a1\u5668\u5e73\u5747\u9996\u5305\u54cd\u5e94\u65f6\u95f4(per server)\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 30 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average init-delay\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Average init-delay\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"server_remote.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "description": "", 
+        "title": "vis.\u670d\u52a1\u5668\u5e73\u5747\u9996\u5305\u54cd\u5e94\u65f6\u95f4(per server)", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"delay_type.keyword\",\"value\":\"init-delay\",\"params\":{\"query\":\"init-delay\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"delay_type.keyword\":{\"query\":\"init-delay\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "AWIVKxrfoz5dPjfN8naj"
+    }, 
+    {
+      "updated_at": "2020-01-31T08:10:03.001Z", 
+      "version": "WzI2MCw1XQ==", 
+      "references": [], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u5e94\u7528\u5b9e\u65f6\u9996\u5305\u54cd\u5e94\u65f6\u95f4\",\"type\":\"timelion\",\"params\":{\"type\":\"timelion\",\"expression\":\".es(metric=min:delay_value,index=http-fluentd-*,q=\\\"delay_type.keyword:init-delay\\\",timefield=timestamp).label(\\\"\u6700\u5c0f\u9996\u5305\u54cd\u5e94\u5ef6\u8fdf\\\"),.es(metric=max:delay_value,index=http-fluentd-*,q=\\\"delay_type.keyword:init-delay\\\",timefield=timestamp).label(\\\"\u6700\u5927\u9996\u5305\u54cd\u5e94\u5ef6\u8fdf\\\"),.es(metric=avg:delay_value,index=http-fluentd-*,q=\\\"delay_type.keyword:init-delay\\\",timefield=timestamp).label(\\\"\u5e73\u5747\u9996\u5305\u54cd\u5e94\u5ef6\u8fdf\\\"),\",\"interval\":\"auto\"},\"aggs\":[]}", 
+        "description": "", 
+        "title": "vis.\u5e94\u7528\u5b9e\u65f6\u9996\u5305\u54cd\u5e94\u65f6\u95f4", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[]}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "AWIVJDsKoz5dPjfN8nZx"
+    }, 
+    {
+      "updated_at": "2020-01-31T05:55:45.536Z", 
+      "version": "WzIzNSw1XQ==", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }, 
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u670d\u52a1\u5668\u8fde\u7eed\u54cd\u5e94\u5e73\u5747\u5ef6\u8fdf\u91c7\u6837\uff08\u6bcf10\u5305\uff09\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 5 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average svr-pkts-delay\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Average svr-pkts-delay\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\",\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"server_remote.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "description": "", 
+        "title": "vis.\u670d\u52a1\u5668\u8fde\u7eed\u54cd\u5e94\u5e73\u5747\u5ef6\u8fdf\u91c7\u6837\uff08\u6bcf10\u5305\uff09", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"delay_type.keyword\",\"value\":\"svr-pkts-delay\",\"params\":{\"query\":\"svr-pkts-delay\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"delay_type.keyword\":{\"query\":\"svr-pkts-delay\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "AWIVUkZ6oz5dPjfN8nh1"
+    }, 
+    {
+      "updated_at": "2020-01-31T08:11:18.702Z", 
+      "version": "WzI2MSw1XQ==", 
+      "references": [], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u5e94\u7528\u5b9e\u65f6\u670d\u52a1\u5668\u8fde\u7eed\u54cd\u5e94\u5ef6\u8fdf\u91c7\u6837(\u6bcf15\u79d2)\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=http-fluentd-*, metric=min:delay_value,timefield=timestamp,q=\\\"delay_type.keyword:svr-pkts-delay\\\").label(\\\"\u6700\u5c0f\u8fde\u7eed\u54cd\u5e94\u5ef6\u8fdf\\\"),\\n.es(metric=max:delay_value, index=http-fluentd-*,timefield=timestamp,q=\\\"delay_type.keyword:svr-pkts-delay\\\").label(\\\"\u6700\u5927\u8fde\u7eed\u54cd\u5e94\u5ef6\u8fdf\\\"),\\n.es(index=http-fluentd-*,metric=avg:delay_value,timefield=timestamp,q=\\\"delay_type.keyword:svr-pkts-delay\\\").label(\\\"\u5e73\u5747\u8fde\u7eed\u54cd\u5e94\u5ef6\u8fdf\\\")\",\"interval\":\"auto\"},\"aggs\":[]}", 
+        "description": "", 
+        "title": "vis.\u5e94\u7528\u5b9e\u65f6\u670d\u52a1\u5668\u8fde\u7eed\u54cd\u5e94\u5ef6\u8fdf\u91c7\u6837(\u6bcf15\u79d2)", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "0933eed0-43ed-11ea-ba6f-f398d1ae1a65"
+    }, 
+    {
+      "updated_at": "2020-01-31T07:34:38.195Z", 
+      "version": "WzIzOSw1XQ==", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }, 
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index", 
+          "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u9996\u5305\u5ef6\u8fdf\u70ed\u529b\u56fe\",\"type\":\"tile_map\",\"params\":{\"mapType\":\"Heatmap\",\"isDesaturated\":true,\"addTooltip\":true,\"heatMaxZoom\":0,\"heatMinOpacity\":0.1,\"heatRadius\":25,\"heatBlur\":15,\"legendPosition\":\"bottomright\",\"mapZoom\":2,\"mapCenter\":[0,0],\"wms\":{\"enabled\":false,\"url\":\"https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer\",\"options\":{\"version\":\"1.3.0\",\"layers\":\"0\",\"format\":\"image/png\",\"transparent\":true,\"attribution\":\"Maps provided by USGS\",\"styles\":\"\"}},\"type\":\"tile_map\",\"colorSchema\":\"Yellow to Red\",\"heatClusterSize\":1.5},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"delay_value\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"geo\",\"autoPrecision\":true,\"precision\":2,\"useGeocentroid\":true,\"isFilteredByCollar\":true,\"mapZoom\":2,\"mapCenter\":[0,0]}}]}", 
+        "description": "", 
+        "title": "vis.\u9996\u5305\u5ef6\u8fdf\u70ed\u529b\u56fe", 
+        "uiStateJSON": "{\"mapZoom\":4,\"mapCenter\":[35.99578538642032,104.1064453125]}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"alias\":null,\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"delay_type.keyword\",\"value\":\"init-delay\",\"params\":{\"query\":\"init-delay\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"delay_type.keyword\":{\"query\":\"init-delay\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "AWIVXPftoz5dPjfN8nkt"
+    }, 
+    {
+      "updated_at": "2020-01-31T00:59:46.860Z", 
+      "version": "WzIxMyw1XQ==", 
+      "references": [], 
+      "migrationVersion": {
+        "index-pattern": "6.5.0"
+      }, 
+      "attributes": {
+        "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"cdnumber\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"city\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"city.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"city\",\"subType\":\"multi\"},{\"name\":\"client-ip\",\"type\":\"ip\",\"esTypes\":[\"ip\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"client_local\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"client_local.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"client_local\",\"subType\":\"multi\"},{\"name\":\"client_local_port\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"client_local_port.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"client_local_port\",\"subType\":\"multi\"},{\"name\":\"client_remote_port\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"client_remote_port.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"client_remote_port\",\"subType\":\"multi\"},{\"name\":\"content-type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"content-type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"content-type\",\"subType\":\"multi\"},{\"name\":\"cookie\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"cookie.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"cookie\",\"subType\":\"multi\"},{\"name\":\"country\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"country.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"country\",\"subType\":\"multi\"},{\"name\":\"country_name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"country_name.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"country_name\",\"subType\":\"multi\"},{\"name\":\"delay_type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"delay_type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"delay_type\",\"subType\":\"multi\"},{\"name\":\"delay_value\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"geo\",\"type\":\"geo_point\",\"esTypes\":[\"geo_point\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"host\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"host.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"host\",\"subType\":\"multi\"},{\"name\":\"index\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"index.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"index\",\"subType\":\"multi\"},{\"name\":\"latency\",\"type\":\"number\",\"esTypes\":[\"integer\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"method\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"method.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"method\",\"subType\":\"multi\"},{\"name\":\"postal_code\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"postal_code.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"postal_code\",\"subType\":\"multi\"},{\"name\":\"region_code\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"region_code.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"region_code\",\"subType\":\"multi\"},{\"name\":\"region_name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"region_name.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"region_name\",\"subType\":\"multi\"},{\"name\":\"resp-status\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"resp-status.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"resp-status\",\"subType\":\"multi\"},{\"name\":\"sender\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"sender.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"sender\",\"subType\":\"multi\"},{\"name\":\"server-ip\",\"type\":\"ip\",\"esTypes\":[\"ip\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"server_local\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"server_local.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"server_local\",\"subType\":\"multi\"},{\"name\":\"server_local_port\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"server_local_port.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"server_local_port\",\"subType\":\"multi\"},{\"name\":\"server_remote\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"server_remote.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"server_remote\",\"subType\":\"multi\"},{\"name\":\"server_remote_port\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"server_remote_port.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"server_remote_port\",\"subType\":\"multi\"},{\"name\":\"status\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"status.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"status\",\"subType\":\"multi\"},{\"name\":\"stdout\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"stdout.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"stdout\",\"subType\":\"multi\"},{\"name\":\"timestamp\",\"type\":\"date\",\"esTypes\":[\"date\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"type\",\"subType\":\"multi\"},{\"name\":\"uri\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"uri.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"uri\",\"subType\":\"multi\"},{\"name\":\"user-agent\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"user-agent.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"user-agent\",\"subType\":\"multi\"},{\"name\":\"username\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"username.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"username\",\"subType\":\"multi\"},{\"name\":\"vs_name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"vs_name.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"vs_name\",\"subType\":\"multi\"}]", 
+        "timeFieldName": "timestamp", 
+        "title": "http-fluentd-*"
+      }, 
+      "type": "index-pattern", 
+      "id": "7240b260-3cf8-11ea-b5b5-e3bdf8f0dd3e"
+    }
+  ]
+}
