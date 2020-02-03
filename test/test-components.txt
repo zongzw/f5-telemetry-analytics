@@ -77,3 +77,4 @@ elasticsearch
     list all indices:
 
         curl -XGET 'http://10.250.18.183:9200/_cat/indices/?v'
+        curl -XGET 'http://localhost:9200/_cat/indices/?v'

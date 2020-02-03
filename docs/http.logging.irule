@@ -32,6 +32,7 @@ when HTTP_RESPONSE {
     HSL::send $hsl "\
     {\
         \"timestamp\": \"$timestamp\", \
+        \"vs_name\": \"[virtual name]\", \
         \"client-ip\": \"183.84.2.166\", \
         \"host\": \"$host\", \
         \"user-agent\": \"$user_agent\", \

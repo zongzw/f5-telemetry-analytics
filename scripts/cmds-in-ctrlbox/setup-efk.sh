@@ -1,11 +1,37 @@
 #!/bin/bash
 
 cdir=`cd $(dirname $0); pwd`
+workdir=$cdir/../..
 
-wait=0
-timeout=60
+timeout=150
+logpath=$workdir/logs/startup-`date +%Y.%m.%d.%H.%M.%S`.log
+
+# echo -n "Waiting for es cluster to be ready ..."
+# wait=0
+# while true; do 
+#     if [ $wait -ge $timeout ]; then 
+#         echo "timeout for waiting for es readiness."
+#         exit 1
+#     fi
+#     res_code=`curl http://elasticsearch:9200 -s -o /dev/null -w "%{http_code}"`
+#     if [ "$res_code" = "200" ]; then 
+#         echo " OK"
+#         break; 
+#     else 
+#         echo -n "."
+#     fi
+
+#     wait=$(($wait + 1))
+#     sleep 1
+# done
+
+# echo -n "Remove stale kibana tasks due to restart if exists ..."
+# curl -XDELETE "http://elasticsearch:9200/.kibana_task_manager_*" -s -o /dev/null -w "%{http_code}"
+# curl -XDELETE "http://elasticsearch:9200/.kibana_*" -s -o /dev/null -w "%{http_code}"
+# echo
 
 echo -n "Waiting for kibana to be ready ..."
+wait=0
 while true; do 
     if [ $wait -ge $timeout ]; then 
         echo "timeout for waiting for kibana readiness."
