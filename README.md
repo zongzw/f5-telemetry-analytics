@@ -1,8 +1,10 @@
 # BigData Source Tools Using BIG-IP Telemetry
 
-This program works on the **Visualization and Analytics over BIG-IP Data Traffic** by using docker based EFK.
+This project works on **Visualization and Analytics On BIG-IP Data Traffic**.
 
-The scaling-out is an another story, so performance improving work is on the way.
+It is powered by docker based BigData Engine Tools: EFK. The scaling-out is an another story, so performance improving work is on the way.
+
+** **Quick Glance On The Samples** **: [docs/screenshots/README.md](docs/screenshots/README.md)
 
 ## Program Architecture
 

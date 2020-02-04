@@ -47,6 +47,28 @@ for n in SOURCES:
             # print("removing %s" % n)
             SOURCES.remove(n)
 
+USERNAMES = [
+    'zongzw', 'andrew', 'andrewzong', 'zongzhaowei', 'kk', 'zz', 'xiong', 'zongzi', 'zong', 'zong',
+    'sally', 'annie'
+]
+
+METHODS = [
+    'GET', 'POST', 'DELETE', 'PUT', 'PATCH', 'GET', 'POST', 'PUT', 'GET'
+]
+
+URIS = [
+    '/index.html',
+    '/pages/344',
+    '/images',
+    '/',
+    '/gsts.tar.gz',
+    '/p/c8edab99173d',
+    '/search',
+    '/index.html',
+    '/',
+    '/search'
+]
+
 def mock_logging_data_20001(ts, concurrency):
     #{
     # "timestamp": "$DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000Z", 
@@ -74,37 +96,27 @@ def mock_logging_data_20001(ts, concurrency):
         "host": "bigip-vs-server",
         "user-agent": user_agent,
         "cookie": "",
-        "method": "GET",
-        "uri": "/",
-        "username": "zongzw",
+        "method": random.choice(METHODS),
+        "uri": random.choice(URIS),
+        "username": random.choice(USERNAMES),
         "content-type": "application/json",
         "server-ip": rand_dest,
         "latency": random.randint(1, 20),
-        "status": "200",
+        "resp-status": random.choice(RESPCODES),
         "sender": "zongzw %0d" % random.randint(0, 100),
-        "stdout": "OK"
+        "stdout": "KO",
+
+        'vs_name': random.choice(['/Common/vs-l4-84', '/Common/vs-l7-80']),
+        'client_remote_port': random.choice([56002, 34563, 34345, 33746, 3344, 23345]),
+        'client_local': 'bigip-clientside-ip',
+        'server_local': 'bigip-serverside-ip',
+        'server_local_port': random.choice([84, 80]),
+        'server_remote': rand_dest,
+        'server_remote_port': random.choice([84, 80]),
+        'delay_type': random.choice(['svr-pkts-delay', 'init-delay', 'HS-delay']),
+        'delay_value': random.randint(1, 10),
+        'cdnumber': random.randint(1, 4)
     }
     
-    
-
-
     return json.dumps(jdata)
-
-'''
-{
-    "ts": "$DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000Z", 
-    "timestamp": "$DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000Z", 
-    "client-ip": "${X-Forwarded-For}", 
-    "host": "$Host", 
-    "user-agent": "${User-agent}", 
-    "cookie": "$Cookie", 
-    "method": "$HTTP_METHOD", 
-    "uri": "$HTTP_URI", 
-    "username": "$Username", 
-    "content-type": "${Content-Type}", 
-    "server-ip": "$SERVER_IP", 
-    "latency": $RESPONSE_MSECS, 
-    "status": "$HTTP_STATCODE", 
-    "sender": "zongzw"
-}
-'''
+    
