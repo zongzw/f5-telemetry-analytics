@@ -47,7 +47,7 @@ $cdir/access-vs-in-batch.sh $1 $2 $3 $4
 #         "failed_shards": [
 #             {
 #                 "shard": 0,
-#                 "index": "http-fluentd",
+#                 "index": "ltm-fluentd",
 #                 "node": "m9MKf5zbT7-Yp7F3a5Dmlw",
 #                 "reason": {
 #                     "type": "illegal_argument_exception",

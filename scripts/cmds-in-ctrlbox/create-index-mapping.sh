@@ -58,11 +58,11 @@ function get_n_hour_further_datestr() {
   done
 )
 
-echo -n "Creating aliases for http-fluentd-* and errlogs-* ... "
+echo -n "Creating aliases for ltm-fluentd-* and errlogs-* ... "
 curl -XPOST -s -w "%{http_code}" -H "Content-Type: application/json" $host_endpoint/_aliases -d'
 {
     "actions" : [
-        { "add" : { "index" : "http-fluentd-*", "alias" : "all-http-fluentd-alias" } },
+        { "add" : { "index" : "ltm-fluentd-*", "alias" : "all-ltm-fluentd-alias" } },
         { "add" : { "index" : "errlogs-*", "alias" : "all-errlogs-alias" } }
     ]
 }'

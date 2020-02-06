@@ -46,7 +46,7 @@
         }
       }
     },
-    "http-fluentd-docs-count": {
+    "ltm-fluentd-docs-count": {
       "type": "long"
     },
     "errlogs-docs-count": {

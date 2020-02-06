@@ -28,7 +28,7 @@ except Exception as e:
     print("failed to get disk usage info: %s" % e.message)
     sys.exit(1)
 
-for n in ['http-fluentd', 'errlogs']:
+for n in ['ltm-fluentd', 'errlogs']:
     try:
         index_pattern = n
         r = requests.get(
@@ -41,7 +41,7 @@ for n in ['http-fluentd', 'errlogs']:
         print("failed to get index '%s''s stat: %s" % (index_pattern, e.message))
         sys.exit(1)
 
-tag_name = 'http-fluentd'
+tag_name = 'ltm-fluentd'
 datadir = os.path.join(workdir, 'data/fluentd', tag_name)
 print datadir
 workers_size = fluentd_buffer_size.get_subfolder_size(datadir)
