@@ -136,8 +136,8 @@
       "id": "cfa40e00-4673-11ea-82ed-5b875ab6caa0"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzM1LDFd", 
+      "updated_at": "2020-02-06T11:41:07.586Z", 
+      "version": "WzcwLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -149,9 +149,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5b9e\u65f6\u670d\u52a1\u5668\u54cd\u5e94\u5ef6\u8fdf\",\"type\":\"line\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"timestamp per 5 seconds\"},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"legendPosition\":\"top\",\"seriesParams\":[{\"data\":{\"id\":\"2\",\"label\":\"Avg. Response/Server\"},\"drawLinesBetweenPoints\":true,\"interpolate\":\"cardinal\",\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"line\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Avg. Response/Server\"},\"type\":\"value\"}],\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT5S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-02-03T05:35:07.117Z\",\"max\":\"2020-02-03T05:50:07.117Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"avg\"}],\"series\":[{\"accessor\":1,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"latency\",\"customLabel\":\"Avg. Response/Server\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"server-ip\",\"orderBy\":\"2\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"\"}}]}", 
+        "visState": "{\"title\":\"vis.\u5b9e\u65f6\u670d\u52a1\u5668\u54cd\u5e94\u5ef6\u8fdf\",\"type\":\"line\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"timestamp per 5 seconds\"},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"legendPosition\":\"top\",\"seriesParams\":[{\"data\":{\"id\":\"2\",\"label\":\"Avg. Response/Server\"},\"drawLinesBetweenPoints\":true,\"interpolate\":\"cardinal\",\"lineWidth\":2,\"mode\":\"stacked\",\"show\":true,\"showCircles\":true,\"type\":\"line\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Avg. Response/Server\"},\"type\":\"value\"}],\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT5S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-02-03T05:35:07.117Z\",\"max\":\"2020-02-03T05:50:07.117Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"avg\"}],\"series\":[{\"accessor\":1,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"latency\",\"customLabel\":\"Avg. Response/Server\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"server-ip\",\"orderBy\":\"2\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"\"}}]}", 
         "description": "", 
-        "title": "\u5b9e\u65f6\u670d\u52a1\u5668\u54cd\u5e94\u5ef6\u8fdf", 
+        "title": "vis.\u5b9e\u65f6\u670d\u52a1\u5668\u54cd\u5e94\u5ef6\u8fdf", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -188,8 +188,8 @@
       "id": "AV-Y2Nh6gNN0wcwlSZ-A"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzM3LDFd", 
+      "updated_at": "2020-02-06T11:41:14.777Z", 
+      "version": "WzcxLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -201,21 +201,21 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\n  \"title\": \"\u5b9e\u65f6HTTP\u54cd\u5e94\u72b6\u6001\u7801\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"timestamp per second\"\n        }\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Count\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"histogram\",\n        \"mode\": \"stacked\",\n        \"data\": {\n          \"label\": \"Count\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"top\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"type\": \"histogram\",\n    \"labels\": {\n      \"show\": false\n    },\n    \"thresholdLine\": {\n      \"show\": false,\n      \"value\": 10,\n      \"width\": 1,\n      \"style\": \"full\",\n      \"color\": \"#34130C\"\n    },\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"date\",\n          \"params\": {\n            \"pattern\": \"HH:mm:ss\"\n          }\n        },\n        \"params\": {\n          \"date\": true,\n          \"interval\": \"PT30S\",\n          \"format\": \"HH:mm:ss\",\n          \"bounds\": {\n            \"min\": \"2020-02-03T05:31:46.195Z\",\n            \"max\": \"2020-02-03T05:46:46.195Z\"\n          }\n        },\n        \"aggType\": \"date_histogram\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 2,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"count\"\n        }\n      ],\n      \"series\": [\n        {\n          \"accessor\": 1,\n          \"format\": {\n            \"id\": \"terms\",\n            \"params\": {\n              \"id\": \"string\",\n              \"otherBucketLabel\": \"Other\",\n              \"missingBucketLabel\": \"Missing\"\n            }\n          },\n          \"params\": {},\n          \"aggType\": \"terms\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"timestamp\",\n        \"timeRange\": {\n          \"from\": \"now-15m\",\n          \"to\": \"now\"\n        },\n        \"useNormalizedEsInterval\": true,\n        \"interval\": \"auto\",\n        \"drop_partials\": false,\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {},\n        \"customLabel\": \"\"\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"field\": \"resp-status\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 5,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"customLabel\": \"status\"\n      }\n    }\n  ]\n}", 
+        "visState": "{\"title\":\"vis.\u5b9e\u65f6HTTP\u54cd\u5e94\u72b6\u6001\u7801\",\"type\":\"histogram\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per second\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"histogram\",\"labels\":{\"show\":false},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT30S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-02-03T05:31:46.195Z\",\"max\":\"2020-02-03T05:46:46.195Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"count\"}],\"series\":[{\"accessor\":1,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"resp-status\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"status\"}}]}", 
         "description": "", 
-        "title": "\u5b9e\u65f6HTTP\u54cd\u5e94\u72b6\u6001\u7801", 
+        "title": "vis.\u5b9e\u65f6HTTP\u54cd\u5e94\u72b6\u6001\u7801", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\n  \"query\": {\n    \"query\": {\n      \"match_all\": {}\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
         }
       }, 
       "type": "visualization", 
       "id": "AV-Ze6KjgNN0wcwlSaC4"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzM4LDFd", 
+      "updated_at": "2020-02-06T11:42:29.621Z", 
+      "version": "Wzc2LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -227,9 +227,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5ba2\u6237\u603b\u8bf7\u6c42\u6570\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"type\":\"metric\",\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":0}],\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":false},\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"\",\"fontSize\":60,\"labelColor\":false,\"subText\":\"\"},\"useRange\":false,\"metricColorMode\":\"None\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total_Requests\"}}]}", 
+        "visState": "{\"title\":\"vis.\u5ba2\u6237\u603b\u8bf7\u6c42\u6570-f\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"type\":\"metric\",\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":0}],\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":false},\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"\",\"fontSize\":60,\"labelColor\":false,\"subText\":\"\"},\"useRange\":false,\"metricColorMode\":\"None\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total_Requests\"}}]}", 
         "description": "", 
-        "title": "\u5ba2\u6237\u603b\u8bf7\u6c42\u6570", 
+        "title": "vis.\u5ba2\u6237\u603b\u8bf7\u6c42\u6570-f", 
         "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 0\":\"rgb(0,104,55)\"}}}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -266,8 +266,8 @@
       "id": "AV-ZvaH2gNN0wcwlSaMO"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQwLDFd", 
+      "updated_at": "2020-02-06T11:40:18.574Z", 
+      "version": "WzY2LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -279,29 +279,29 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\n  \"title\": \"\u70ed\u70b9URI\u8bf7\u6c42Top10\",\n  \"type\": \"histogram\",\n  \"params\": {\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 200\n        },\n        \"title\": {\n          \"text\": \"Top20_Request_Path\"\n        }\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 75,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"\u5355URL\u8bf7\u6c42\u603b\u6570\u6392\u540d\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": true,\n        \"type\": \"histogram\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"\u5355URL\u8bf7\u6c42\u603b\u6570\u6392\u540d\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"top\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"type\": \"horizontal_bar\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"\u5355URL\u8bf7\u6c42\u603b\u6570\u6392\u540d\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"uri.keyword\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"customLabel\": \"Top20_Request_Path\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}", 
+        "visState": "{\"title\":\"vis.\u70ed\u70b9URI\u8bf7\u6c42Top10\",\"type\":\"histogram\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{\"text\":\"Top20_Request_Path\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"\u5355URL\u8bf7\u6c42\u603b\u6570\u6392\u540d\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"\u5355URL\u8bf7\u6c42\u603b\u6570\u6392\u540d\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"horizontal_bar\",\"labels\":{\"show\":false},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\u5355URL\u8bf7\u6c42\u603b\u6570\u6392\u540d\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"uri.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":10,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Top20_Request_Path\"}}]}", 
         "description": "", 
-        "title": "\u70ed\u70b9URI\u8bf7\u6c42Top10", 
+        "title": "vis.\u70ed\u70b9URI\u8bf7\u6c42Top10", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\n  \"filter\": [],\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"query\": {\n      \"match_all\": {}\n    },\n    \"language\": \"lucene\"\n  },\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+          "searchSourceJSON": "{\"filter\":[],\"highlightAll\":true,\"version\":true,\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
         }
       }, 
       "type": "visualization", 
       "id": "AV-Z0jcJgNN0wcwlSaOC"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQxLDFd", 
+      "updated_at": "2020-02-06T11:41:41.678Z", 
+      "version": "Wzc1LDFd", 
       "references": [], 
       "migrationVersion": {
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5168\u5c40\u5b9e\u65f6\u8bbf\u95ee\u5ef6\u8fdf\uff08\u6700\u5927\uff0c\u6700\u5c0f\uff0c\u8bc4\u4f30\uff09\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(metric='min:latency',index=\\\"ltm-fluentd-*\\\", timefield=timestamp).label(\\\"Min Real Response For Requesting\\\"),.es(metric='max:latency',index=\\\"ltm-fluentd-*\\\", timefield=timestamp).label(\\\" Max Real Response For Requesting\\\"),.es(metric='avg:latency',index=ltm-fluentd-*, timefield=timestamp).label(\\\"Avg Real Response For Requesting\\\"),\",\"interval\":\"auto\",\"type\":\"timelion\"},\"aggs\":[]}", 
+        "visState": "{\"title\":\"vis.\u5168\u5c40\u5b9e\u65f6\u8bbf\u95ee\u5ef6\u8fdf\uff08\u6700\u5927\uff0c\u6700\u5c0f\uff0c\u8bc4\u4f30\uff09\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(metric='min:latency',index=\\\"ltm-fluentd-*\\\", timefield=timestamp).label(\\\"Min Real Response For Requesting\\\"),.es(metric='max:latency',index=\\\"ltm-fluentd-*\\\", timefield=timestamp).label(\\\" Max Real Response For Requesting\\\"),.es(metric='avg:latency',index=ltm-fluentd-*, timefield=timestamp).label(\\\"Avg Real Response For Requesting\\\"),\",\"interval\":\"auto\",\"type\":\"timelion\"},\"aggs\":[]}", 
         "description": "", 
-        "title": "\u5168\u5c40\u5b9e\u65f6\u8bbf\u95ee\u5ef6\u8fdf\uff08\u6700\u5927\uff0c\u6700\u5c0f\uff0c\u8bc4\u4f30\uff09", 
+        "title": "vis.\u5168\u5c40\u5b9e\u65f6\u8bbf\u95ee\u5ef6\u8fdf\uff08\u6700\u5927\uff0c\u6700\u5c0f\uff0c\u8bc4\u4f30\uff09", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -312,16 +312,16 @@
       "id": "AV_mWT9NtzVZhbjXBKMJ"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQyLDFd", 
+      "updated_at": "2020-02-06T11:41:28.148Z", 
+      "version": "WzczLDFd", 
       "references": [], 
       "migrationVersion": {
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5173\u952eAPI\u5b9e\u65f6\u54cd\u5e94\u5ef6\u8fdf\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(metric='avg:latency',q='uri=\\\"/index.html\\\"',index=\\\"ltm-fluentd-*\\\",timefield=timestamp).label(\\\"Avg Response delay For Key API index.html\\\"),.es(metric='max:latency',q='uri=\\\"/index.html\\\"',index=\\\"ltm-fluentd-*\\\",timefield=timestamp).label(\\\"Max Response delay For Key API /index.html\\\"),.es(metric='avg:latency',q='uri=\\\"/index.html\\\"',index=\\\"ltm-fluentd-*\\\",timefield=timestamp).label(\\\"Min Response delay For Key API index.html\\\")\",\"interval\":\"auto\",\"type\":\"timelion\"},\"aggs\":[]}", 
+        "visState": "{\"title\":\"vis.\u5173\u952eAPI\u5b9e\u65f6\u54cd\u5e94\u5ef6\u8fdf\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(metric='avg:latency',q='uri=\\\"/index.html\\\"',index=\\\"ltm-fluentd-*\\\",timefield=timestamp).label(\\\"Avg Response delay For Key API index.html\\\"),.es(metric='max:latency',q='uri=\\\"/index.html\\\"',index=\\\"ltm-fluentd-*\\\",timefield=timestamp).label(\\\"Max Response delay For Key API /index.html\\\"),.es(metric='avg:latency',q='uri=\\\"/index.html\\\"',index=\\\"ltm-fluentd-*\\\",timefield=timestamp).label(\\\"Min Response delay For Key API index.html\\\")\",\"interval\":\"auto\",\"type\":\"timelion\"},\"aggs\":[]}", 
         "description": "", 
-        "title": "\u5173\u952eAPI\u5b9e\u65f6\u54cd\u5e94\u5ef6\u8fdf", 
+        "title": "vis.\u5173\u952eAPI\u5b9e\u65f6\u54cd\u5e94\u5ef6\u8fdf", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -332,8 +332,8 @@
       "id": "AV_mrkcVtzVZhbjXBKQx"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQzLDFd", 
+      "updated_at": "2020-02-06T11:42:49.853Z", 
+      "version": "Wzc3LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -345,9 +345,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u79d2\u6740\u5165\u53e3\u5b9e\u65f6\u8bbf\u95ee\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 30 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"entry\",\"language\":\"lucene\"},\"label\":\"\u79d2\u6740\u5165\u53e3\"}]}}]}", 
+        "visState": "{\"title\":\"vis.\u79d2\u6740\u5165\u53e3\u5b9e\u65f6\u8bbf\u95ee\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 30 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"entry\",\"language\":\"lucene\"},\"label\":\"\u79d2\u6740\u5165\u53e3\"}]}}]}", 
         "description": "", 
-        "title": "\u79d2\u6740\u5165\u53e3\u5b9e\u65f6\u8bbf\u95ee", 
+        "title": "vis.\u79d2\u6740\u5165\u53e3\u5b9e\u65f6\u8bbf\u95ee", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -358,8 +358,8 @@
       "id": "AV_m7MQptzVZhbjXBKXO"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQ0LDFd", 
+      "updated_at": "2020-02-06T11:39:59.024Z", 
+      "version": "WzY1LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -371,21 +371,21 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\n  \"title\": \"\u79d2\u6740\u5b9d\u8d1d\u8be6\u60c5\u9875\u5b9e\u65f6\u8bbf\u95ee\",\n  \"type\": \"line\",\n  \"params\": {\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"timestamp per 30 seconds\"\n        }\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Count\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"line\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"Count\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"interpolate\": \"cardinal\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"top\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"type\": \"line\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"timestamp\",\n        \"interval\": \"auto\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": \"detail\",\n              \"language\": \"lucene\"\n            },\n            \"label\": \"\u79d2\u6740\u5b9d\u8d1d\u8be6\u60c5\u9875\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}", 
+        "visState": "{\"title\":\"vis.\u79d2\u6740\u5b9d\u8d1d\u8be6\u60c5\u9875\u5b9e\u65f6\u8bbf\u95ee\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 30 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"detail\",\"language\":\"lucene\"},\"label\":\"\u79d2\u6740\u5b9d\u8d1d\u8be6\u60c5\u9875\"}]}}]}", 
         "description": "", 
-        "title": "\u79d2\u6740\u5b9d\u8d1d\u8be6\u60c5\u9875\u5b9e\u65f6\u8bbf\u95ee", 
+        "title": "vis.\u79d2\u6740\u5b9d\u8d1d\u8be6\u60c5\u9875\u5b9e\u65f6\u8bbf\u95ee", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\n  \"query\": {\n    \"query\": {\n      \"match_all\": {}\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
         }
       }, 
       "type": "visualization", 
       "id": "AV_m7qintzVZhbjXBKXP"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQ1LDFd", 
+      "updated_at": "2020-02-06T11:39:49.840Z", 
+      "version": "WzY0LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -397,13 +397,13 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\n  \"title\": \"\u79d2\u6740\u5b9e\u65f6\u652f\u4ed8\u4ea4\u6613\u7b14\u6570\",\n  \"type\": \"line\",\n  \"params\": {\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"timestamp per 30 seconds\"\n        }\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Count\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"line\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"Count\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"interpolate\": \"cardinal\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"top\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"type\": \"line\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"timestamp\",\n        \"interval\": \"auto\",\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"3\",\n      \"enabled\": true,\n      \"type\": \"filters\",\n      \"schema\": \"group\",\n      \"params\": {\n        \"filters\": [\n          {\n            \"input\": {\n              \"query\": \"pay\",\n              \"language\": \"lucene\"\n            },\n            \"label\": \"\u79d2\u6740\u652f\u4ed8\u4ea4\u6613\"\n          }\n        ]\n      }\n    }\n  ],\n  \"listeners\": {}\n}", 
+        "visState": "{\"title\":\"vis.\u79d2\u6740\u5b9e\u65f6\u652f\u4ed8\u4ea4\u6613\u7b14\u6570\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per 30 seconds\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"pay\",\"language\":\"lucene\"},\"label\":\"\u79d2\u6740\u652f\u4ed8\u4ea4\u6613\"}]}}]}", 
         "description": "", 
-        "title": "\u79d2\u6740\u5b9e\u65f6\u652f\u4ed8\u4ea4\u6613\u7b14\u6570", 
+        "title": "vis.\u79d2\u6740\u5b9e\u65f6\u652f\u4ed8\u4ea4\u6613\u7b14\u6570", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\n  \"query\": {\n    \"query\": {\n      \"match_all\": {}\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
         }
       }, 
       "type": "visualization", 
@@ -436,8 +436,8 @@
       "id": "AV_nC-wmtzVZhbjXBKiD"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQ3LDFd", 
+      "updated_at": "2020-02-06T11:40:26.797Z", 
+      "version": "WzY3LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -449,9 +449,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u6d4f\u89c8\u5668\u7c7b\u578b\u5206\u5e03\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"legendPosition\":\"top\",\"type\":\"pie\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user-agent.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "visState": "{\"title\":\"vis.\u6d4f\u89c8\u5668\u7c7b\u578b\u5206\u5e03\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":true,\"legendPosition\":\"top\",\"type\":\"pie\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"user-agent.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
         "description": "", 
-        "title": "\u6d4f\u89c8\u5668\u7c7b\u578b\u5206\u5e03", 
+        "title": "vis.\u6d4f\u89c8\u5668\u7c7b\u578b\u5206\u5e03", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -462,8 +462,8 @@
       "id": "AV_nHL_KtzVZhbjXBKmu"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQ4LDFd", 
+      "updated_at": "2020-02-06T11:41:35.372Z", 
+      "version": "Wzc0LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -475,9 +475,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5173\u8054\u9875\u9762\u8bbf\u95ee\u903b\u8f91\u7edf\u8ba1\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per minute\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm\"}},\"params\":{\"date\":true,\"interval\":\"PT1M\",\"format\":\"HH:mm\",\"bounds\":{\"min\":\"2020-02-03T05:20:41.558Z\",\"max\":\"2020-02-03T05:35:41.558Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"count\"}],\"series\":[{\"accessor\":1,\"format\":{},\"params\":{},\"aggType\":\"filters\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"m\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"entry\",\"language\":\"lucene\"},\"label\":\"\u767b\u5f55\u9875\"},{\"input\":{\"query\":\"detail\",\"language\":\"lucene\"},\"label\":\"\u8be6\u60c5\u9875\"},{\"input\":{\"query\":\"pay\",\"language\":\"lucene\"},\"label\":\"\u652f\u4ed8\u9875\"},{\"input\":{\"query\":\"*index.html*\",\"language\":\"lucene\"},\"label\":\"\u6d4f\u89c8\u9875\"}]}}]}", 
+        "visState": "{\"title\":\"vis.\u5173\u8054\u9875\u9762\u8bbf\u95ee\u903b\u8f91\u7edf\u8ba1\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"timestamp per minute\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm\"}},\"params\":{\"date\":true,\"interval\":\"PT1M\",\"format\":\"HH:mm\",\"bounds\":{\"min\":\"2020-02-03T05:20:41.558Z\",\"max\":\"2020-02-03T05:35:41.558Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"count\"}],\"series\":[{\"accessor\":1,\"format\":{},\"params\":{},\"aggType\":\"filters\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"m\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"entry\",\"language\":\"lucene\"},\"label\":\"\u767b\u5f55\u9875\"},{\"input\":{\"query\":\"detail\",\"language\":\"lucene\"},\"label\":\"\u8be6\u60c5\u9875\"},{\"input\":{\"query\":\"pay\",\"language\":\"lucene\"},\"label\":\"\u652f\u4ed8\u9875\"},{\"input\":{\"query\":\"*index.html*\",\"language\":\"lucene\"},\"label\":\"\u6d4f\u89c8\u9875\"}]}}]}", 
         "description": "", 
-        "title": "\u5173\u8054\u9875\u9762\u8bbf\u95ee\u903b\u8f91\u7edf\u8ba1", 
+        "title": "vis.\u5173\u8054\u9875\u9762\u8bbf\u95ee\u903b\u8f91\u7edf\u8ba1", 
         "uiStateJSON": "{\"vis\":{\"colors\":{\"uri :index* \":\"#3F2B5B\",\"\u9996\u9875\u6d4f\u89c8\":\"#967302\"}}}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -488,8 +488,8 @@
       "id": "AV_pG4kotzVZhbjXBKqA"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzQ5LDFd", 
+      "updated_at": "2020-02-06T11:40:42.320Z", 
+      "version": "WzY5LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -501,9 +501,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5ba2\u6237\u7aefIP Top20\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"type\":\"pie\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"ClientsIP\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"client-ip\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":20,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "visState": "{\"title\":\"vis.\u5ba2\u6237\u7aefIP Top20\",\"type\":\"pie\",\"params\":{\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"type\":\"pie\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"ClientsIP\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"client-ip\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":20,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
         "description": "", 
-        "title": "\u5ba2\u6237\u7aefIP Top20", 
+        "title": "vis.\u5ba2\u6237\u7aefIP Top20", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -514,8 +514,8 @@
       "id": "AWAFDeGJPAYiU8N0oSpj"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzUwLDFd", 
+      "updated_at": "2020-02-06T11:39:29.447Z", 
+      "version": "WzYyLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -527,21 +527,21 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\n  \"title\": \"\u8bbf\u5ba2\u57ce\u5e02\u5206\u5e03\",\n  \"type\": \"pie\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTooltip\": true,\n    \"isDonut\": false,\n    \"legendPosition\": \"right\",\n    \"type\": \"pie\"\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"city.keyword\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\"\n      }\n    }\n  ],\n  \"listeners\": {}\n}", 
+        "visState": "{\"title\":\"vis.\u8bbf\u5ba2\u57ce\u5e02\u5206\u5e03-f\",\"type\":\"pie\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"isDonut\":false,\"legendPosition\":\"right\",\"type\":\"pie\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"city.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":20,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
         "description": "", 
-        "title": "\u8bbf\u5ba2\u57ce\u5e02\u5206\u5e03", 
-        "uiStateJSON": "{\n  \"spy\": {\n    \"mode\": {\n      \"name\": null,\n      \"fill\": false\n    }\n  }\n}", 
+        "title": "vis.\u8bbf\u5ba2\u57ce\u5e02\u5206\u5e03-f", 
+        "uiStateJSON": "{\"spy\":{\"mode\":{\"name\":null,\"fill\":false}}}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\n  \"query\": {\n    \"query\": {\n      \"match_all\": {}\n    },\n    \"language\": \"lucene\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
         }
       }, 
       "type": "visualization", 
       "id": "AWAFe7efPAYiU8N0oSxg"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzUxLDFd", 
+      "updated_at": "2020-02-06T11:38:04.506Z", 
+      "version": "WzYxLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -553,9 +553,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u6bcf\u7ebf\u8def\u8bbf\u95ee\u6570\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"timestamp per second\"},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"top\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}],\"labels\":{\"show\":false},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"vs_name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "visState": "{\"title\":\"vis.\u6bcf\u7ebf\u8def\u8bbf\u95ee\u6570\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"timestamp per second\"},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"top\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}],\"labels\":{\"show\":false},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"vs_name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
         "description": "", 
-        "title": "\u6bcf\u7ebf\u8def\u8bbf\u95ee\u6570", 
+        "title": "vis.\u6bcf\u7ebf\u8def\u8bbf\u95ee\u6570", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -566,16 +566,16 @@
       "id": "AWAGBYfbPAYiU8N0oTFr"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzUyLDFd", 
+      "updated_at": "2020-02-06T11:39:42.562Z", 
+      "version": "WzYzLDFd", 
       "references": [], 
       "migrationVersion": {
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u7ebf\u8def\u5e73\u5747\u5ef6\u8fdf\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(metric='avg:latency',q=vs-l7-80,index=ltm-fluentd-*,timefield=timestamp).label(\\\"\u7ebf\u8def1\u5e73\u5747\u5ef6\u8fdf\\\",),.es(metric='avg:delay_value',q=vs-l4-84,index=ltm-fluentd-*,timefield=timestamp).label(\\\"\u7ebf\u8def2\u5e73\u5747\u5ef6\u8fdf\\\",),\",\"interval\":\"auto\",\"type\":\"timelion\"},\"aggs\":[]}", 
+        "visState": "{\"title\":\"vis.\u7ebf\u8def\u5e73\u5747\u5ef6\u8fdf\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(metric='avg:latency',q=vs-l7-80,index=ltm-fluentd-*,timefield=timestamp).label(\\\"\u7ebf\u8def1\u5e73\u5747\u5ef6\u8fdf\\\",),.es(metric='avg:delay_value',q=vs-l4-84,index=ltm-fluentd-*,timefield=timestamp).label(\\\"\u7ebf\u8def2\u5e73\u5747\u5ef6\u8fdf\\\",),\",\"interval\":\"auto\",\"type\":\"timelion\"},\"aggs\":[]}", 
         "description": "", 
-        "title": "\u7ebf\u8def\u5e73\u5747\u5ef6\u8fdf", 
+        "title": "vis.\u7ebf\u8def\u5e73\u5747\u5ef6\u8fdf", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -586,8 +586,8 @@
       "id": "AWAGEzhgPAYiU8N0oTJs"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzUzLDFd", 
+      "updated_at": "2020-02-06T11:40:34.843Z", 
+      "version": "WzY4LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -599,9 +599,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5e94\u7528\u5386\u53f2\u54cd\u5e94\u8d8b\u52bf\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"\u5e74\u5ea6\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"\u5e74\u5ea6\u5386\u53f2\u66f2\u7ebf\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"\u5e74\u5ea6\u5386\u53f2\u66f2\u7ebf\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"latency\",\"customLabel\":\"\u5e74\u5ea6\u5386\u53f2\u66f2\u7ebf\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"10m\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\u5e74\u5ea6\"}}]}", 
+        "visState": "{\"title\":\"vis.\u5e94\u7528\u5386\u53f2\u54cd\u5e94\u8d8b\u52bf\",\"type\":\"line\",\"params\":{\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{\"text\":\"\u5e74\u5ea6\"}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"\u5e74\u5ea6\u5386\u53f2\u66f2\u7ebf\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"\u5e74\u5ea6\u5386\u53f2\u66f2\u7ebf\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"times\":[],\"addTimeMarker\":false,\"type\":\"line\",\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"latency\",\"customLabel\":\"\u5e74\u5ea6\u5386\u53f2\u66f2\u7ebf\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"useNormalizedEsInterval\":true,\"interval\":\"10m\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\u5e74\u5ea6\"}}]}", 
         "description": "", 
-        "title": "\u5e94\u7528\u5386\u53f2\u54cd\u5e94\u8d8b\u52bf", 
+        "title": "vis.\u5e94\u7528\u5386\u53f2\u54cd\u5e94\u8d8b\u52bf", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -612,8 +612,8 @@
       "id": "AWAGmxDIPAYiU8N0oTZK"
     }, 
     {
-      "updated_at": "2020-02-06T09:50:33.741Z", 
-      "version": "WzU0LDFd", 
+      "updated_at": "2020-02-06T11:41:21.229Z", 
+      "version": "WzcyLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -625,9 +625,9 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"\u5728\u7ebf\u7528\u6237 Top 10\",\"type\":\"line\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"timestamp per 10 seconds\"},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"labels\":{},\"legendPosition\":\"top\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"\u5728\u7ebf\u7528\u6237\u6570\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":\"true\",\"showCircles\":true,\"type\":\"line\",\"valueAxis\":\"ValueAxis-1\"}],\"thresholdLine\":{\"color\":\"#34130C\",\"show\":false,\"style\":\"full\",\"value\":10,\"width\":1},\"times\":[],\"type\":\"line\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"\u5728\u7ebf\u7528\u6237\u6570\"},\"type\":\"value\"}],\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT10S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-02-04T04:14:16.633Z\",\"max\":\"2020-02-04T04:44:16.633Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"cardinality\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"username.keyword\",\"customLabel\":\"\u5728\u7ebf\u7528\u6237\u6570\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-30m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"username.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":10,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
+        "visState": "{\"title\":\"vis.\u5728\u7ebf\u7528\u6237 Top 10\",\"type\":\"line\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"timestamp per 10 seconds\"},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"labels\":{},\"legendPosition\":\"top\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"\u5728\u7ebf\u7528\u6237\u6570\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":\"true\",\"showCircles\":true,\"type\":\"line\",\"valueAxis\":\"ValueAxis-1\"}],\"thresholdLine\":{\"color\":\"#34130C\",\"show\":false,\"style\":\"full\",\"value\":10,\"width\":1},\"times\":[],\"type\":\"line\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"\u5728\u7ebf\u7528\u6237\u6570\"},\"type\":\"value\"}],\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT10S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-02-04T04:14:16.633Z\",\"max\":\"2020-02-04T04:44:16.633Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"cardinality\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"username.keyword\",\"customLabel\":\"\u5728\u7ebf\u7528\u6237\u6570\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-30m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"s\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"username.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":10,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}", 
         "description": "", 
-        "title": "\u5728\u7ebf\u7528\u6237 Top 10", 
+        "title": "vis.\u5728\u7ebf\u7528\u6237 Top 10", 
         "uiStateJSON": "{}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {

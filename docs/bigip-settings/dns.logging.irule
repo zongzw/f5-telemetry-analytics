@@ -1,0 +1,19 @@
+when DNS_REQUEST {
+    set clientip [IP::client_addr]
+    set clientport [UDP::client_port]
+    set listenerip [IP::local_addr]
+    set requestid [DNS::header id]
+    set qname [DNS::question name]
+    set qtype [DNS::question type]
+}
+when DNS_RESPONSE {
+    set hsl [HSL::open -proto UDP -pool logstash-pool]
+    set status [DNS::header rcode]
+    set origin [DNS::origin]
+    set elkdata "$static::tcl_platform(machine) $clientip $clientport $listenerip $requestid $qname $qtype $status $origin"
+    #log local0. $elkdata
+    
+    HSL::send $hsl $elkdata
+}
+
+# "%{HOSTNAME:F5hostname} %{IP:clientip} %{POSINT:clientport} %{IP:svrip} %{NUMBER:qid} %{HOSTNAME:qname} %{GREEDYDATA:qtype} %{GREEDYDATA:status} %{GREEDYDATA:origin}" }
