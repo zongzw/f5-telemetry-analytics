@@ -28,24 +28,31 @@ except Exception as e:
     print("failed to get disk usage info: %s" % e.message)
     sys.exit(1)
 
-for n in ['ltm-fluentd', 'errlogs']:
-    try:
-        index_pattern = n
-        r = requests.get(
-            "%s/%s-*/_stats" % (es_host, index_pattern),
-        )
-        docs_info = r.json()['_all']['total']['docs']
-        index_count = docs_info['count'] - docs_info['deleted']
-        collectd['%s-docs-count' % index_pattern] = index_count
-    except Exception as e:
-        print("failed to get index '%s''s stat: %s" % (index_pattern, e.message))
-        sys.exit(1)
+# ======================================
 
-tag_name = 'ltm-fluentd'
-datadir = os.path.join(workdir, 'data/fluentd', tag_name)
+# Get the count in dashboard instead.
+
+# for n in ['ltm-fluentd', 'errlogs']:
+#     try:
+#         index_pattern = n
+#         r = requests.get(
+#             "%s/%s-*/_stats" % (es_host, index_pattern),
+#         )
+#         docs_info = r.json()['_all']['total']['docs']
+#         index_count = docs_info['count'] - docs_info['deleted']
+#         collectd['%s-docs-count' % index_pattern] = index_count
+#     except Exception as e:
+#         print("failed to get index '%s''s stat: %s" % (index_pattern, e.message))
+#         sys.exit(1)
+
+# ======================================
+
+datadir = os.path.join(workdir, 'data/fluentd')
 print datadir
 workers_size = fluentd_buffer_size.get_subfolder_size(datadir)
 collectd['fluentd_size_bytes'] = workers_size
+
+# ======================================
 
 datestr = time.strftime("%Y.%m.%d", time.gmtime())
 timestr = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())

@@ -1,0 +1,56 @@
+{
+  "properties": {
+    "timestamp": {
+      "type": "date"
+    },
+    "kfk_data_size_m": {
+      "type": "long"
+    },
+    "total_size_m": {
+      "type": "long"
+    },
+    "avail_size_m": {
+      "type": "long"
+    },
+    "es_data_size_m": {
+      "type": "long"
+    },
+    "usage_rate": {
+      "type": "long"
+    },
+    "fluentd_size_bytes": {
+      "properties": {
+        "worker0": {
+          "type": "long"
+        },
+        "worker1": {
+          "type": "long"
+        },
+        "worker2": {
+          "type": "long"
+        },
+        "worker3": {
+          "type": "long"
+        },
+        "worker4": {
+          "type": "long"
+        },
+        "worker5": {
+          "type": "long"
+        },
+        "worker6": {
+          "type": "long"
+        },
+        "worker7": {
+          "type": "long"
+        }
+      }
+    },
+    "ltm-fluentd-docs-count": {
+      "type": "long"
+    },
+    "errlogs-docs-count": {
+      "type": "long"
+    }
+  }
+}

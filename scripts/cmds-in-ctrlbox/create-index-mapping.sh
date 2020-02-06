@@ -58,13 +58,14 @@ function get_n_hour_further_datestr() {
   done
 )
 
-echo -n "Creating aliases for ltm-fluentd-* and errlogs-* ... "
-curl -XPOST -s -w "%{http_code}" -H "Content-Type: application/json" $host_endpoint/_aliases -d'
-{
-    "actions" : [
-        { "add" : { "index" : "ltm-fluentd-*", "alias" : "all-ltm-fluentd-alias" } },
-        { "add" : { "index" : "errlogs-*", "alias" : "all-errlogs-alias" } }
-    ]
-}'
-echo
+# No elseplaces are using ltm-fluentd index alias.
+# echo -n "Creating aliases for ltm-fluentd-* and errlogs-* ... "
+# curl -XPOST -s -w "%{http_code}" -H "Content-Type: application/json" $host_endpoint/_aliases -d'
+# {
+#     "actions" : [
+#         { "add" : { "index" : "ltm-fluentd-*", "alias" : "all-ltm-fluentd-alias" } },
+#         { "add" : { "index" : "errlogs-*", "alias" : "all-errlogs-alias" } }
+#     ]
+# }'
+# echo
 
