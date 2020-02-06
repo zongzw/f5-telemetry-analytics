@@ -2,8 +2,8 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzExLDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzEwLDFd", 
       "references": [
         {
           "type": "visualization", 
@@ -61,8 +61,8 @@
       "id": "66cae1e0-1fe7-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzEyLDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzExLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -87,8 +87,8 @@
       "id": "7399c700-1fde-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzEzLDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzEyLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -113,8 +113,8 @@
       "id": "36a483d0-1fe3-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzE0LDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzEzLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -139,8 +139,8 @@
       "id": "8fc89a60-1fe2-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzE1LDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzE0LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -165,8 +165,8 @@
       "id": "8fcbfd20-1fdf-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzE2LDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzE1LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -191,8 +191,8 @@
       "id": "913ee280-1fe9-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:36:03.330Z", 
-      "version": "WzE3LDFd", 
+      "updated_at": "2020-02-06T09:50:29.619Z", 
+      "version": "WzE2LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -217,8 +217,8 @@
       "id": "a938c280-169c-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-06T07:50:54.656Z", 
-      "version": "Wzc4LDFd", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
+      "version": "WzksMV0=", 
       "references": [], 
       "migrationVersion": {
         "index-pattern": "6.5.0"

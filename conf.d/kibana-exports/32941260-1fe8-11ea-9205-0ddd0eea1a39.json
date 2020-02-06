@@ -2,7 +2,7 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzIsMV0=", 
       "references": [
         {
@@ -76,7 +76,7 @@
       "id": "32941260-1fe8-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzMsMV0=", 
       "references": [
         {
@@ -102,7 +102,7 @@
       "id": "d2fec220-1699-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzQsMV0=", 
       "references": [
         {
@@ -128,7 +128,7 @@
       "id": "03542990-1719-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzUsMV0=", 
       "references": [
         {
@@ -154,7 +154,7 @@
       "id": "0bfd0ab0-31f6-11ea-99e1-6193556b21bf"
     }, 
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzYsMV0=", 
       "references": [
         {
@@ -180,7 +180,7 @@
       "id": "33113460-16a2-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzcsMV0=", 
       "references": [
         {
@@ -206,7 +206,7 @@
       "id": "5954bca0-16a2-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-06T07:35:58.190Z", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
       "version": "WzgsMV0=", 
       "references": [
         {
@@ -232,8 +232,8 @@
       "id": "887bc070-1fd8-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-06T07:50:54.656Z", 
-      "version": "Wzc4LDFd", 
+      "updated_at": "2020-02-06T09:50:26.153Z", 
+      "version": "WzksMV0=", 
       "references": [], 
       "migrationVersion": {
         "index-pattern": "6.5.0"
