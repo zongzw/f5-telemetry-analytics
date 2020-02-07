@@ -1,0 +1,16 @@
+{
+  "properties": {
+    "timestamp": {
+      "type": "date"
+    },
+    "clientip": {
+      "type": "ip"
+    },
+    "svrip": {
+      "type": "ip"
+    },
+    "geo": {
+      "type": "geo_point"
+    }
+  }
+}

@@ -8,12 +8,86 @@ when DNS_REQUEST {
 }
 when DNS_RESPONSE {
     set hsl [HSL::open -proto UDP -pool logstash-pool]
+
+    set timestamp [clock format [clock seconds] -format "%Y-%m-%dT%T.000%z"]
     set status [DNS::header rcode]
     set origin [DNS::origin]
-    set elkdata "$static::tcl_platform(machine) $clientip $clientport $listenerip $requestid $qname $qtype $status $origin"
+
+    # set elkdata "$static::tcl_platform(machine) $clientip $clientport $listenerip $requestid $qname $qtype $status $origin"
+    set elkdata "{ \
+        \"timestamp\": \"$timestamp\", \
+        \"data_type\"
+        \"clientip\": \"$clientip\", \
+        \"clientport\": $clientport, \
+        
+        \"queryid\": \"$requestid\", \
+        
+        
+        \"status\": \"$status\", \
+        \"origin\": \"$origin\" \
+
+        .. request
+        \"F5hostname\": \"$static::tcl_platform(machine)\", \
+        viewname
+        \"queryname\": \"$qname\", \
+        \"querytype\": \"$qtype\", \
+        \"listenervs\": \"$listenerip\", \
+        routedomain  int
+
+        .. response
+        F5Reponsehostname
+        responsecode
+        responseflag
+        responsename
+        answer
+        emptyresponse
+
+
+
+    }"
     #log local0. $elkdata
     
     HSL::send $hsl $elkdata
 }
 
 # "%{HOSTNAME:F5hostname} %{IP:clientip} %{POSINT:clientport} %{IP:svrip} %{NUMBER:qid} %{HOSTNAME:qname} %{GREEDYDATA:qtype} %{GREEDYDATA:status} %{GREEDYDATA:origin}" }
+
+
+
+filter {
+  if [type] == 'f5-dns' and [message] =~ 'query:' {
+    grok {
+          match => { "message" => "%{TIMESTAMP_ISO8601:requesttime} %{HOSTNAME:F5hostname} qid %{NUMBER:queryid} from %{IP:clientip}#%{POSINT:clientport}: view %{GREEDYDATA:viewname}: query: %{HOSTNAME:queryname} IN %{GREEDYDATA:querytype} \+ \(%{IP:listenervs}\%%{NUMBER:routedomain}\)" }
+        }
+    geoip {
+         source => "clientip"
+         target => "geoip"
+    }
+    } else if [type] == 'f5-dns' and [message] =~ '; '{
+    grok {
+          match => { "message" => "%{TIMESTAMP_ISO8601:responsetime} %{HOSTNAME:F5Reponsehostname} qid %{NUMBER:queryid} to %{IP:clientip}#%{POSINT:clientport}: \[%{WORD:responsecode} %{GREEDYDATA:responseflag}\] response: %{HOSTNAME:responsename}\. %{GREEDYDATA:answer}" }
+          add_field => [ "iswideip", "no" ]
+    }
+    geoip {
+         source => "clientip"
+         target => "geoipresponse"
+    }
+    } else if [type] == 'f5-dns' and [message] =~ ': empty' {
+    grok {
+          match => { "message" => "%{TIMESTAMP_ISO8601:responsetime} %{HOSTNAME:F5Reponsehostname} qid %{NUMBER:queryid} to %{IP:clientip}#%{POSINT:clientport}: \[%{WORD:responsecode} %{GREEDYDATA:responseflag}\] response: %{GREEDYDATA:answer}" }
+          add_field => [ "emptyresponse", "yes" ]
+    }
+    geoip {
+         source => "clientip"
+         target => "geoipresponse"
+    }
+    } else if [type] == 'f5-dns' {
+    grok {
+          match => { "message" => "%{TIMESTAMP_ISO8601:responsetime} %{HOSTNAME:F5Reponsehostname} qid %{NUMBER:queryid} to %{IP:clientip}#%{POSINT:clientport}: \[%{WORD:responsecode} %{GREEDYDATA:responseflag}\] response: %{HOSTNAME:responsename}\. %{GREEDYDATA:answer}" }
+    }
+    geoip {
+         source => "clientip"
+         target => "geoipresponse"
+    }
+    }
+}

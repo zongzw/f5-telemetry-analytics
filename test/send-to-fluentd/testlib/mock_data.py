@@ -1,6 +1,7 @@
 import random
 import timeutils
 import json
+import uuid
 
 RESPCODES = [200, 200, 200, 200, 200, 200, 202, 202, 204, 204, 400, 401, 404, 410, 500, 503]
 MAXCOUNT = 4000
@@ -69,6 +70,15 @@ URIS = [
     '/search'
 ]
 
+PORTS = [56002, 34563, 34345, 33746, 3344, 23345]
+
+QNAMES = [
+    'www.baidu.com',
+    'httrack.website.com.cn',
+    'google.com',
+    'www.myf5.net'
+]
+
 def mock_logging_data_20001(ts, concurrency):
     #{
     # "timestamp": "$DATE_YYYY-$DATE_MM-${DATE_DD}T${TIME_HMS}.000Z", 
@@ -104,7 +114,7 @@ def mock_logging_data_20001(ts, concurrency):
         "latency": random.randint(1, 20),
         "resp-status": random.choice(RESPCODES),
         "sender": "zongzw %0d" % random.randint(0, 100),
-        "stdout": "KO",
+        "stdout": "OK",
 
         'vs_name': random.choice(['/Common/vs-l4-84', '/Common/vs-l7-80']),
         'client_remote_port': random.choice([56002, 34563, 34345, 33746, 3344, 23345]),
@@ -118,5 +128,57 @@ def mock_logging_data_20001(ts, concurrency):
         'cdnumber': random.randint(1, 4)
     }
     
+    return json.dumps(jdata)
+
+HOSTNAMES = ['8bc234-245dacd.bigip.local', '58db82ad-2452badd.bigip.local']
+def mock_logging_data_20002(ts, concurrency):
+
+    rand_src = random.choice(SOURCES)
+    user_agent = random.choice(USER_AGENTS)
+    rand_dest = random.choice(DESTINATIONS)
+    jdata = {
+        "timestamp": timeutils.ts2str(ts),
+        "clientip": rand_src,
+        'clientport': random.choice(PORTS),
+        'queryid': "%x" % random.randint(0, 100000),
+        'origin': random.choice(QNAMES),
+        'status': random.choice(['OK', 'FAILED']),
+        
+        "stdout": "OK"
+    }
+
+    def rand_request():
+        d = {
+            "data_type": 'request',
+            "F5hostname": random.choice(HOSTNAMES),
+            "viewname": random.choice(['aaa', 'bbb', 'none', 'none']),
+            'listenervs': rand_dest,
+            'queryname': random.choice(QNAMES),
+            'querytype': random.choice(['A', 'AAAA', 'MX']),
+            'routedomain': random.randint(1, 10)
+        }
+        return d
+
+    def rand_response():
+        d = {
+            "data_type": 'response',
+            "F5Reponsehostname": random.choice(HOSTNAMES),
+            "responsecode": random.choice(['OK', 'FAILED']),
+            "responseflag": random.choice(['what', 'is', 'a', 'flag', 'qr']),
+            'responsename': random.choice(HOSTNAMES),
+            'answer': random.choice(SOURCES)
+        }
+
+        if random.randint(0, 10) > 5: 
+            d['emptyresponse'] = 'yes' 
+        if random.randint(0, 10) > 5:
+            d['iswideip'] = 'no'
+
+        return  d
+    
+    f = random.choice([rand_request, rand_response])
+    jd = f()
+
+    jdata = dict(jdata.items() + jd.items())
     return json.dumps(jdata)
     
