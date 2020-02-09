@@ -263,8 +263,8 @@
       "id": "41155af0-4aeb-11ea-b817-21b2c9686cd6"
     }, 
     {
-      "updated_at": "2020-02-09T03:39:50.781Z", 
-      "version": "WzE4NSwyXQ==", 
+      "updated_at": "2020-02-09T12:52:06.194Z", 
+      "version": "WzI1MCwyXQ==", 
       "references": [
         {
           "type": "index-pattern", 
@@ -276,7 +276,7 @@
         "visualization": "7.3.1"
       }, 
       "attributes": {
-        "visState": "{\"title\":\"vis.\u670d\u52a1\u5668\u54cd\u5e94\u8d44\u6e90\u5927\u5c0f\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\",\"percentageCol\":\"\",\"dimensions\":{\"metrics\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"avg\"}],\"buckets\":[{\"accessor\":0,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"transmission.resource_size\",\"customLabel\":\"Resource Name\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"transmission.resource_name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":15,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Resource Size\"}}]}", 
+        "visState": "{\"title\":\"vis.\u670d\u52a1\u5668\u54cd\u5e94\u8d44\u6e90\u5927\u5c0f\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\",\"percentageCol\":\"\",\"dimensions\":{\"metrics\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"avg\"}],\"buckets\":[{\"accessor\":0,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"transmission.resource_size\",\"customLabel\":\"Resource Size(Bytes)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"transmission.resource_name.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":15,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Resource Names\"}}]}", 
         "description": "", 
         "title": "vis.\u670d\u52a1\u5668\u54cd\u5e94\u8d44\u6e90\u5927\u5c0f", 
         "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}", 
