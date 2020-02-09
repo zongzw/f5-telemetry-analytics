@@ -57,18 +57,18 @@ METHODS = [
     'GET', 'POST', 'DELETE', 'PUT', 'PATCH', 'GET', 'POST', 'PUT', 'GET'
 ]
 
-URIS = [
-    '/index.html',
-    '/pages/344',
-    '/images',
-    '/',
-    '/gsts.tar.gz',
-    '/p/c8edab99173d',
-    '/search',
-    '/index.html',
-    '/',
-    '/search'
-]
+URIS = {
+    '/index.html': {'size': 4353},
+    '/pages/344': {'size': 344},
+    '/images': {'size': 451024},
+    '/': {'size': 45},
+    '/gsts.tar.gz': {'size': 2*1024*1024},
+    '/p/c8edab99173d': {'size': 2254},
+    '/search': {'size': 4321},
+    '/index.html': {'size': 53243},
+    '/': {'size': 23434},
+    '/search': {'size': 2334}
+}
 
 PORTS = [56002, 34563, 34345, 33746, 3344, 23345]
 
@@ -99,6 +99,7 @@ def mock_logging_data_20001(ts, concurrency):
     rand_src = random.choice(SOURCES)
     user_agent = random.choice(USER_AGENTS)
     rand_dest = random.choice(DESTINATIONS)
+    uri = random.choice(URIS.keys())
     jdata = {
         "timestamp": timeutils.ts2str(ts),
         "client-ip": rand_src,
@@ -107,7 +108,7 @@ def mock_logging_data_20001(ts, concurrency):
         "user-agent": user_agent,
         "cookie": "",
         "method": random.choice(METHODS),
-        "uri": random.choice(URIS),
+        "uri": uri,
         "username": random.choice(USERNAMES),
         "content-type": "application/json",
         "server-ip": rand_dest,
@@ -125,7 +126,12 @@ def mock_logging_data_20001(ts, concurrency):
         'server_remote_port': random.choice([84, 80]),
         'delay_type': random.choice(['svr-pkts-delay', 'init-delay', 'HS-delay']),
         'delay_value': random.randint(1, 10),
-        'cdnumber': random.randint(1, 4)
+        'cdnumber': random.randint(1, 4),
+
+        'transmission': {
+            'resource_size': URIS[uri]['size'],
+            'resource_name': uri
+        }
     }
     
     return json.dumps(jdata)
