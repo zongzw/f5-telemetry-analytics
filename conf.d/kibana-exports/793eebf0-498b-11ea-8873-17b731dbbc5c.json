@@ -2,8 +2,8 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-02-07T09:23:17.167Z", 
-      "version": "WzEzMiwxXQ==", 
+      "updated_at": "2020-02-10T08:20:35.459Z", 
+      "version": "WzI4NywyXQ==", 
       "references": [
         {
           "type": "visualization", 
@@ -63,27 +63,27 @@
         {
           "type": "visualization", 
           "name": "panel_11", 
-          "id": "AV_PJ-FsRbtHwzUyaf6Z"
-        }, 
-        {
-          "type": "visualization", 
-          "name": "panel_12", 
           "id": "AV_PWsqERbtHwzUyaikV"
         }, 
         {
           "type": "visualization", 
-          "name": "panel_13", 
+          "name": "panel_12", 
           "id": "AV_UeVzlahc_BaW5vIZp"
         }, 
         {
           "type": "visualization", 
-          "name": "panel_14", 
+          "name": "panel_13", 
           "id": "AV_UoK7dahc_BaW5vIca"
         }, 
         {
           "type": "visualization", 
-          "name": "panel_15", 
+          "name": "panel_14", 
           "id": "AV_XiVvbTxv7C46ooH4t"
+        }, 
+        {
+          "type": "visualization", 
+          "name": "panel_15", 
+          "id": "7ecbdc50-4bd8-11ea-b817-21b2c9686cd6"
         }
       ], 
       "migrationVersion": {
@@ -94,7 +94,7 @@
         "timeRestore": false, 
         "description": "", 
         "title": "das.DNS \u57df\u540d\u89e3\u6790\u89c6\u56fe", 
-        "panelsJSON": "[{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":20,\"i\":\"1\"},\"panelIndex\":\"1\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":20,\"i\":\"2\"},\"panelIndex\":\"2\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":12,\"y\":52,\"w\":24,\"h\":12,\"i\":\"3\"},\"panelIndex\":\"3\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":64,\"w\":12,\"h\":12,\"i\":\"4\"},\"panelIndex\":\"4\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":52,\"w\":12,\"h\":12,\"i\":\"5\"},\"panelIndex\":\"5\",\"embeddableConfig\":{},\"panelRefName\":\"panel_4\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":36,\"y\":52,\"w\":12,\"h\":12,\"i\":\"7\"},\"panelIndex\":\"7\",\"embeddableConfig\":{},\"panelRefName\":\"panel_5\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":36,\"y\":64,\"w\":12,\"h\":12,\"i\":\"8\"},\"panelIndex\":\"8\",\"embeddableConfig\":{},\"panelRefName\":\"panel_6\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":12,\"y\":64,\"w\":24,\"h\":12,\"i\":\"9\"},\"panelIndex\":\"9\",\"embeddableConfig\":{},\"panelRefName\":\"panel_7\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":40,\"w\":12,\"h\":12,\"i\":\"10\"},\"panelIndex\":\"10\",\"embeddableConfig\":{},\"panelRefName\":\"panel_8\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":40,\"w\":12,\"h\":12,\"i\":\"11\"},\"panelIndex\":\"11\",\"embeddableConfig\":{},\"panelRefName\":\"panel_9\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":28,\"w\":16,\"h\":12,\"i\":\"12\"},\"panelIndex\":\"12\",\"embeddableConfig\":{},\"panelRefName\":\"panel_10\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":20,\"w\":48,\"h\":8,\"i\":\"13\"},\"panelIndex\":\"13\",\"embeddableConfig\":{},\"panelRefName\":\"panel_11\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":32,\"y\":28,\"w\":16,\"h\":12,\"i\":\"14\"},\"panelIndex\":\"14\",\"embeddableConfig\":{},\"panelRefName\":\"panel_12\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":16,\"y\":28,\"w\":16,\"h\":12,\"i\":\"16\"},\"panelIndex\":\"16\",\"embeddableConfig\":{},\"panelRefName\":\"panel_13\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":12,\"y\":40,\"w\":12,\"h\":12,\"i\":\"17\"},\"panelIndex\":\"17\",\"embeddableConfig\":{},\"panelRefName\":\"panel_14\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":36,\"y\":40,\"w\":12,\"h\":12,\"i\":\"18\"},\"panelIndex\":\"18\",\"embeddableConfig\":{},\"panelRefName\":\"panel_15\"}]", 
+        "panelsJSON": "[{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":20,\"i\":\"1\"},\"panelIndex\":\"1\",\"embeddableConfig\":{},\"panelRefName\":\"panel_0\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":20,\"i\":\"2\"},\"panelIndex\":\"2\",\"embeddableConfig\":{},\"panelRefName\":\"panel_1\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":12,\"y\":54,\"w\":24,\"h\":12,\"i\":\"3\"},\"panelIndex\":\"3\",\"embeddableConfig\":{},\"panelRefName\":\"panel_2\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":66,\"w\":12,\"h\":12,\"i\":\"4\"},\"panelIndex\":\"4\",\"embeddableConfig\":{},\"panelRefName\":\"panel_3\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":54,\"w\":12,\"h\":12,\"i\":\"5\"},\"panelIndex\":\"5\",\"embeddableConfig\":{},\"panelRefName\":\"panel_4\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":36,\"y\":54,\"w\":12,\"h\":12,\"i\":\"7\"},\"panelIndex\":\"7\",\"embeddableConfig\":{},\"panelRefName\":\"panel_5\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":36,\"y\":66,\"w\":12,\"h\":12,\"i\":\"8\"},\"panelIndex\":\"8\",\"embeddableConfig\":{},\"panelRefName\":\"panel_6\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":12,\"y\":66,\"w\":24,\"h\":12,\"i\":\"9\"},\"panelIndex\":\"9\",\"embeddableConfig\":{},\"panelRefName\":\"panel_7\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":24,\"y\":42,\"w\":12,\"h\":12,\"i\":\"10\"},\"panelIndex\":\"10\",\"embeddableConfig\":{},\"panelRefName\":\"panel_8\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":42,\"w\":12,\"h\":12,\"i\":\"11\"},\"panelIndex\":\"11\",\"embeddableConfig\":{},\"panelRefName\":\"panel_9\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":30,\"w\":16,\"h\":12,\"i\":\"12\"},\"panelIndex\":\"12\",\"embeddableConfig\":{},\"panelRefName\":\"panel_10\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":32,\"y\":30,\"w\":16,\"h\":12,\"i\":\"14\"},\"panelIndex\":\"14\",\"embeddableConfig\":{},\"panelRefName\":\"panel_11\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":16,\"y\":30,\"w\":16,\"h\":12,\"i\":\"16\"},\"panelIndex\":\"16\",\"embeddableConfig\":{},\"panelRefName\":\"panel_12\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":12,\"y\":42,\"w\":12,\"h\":12,\"i\":\"17\"},\"panelIndex\":\"17\",\"embeddableConfig\":{},\"panelRefName\":\"panel_13\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":36,\"y\":42,\"w\":12,\"h\":12,\"i\":\"18\"},\"panelIndex\":\"18\",\"embeddableConfig\":{},\"panelRefName\":\"panel_14\"},{\"version\":\"7.4.1\",\"gridData\":{\"x\":0,\"y\":20,\"w\":48,\"h\":10,\"i\":\"0b0f0289-1c8d-444d-9704-454aada62999\"},\"panelIndex\":\"0b0f0289-1c8d-444d-9704-454aada62999\",\"embeddableConfig\":{},\"panelRefName\":\"panel_15\"}]", 
         "optionsJSON": "{\"darkTheme\":false}", 
         "version": 1, 
         "kibanaSavedObjectMeta": {
@@ -391,26 +391,6 @@
       "id": "AV_O-PDiRbtHwzUyX39f"
     }, 
     {
-      "updated_at": "2020-02-07T09:13:17.651Z", 
-      "version": "WzExNSwxXQ==", 
-      "references": [], 
-      "migrationVersion": {
-        "visualization": "7.3.1"
-      }, 
-      "attributes": {
-        "visState": "{\"title\":\"vis.\u5b9e\u65f6\u89e3\u6790\u8bf7\u6c42\u8d70\u52bf\",\"type\":\"timelion\",\"params\":{\"type\":\"timelion\",\"expression\":\".es(q=\\\"viewname=none\\\",index=\\\"dns-fluentd-*\\\",timefield=timestamp).label(\\\"Real Requests Requests\\\"),.es(q=\\\"responseflag=~ qr\\\",index=\\\"dns-fluentd-*\\\",timefield=timestamp).label(\\\"Realtime Reponses\\\"),.es(q=\\\"iswideip=no\\\",index=\\\"dns-fluentd-*\\\",timefield=timestamp).label(\\\"Realtime NotSmartResponses\\\")\",\"interval\":\"auto\"},\"aggs\":[]}", 
-        "description": "", 
-        "title": "vis.\u5b9e\u65f6\u89e3\u6790\u8bf7\u6c42\u8d70\u52bf", 
-        "uiStateJSON": "{}", 
-        "version": 1, 
-        "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"query\":{\"query\":{\"match_all\":{}},\"language\":\"lucene\"},\"filter\":[]}"
-        }
-      }, 
-      "type": "visualization", 
-      "id": "AV_PJ-FsRbtHwzUyaf6Z"
-    }, 
-    {
       "updated_at": "2020-02-07T09:19:34.770Z", 
       "version": "WzEyNywxXQ==", 
       "references": [
@@ -513,6 +493,32 @@
       }, 
       "type": "visualization", 
       "id": "AV_XiVvbTxv7C46ooH4t"
+    }, 
+    {
+      "updated_at": "2020-02-10T07:39:40.053Z", 
+      "version": "WzI3MiwyXQ==", 
+      "references": [
+        {
+          "type": "index-pattern", 
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index", 
+          "id": "94eb6860-496d-11ea-8873-17b731dbbc5c"
+        }
+      ], 
+      "migrationVersion": {
+        "visualization": "7.3.1"
+      }, 
+      "attributes": {
+        "visState": "{\"title\":\"vis.\u5b9e\u65f6\u89e3\u6790\u8bf7\u6c42\u8d70\u52bf\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"filter\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"labels\":{},\"thresholdLine\":{\"show\":false,\"value\":10,\"width\":1,\"style\":\"full\",\"color\":\"#34130C\"},\"dimensions\":{\"x\":{\"accessor\":0,\"format\":{\"id\":\"date\",\"params\":{\"pattern\":\"HH:mm:ss\"}},\"params\":{\"date\":true,\"interval\":\"PT30S\",\"format\":\"HH:mm:ss\",\"bounds\":{\"min\":\"2020-02-10T07:07:12.301Z\",\"max\":\"2020-02-10T07:37:12.301Z\"}},\"aggType\":\"date_histogram\"},\"y\":[{\"accessor\":2,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"count\"}],\"series\":[{\"accessor\":1,\"format\":{},\"params\":{},\"aggType\":\"filters\"}]}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"timeRange\":{\"from\":\"now-30m\",\"to\":\"now\"},\"useNormalizedEsInterval\":true,\"interval\":\"auto\",\"drop_partials\":false,\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"filters\",\"schema\":\"group\",\"params\":{\"filters\":[{\"input\":{\"query\":\"viewname.keyword : none\",\"language\":\"kuery\"},\"label\":\"Real Requests\"},{\"input\":{\"query\":\"responseflag.keyword :*qr*\",\"language\":\"kuery\"},\"label\":\"Realtime Responses\"},{\"input\":{\"query\":\"iswideip.keyword :\\\"no\\\" \",\"language\":\"kuery\"},\"label\":\"Realtime NotSmartResponses\"}]}}]}", 
+        "description": "", 
+        "title": "vis.\u5b9e\u65f6\u89e3\u6790\u8bf7\u6c42\u8d70\u52bf", 
+        "uiStateJSON": "{}", 
+        "version": 1, 
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      }, 
+      "type": "visualization", 
+      "id": "7ecbdc50-4bd8-11ea-b817-21b2c9686cd6"
     }, 
     {
       "updated_at": "2020-02-07T08:54:12.995Z", 
