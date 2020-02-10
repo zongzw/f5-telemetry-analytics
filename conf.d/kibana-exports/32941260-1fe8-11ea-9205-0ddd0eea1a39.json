@@ -2,8 +2,8 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzIsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzI1LDFd", 
       "references": [
         {
           "type": "visualization", 
@@ -76,8 +76,8 @@
       "id": "32941260-1fe8-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzMsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzI2LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -102,8 +102,8 @@
       "id": "d2fec220-1699-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzQsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzI3LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -128,8 +128,8 @@
       "id": "03542990-1719-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzUsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzI4LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -154,8 +154,8 @@
       "id": "0bfd0ab0-31f6-11ea-99e1-6193556b21bf"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzYsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzI5LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -180,8 +180,8 @@
       "id": "33113460-16a2-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzcsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzMwLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -206,8 +206,8 @@
       "id": "5954bca0-16a2-11ea-b8b8-657ec8a6203c"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:01.389Z", 
-      "version": "WzgsMV0=", 
+      "updated_at": "2020-02-10T08:34:49.745Z", 
+      "version": "WzMxLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -232,8 +232,8 @@
       "id": "887bc070-1fd8-11ea-9205-0ddd0eea1a39"
     }, 
     {
-      "updated_at": "2020-02-09T03:17:23.158Z", 
-      "version": "WzE4MSwyXQ==", 
+      "updated_at": "2020-02-10T08:34:44.486Z", 
+      "version": "WzI0LDFd", 
       "references": [], 
       "migrationVersion": {
         "index-pattern": "6.5.0"

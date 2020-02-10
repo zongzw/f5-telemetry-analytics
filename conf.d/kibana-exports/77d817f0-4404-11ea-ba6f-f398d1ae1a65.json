@@ -2,8 +2,8 @@
   "version": "7.4.1", 
   "objects": [
     {
-      "updated_at": "2020-02-10T08:17:16.256Z", 
-      "version": "WzI4NCwyXQ==", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzQ0LDFd", 
       "references": [
         {
           "type": "visualization", 
@@ -66,8 +66,8 @@
       "id": "77d817f0-4404-11ea-ba6f-f398d1ae1a65"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:05.606Z", 
-      "version": "WzE5LDFd", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzQ1LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -97,8 +97,8 @@
       "id": "AWIXmi0Uoz5dPjfN8oMu"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:05.606Z", 
-      "version": "WzIwLDFd", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzQ2LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -128,8 +128,8 @@
       "id": "547bbf70-4367-11ea-ba6f-f398d1ae1a65"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:05.606Z", 
-      "version": "WzIxLDFd", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzQ3LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -159,8 +159,8 @@
       "id": "AWIVKxrfoz5dPjfN8naj"
     }, 
     {
-      "updated_at": "2020-02-10T08:07:22.892Z", 
-      "version": "WzI3NywyXQ==", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzQ4LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -185,8 +185,8 @@
       "id": "428b5fa0-4bdc-11ea-b817-21b2c9686cd6"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:05.606Z", 
-      "version": "WzIzLDFd", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzQ5LDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -216,8 +216,8 @@
       "id": "AWIVUkZ6oz5dPjfN8nh1"
     }, 
     {
-      "updated_at": "2020-02-10T08:05:28.546Z", 
-      "version": "WzI3NCwyXQ==", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzUwLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -242,8 +242,8 @@
       "id": "19c54b30-4bdc-11ea-b817-21b2c9686cd6"
     }, 
     {
-      "updated_at": "2020-02-07T05:44:05.606Z", 
-      "version": "WzI1LDFd", 
+      "updated_at": "2020-02-10T08:34:52.637Z", 
+      "version": "WzUxLDFd", 
       "references": [
         {
           "type": "index-pattern", 
@@ -273,8 +273,8 @@
       "id": "AWIVXPftoz5dPjfN8nkt"
     }, 
     {
-      "updated_at": "2020-02-09T03:17:23.158Z", 
-      "version": "WzE4MSwyXQ==", 
+      "updated_at": "2020-02-10T08:34:44.486Z", 
+      "version": "WzI0LDFd", 
       "references": [], 
       "migrationVersion": {
         "index-pattern": "6.5.0"
