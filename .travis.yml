@@ -1,7 +1,25 @@
+
+services:
+  - docker
+
+env:
+  - DOCKER_COMPOSE_VERSION=1.25.2
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+script:
+
+install:
+
+
 deploy:
   provider: releases
-  api_key: "GITHUB OAUTH TOKEN"
-  file: "FILE TO UPLOAD"
+  api_key: 31a923b6a3a819006a301009360cace3df6cdc2a
+  file: file-to-upload.tar.gz
   skip_cleanup: true
   on:
     tags: true
