@@ -1,3 +1,10 @@
+language: python
+
+# build
+
+# test 
+
+# deploy 
 
 services:
   - docker
@@ -11,15 +18,23 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-script:
 
 install:
 
+script:
+  # clone 
+  # run start-all.sh
+  
 
-deploy:
-  provider: releases
-  api_key: 31a923b6a3a819006a301009360cace3df6cdc2a
-  file: file-to-upload.tar.gz
-  skip_cleanup: true
-  on:
-    tags: true
+test:
+  # docker exec CTRLBOX python /root/workdir/test/send-to-fluentd/20001-fake-1-logging.py
+
+
+
+# deploy:
+#   provider: releases
+#   api_key: 31a923b6a3a819006a301009360cace3df6cdc2a
+#   file: file-to-upload.tar.gz
+#   skip_cleanup: true
+#   on:
+#     tags: true
