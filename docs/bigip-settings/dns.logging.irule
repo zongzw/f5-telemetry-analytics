@@ -16,34 +16,24 @@ when DNS_RESPONSE {
     # set elkdata "$static::tcl_platform(machine) $clientip $clientport $listenerip $requestid $qname $qtype $status $origin"
     set elkdata "{ \
         \"timestamp\": \"$timestamp\", \
-        \"data_type\"
+        \"data_type\": \"\", \
         \"clientip\": \"$clientip\", \
         \"clientport\": $clientport, \
-        
         \"queryid\": \"$requestid\", \
-        
-        
         \"status\": \"$status\", \
-        \"origin\": \"$origin\" \
-
-        .. request
+        \"origin\": \"$origin\", \
         \"F5hostname\": \"$static::tcl_platform(machine)\", \
-        viewname
+        \"viewname\": "ANY",
         \"queryname\": \"$qname\", \
         \"querytype\": \"$qtype\", \
         \"listenervs\": \"$listenerip\", \
-        routedomain  int
-
-        .. response
-        F5Reponsehostname
-        responsecode
-        responseflag
-        responsename
-        answer
-        emptyresponse
-
-
-
+        \"routedomain\": 000, \
+        \"F5Reponsehostname\": \"$static::tcl_platform(machine)\", \
+        \"responsecode\": \"\", \
+        \"responseflag\": \"\", \
+        \"responsename\": \"\", \
+        \"answer\": \"\", \
+        \"emptyresponse\": \"\" \
     }"
     #log local0. $elkdata
     
@@ -51,8 +41,6 @@ when DNS_RESPONSE {
 }
 
 # "%{HOSTNAME:F5hostname} %{IP:clientip} %{POSINT:clientport} %{IP:svrip} %{NUMBER:qid} %{HOSTNAME:qname} %{GREEDYDATA:qtype} %{GREEDYDATA:status} %{GREEDYDATA:origin}" }
-
-
 
 filter {
   if [type] == 'f5-dns' and [message] =~ 'query:' {

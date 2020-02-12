@@ -19,7 +19,7 @@ It is powered by docker based BigData Engine Tools: EFK. The scaling-out is an a
 ## Usage and Workflow
 
 1. Run `start-all.sh`:
-   For the first time of running `start-all.sh`, docker command will pull or build images, so it may take a few minutes to finish.
+   For the first time of running `start-all.sh`, docker command will pull or build images, so it may take a few minutes to finish, depends on the downloading speed of docker images.
 
    The `start-all.sh` process do the following 3 things in sequence:
    
@@ -41,10 +41,12 @@ It is powered by docker based BigData Engine Tools: EFK. The scaling-out is an a
 
    1. Create request logging profile using the HSL pool and bind it to the specific virtual server.
 
-      On the request logging profile creation page, left all configuration as default except *Response Setting* -> *Template*: Use the content of `docs/http.logging.profile`.
+      On the request logging profile creation page, left all configuration as default except *Response Setting* -> *Template*: Use the content of `docs/bigip-settings/http.logging.profile`.
 
-3. Discover and View in Dashboard or Do analytics.
+3. Discover and View in Dashboard.
 
+   Open EntryPage: http://\<hostname>:80, or
+   
    Open Kibana webpage: http://localhost:5601:
 
    1. Navigate to Discover tab, to view if there are logs comming in.
@@ -54,7 +56,7 @@ It is powered by docker based BigData Engine Tools: EFK. The scaling-out is an a
 
       Click *share* to find it.
       
-   1. Navigate to Machine Learning tab for data analytics.
+   1. OpNavigate to Machine Learning tab for data analytics(required BYOL).
 
 ## BIG-IP Configuration Template
 
@@ -62,7 +64,7 @@ As the "Get Start", there are 3 options for configuring BIG-IP for logging.
 
 1. Request Logging Profile + HSL (Recommended)
 
-   Copy the content of `docs/http.logging.profile` to the request logging profile as mentioned above. A standard content may be like:
+   Copy the content of `docs/bigip-settings/http.logging.profile` to the request logging profile as mentioned above. A standard content may be like:
 
    ```
       {
@@ -87,7 +89,7 @@ As the "Get Start", there are 3 options for configuring BIG-IP for logging.
 
 2. iRules + HSL
 
-   There is an example: `docs/http.logging.irule`. 
+   There is an example: `docs/bigip-settings/http.logging.irule`. 
    
    Also users can define their own logic and metrics for information collecting.
 
