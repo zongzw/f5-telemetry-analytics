@@ -52,8 +52,9 @@ done
 $cdir/import-kibana-settings.sh
 $cdir/create-index-mapping.sh
 
+curl "http://nginx" -s -o /dev/null # to generate one piece of log to avoid empty access.log for goaccess
 goaccess $workdir/logs/nginx/access.log -o $workdir/logs/nginx/report.html \
-    --date-format='%d/%b/%Y' --time-format='%H:%M:%S' --log-format=COMBINED \
+    --date-format='"%d/%b/%Y"' --time-format='"%H:%M:%S"' --log-format=COMBINED \
     --real-time-html --daemonize
 
 # # It's not a good idea to uncomment the following lines.
