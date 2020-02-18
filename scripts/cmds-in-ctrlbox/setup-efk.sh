@@ -49,13 +49,21 @@ while true; do
     sleep 1
 done
 
+started=0
+echo "Trying to start GoAccess (try max 10 times)..."
+for n in {1..10}; do 
+    curl "http://nginx" -s -o /dev/null && sleep 1 # to generate one piece of log to avoid empty access.log for goaccess
+    goaccess $workdir/logs/nginx/access.log -o $workdir/logs/nginx/report.html \
+        --date-format='"%d/%b/%Y"' --time-format='"%H:%M:%S"' --log-format=COMBINED \
+        --real-time-html --daemonize # almostly failed to start goaccess
+    sleep 5
+    ps -ef | grep -v grep | grep goaccess > /dev/null 2>&1
+    if [ $? -eq 0 ]; then break; fi
+done
+
 $cdir/import-kibana-settings.sh
 $cdir/create-index-mapping.sh
 
-curl "http://nginx" -s -o /dev/null # to generate one piece of log to avoid empty access.log for goaccess
-goaccess $workdir/logs/nginx/access.log -o $workdir/logs/nginx/report.html \
-    --date-format='"%d/%b/%Y"' --time-format='"%H:%M:%S"' --log-format=COMBINED \
-    --real-time-html --daemonize
 
 # # It's not a good idea to uncomment the following lines.
 # # instead, we should contact IT to apply for more disk.

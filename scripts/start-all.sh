@@ -52,17 +52,13 @@ done
 
 docker exec CTRLBOX "/root/workdir/scripts/cmds-in-ctrlbox/setup-efk.sh"
 
-echo -n "Setup self control and monitoring ... "
-docker exec CTRLBOX "crond"
-docker exec CTRLBOX crontab /etc/crontab
-echo "done"
-
-for n in "FLUENTD"; do 
-    echo -n "Setup $n auto-configuration reloading ... "
+for n in "CTRLBOX" "FLUENTD"; do 
+    echo -n "Setup $n crontab jobs ... "
     docker exec $n "crond"
     docker exec $n crontab /etc/crontab
     echo "done"
 done
+
 # x='
 # 0. start docker containers..
 # 1. kibana:          import kibana settings
