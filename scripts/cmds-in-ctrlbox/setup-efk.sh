@@ -52,6 +52,10 @@ done
 $cdir/import-kibana-settings.sh
 $cdir/create-index-mapping.sh
 
+goaccess $workdir/logs/nginx/access.log -o $workdir/logs/nginx/report.html \
+    --date-format='%d/%b/%Y' --time-format='%H:%M:%S' --log-format=COMBINED \
+    --real-time-html --daemonize
+
 # # It's not a good idea to uncomment the following lines.
 # # instead, we should contact IT to apply for more disk.
 
