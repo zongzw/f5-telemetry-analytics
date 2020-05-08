@@ -1,3 +1,8 @@
+*Please note that this repository is deprecated.*
+*Please refer to the official repository:*
+
+**https://github.com/f5devcentral/f5-telemetry-analytics**
+
 # F5 BigData Engine
 
 This project works on **Visualization and Analytics On BIG-IP Data Traffic**.
